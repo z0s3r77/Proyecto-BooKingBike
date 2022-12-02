@@ -31,46 +31,13 @@ def jsonToList(path):
     
     return json_file
 
-#Añadimos la estructura deseada
+#Comprobamos que se haya convertido en lista correctamente
 
 def checkEstructuraBikesJson(bikes_json): 
 
     assert isinstance(bikes_json, list)
 
-    bikesSchema =  {
-        "_id": {"type": "string"},
-        "Brand": {"type": "string"},
-        "Model": "object",
-        "properties": {
-            "Name": {"type": "string"},
-            "Style": {"type": "string"},
-            "Suspension": {"type": "string"},
-            "Material": {"type": "string"},
-            "Fork brand": {"type": "string"},
-            "Fork length": "object",
-            "properties": {
-                "$numberInt": {"type": "string"}
-            },
-            "Developments": {"type": "string"},
-            "Group": {"type": "string"},
-            "Type": {"type": "string"}
-        },
-        "Price": "object",
-        "properties": {
-            "$numberInt": {"type": "string"}
-        },
-        "Status": {"type": "string"}
-    }
 
-    #Validamos que los JSON siguen la estructura deseada
-
-    for document in bikes_json:
-        try:
-            validate(instance=document, schema=bikesSchema)
-        except jsonschema.exceptions.ValidationError as err:
-            print(err)
-            err = "El Documento JSON es invalido"
-            return False, err
 
 #Convertimos el JSON en una lista/diccionario python para poder tratarlo
 
@@ -80,10 +47,10 @@ def main(path):
     checkBikesJson(path)
     #Convierte el JSON en una lista llamada bikes_json
     bikes_json = jsonToList(path)
-    #Comprueba la estructura de Bikes_JSON con una plantilla
-    checkEstructuraBikesJson(bikes_json)
     
     return bikes_json
 
 
-bikes_json = main(path='json/bikes.json')
+bikes_json = main('json/bikes.json')
+
+print(bikes_json)
