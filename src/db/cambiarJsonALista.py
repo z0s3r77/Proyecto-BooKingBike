@@ -52,5 +52,3 @@ def main(path):
 
 
 bikes_json = main('json/bikes.json')
-
-print(bikes_json)
