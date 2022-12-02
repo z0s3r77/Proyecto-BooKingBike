@@ -1,4 +1,5 @@
 from conexionApiMongo import requestToMongoApi
+import os
 import json
 
 
@@ -23,13 +24,16 @@ def generateJsonFileFromResponse(response):
     assert isinstance(response, dict)
 
     try:
+        #Comprobamos si existe el directorio json <> lo crea
+        if not os.path.exists('json/'):
+            os.makedirs('json/')
 
         #Abrimos el archivo bikes.json con el fin de escribir en este "w"
         outFile = open("json/bikes.json", "w")
 
     except OSError:
         print("No se puede abrir el archivo")
-        SystemExit()
+        quit()
     
     else: 
         #json.dump nos permite convertir el diccionario en un objeto JSON
@@ -43,9 +47,9 @@ if __name__ == '__main__':
     #Volcamos la respuesta de requestToMongoApi del modulo conexionApiMongo
     response = requestToMongoApi()
 
-    def mainGeneradorJson(response):
+    def GeneradorJsonFile(response):
 
         response = convertResponseStringIntoObjtect(response)
         generateJsonFileFromResponse(response)
     
-    mainGeneradorJson(response)
+    GeneradorJsonFile(response)
