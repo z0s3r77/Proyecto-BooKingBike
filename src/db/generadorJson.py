@@ -25,7 +25,7 @@ def generateJsonFileFromResponse(response):
     try:
 
         #Abrimos el archivo bikes.json con el fin de escribir en este "w"
-        outFile = open("JSON/bikes.json", "w")
+        outFile = open("json/bikes.json", "w")
 
     except OSError:
         print("No se puede abrir el archivo")

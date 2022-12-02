@@ -6,6 +6,7 @@ import json
 
 def requestToMongoApi():
   
+  #Datos necesarios para hacer el request a la API de MongoAtlas
   url = "https://data.mongodb-api.com/app/data-cozpc/endpoint/data/v1/action/find"
   payload = json.dumps({
       "collection": "bikes",
@@ -26,10 +27,30 @@ def requestToMongoApi():
     'api-key': 'yvkotEFnlbULNH9Zm14y8LSGZMYcbuA26YF5P9nZlXDpG4LEcEhlJYI3tALDVh5q',
     'Accept': 'application/ejson' 
   }
-  response = requests.request("POST", url, headers=headers, data=payload)
-  result = (response.text)
+
+  #Ejecutamos un try para hacer el request a la API, esto nos devolverá un string
+  try:
+    response = requests.request("POST", url, headers=headers, data=payload) 
+
+  #En caso de error de conexión cierra el interprete
+  except requests.exceptions.ConnectionError:
+    print('Error de conexion o falta de acceso a internet')
+    quit()
+
+  #En caso de Timout cierra el interprete
+  except requests.exceptions.Timeout:
+    print('Error de Timeout')
+    quit()
+    
+  else:
+    #Comprueba que response sea un string
+    if type(response.text) == str:  
+      result = (response.text)
+    else:
+      return 'El response no es un string'
   
-  
-  return result
+
+    #Result es igual a la coleccion de bicicletas str
+    return result
 
 
