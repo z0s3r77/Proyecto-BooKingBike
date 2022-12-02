@@ -28,9 +28,8 @@ def requestToMongoApi():
   }
   response = requests.request("POST", url, headers=headers, data=payload)
   result = (response.text)
-  result = result.replace('{"documents":',"")
-  result = result.replace('}',"",-1)
   
   
   return result
+
 
