@@ -1,9 +1,7 @@
 import json
-import jsonschema
-from jsonschema import validate
 import os
 
-def checkBikesJson(path): 
+def checkBikesJsonFile(path): 
 
     #Comprobamos que el JSON exista en el path
     isExist = os.path.exists(path)
@@ -25,28 +23,21 @@ def checkBikesJson(path):
 
 #Convertimos el JSON en una lista
 
-def jsonToList(path):
+def convertBikesJsonToList(path):
     json_file = open(path)
     json_file = json.load(json_file)
     
     return json_file
 
-#Comprobamos que se haya convertido en lista correctamente
-
-def checkEstructuraBikesJson(bikes_json): 
-
-    assert isinstance(bikes_json, list)
-
 
 
 #Convertimos el JSON en una lista/diccionario python para poder tratarlo
-
 def main(path):  
 
     #Comprueba que el archivo exista en ese path y que sea JSON
-    checkBikesJson(path)
+    checkBikesJsonFile(path)
     #Convierte el JSON en una lista llamada bikes_json
-    bikes_json = jsonToList(path)
+    bikes_json = convertBikesJsonToList(path)
     
     return bikes_json
 
