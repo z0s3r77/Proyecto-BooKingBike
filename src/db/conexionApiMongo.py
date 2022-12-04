@@ -12,7 +12,6 @@ def requestToMongoApi():
       "collection": "bikes",
       "database": "BookingBike",
       "dataSource": "Sandbox",
-      "filter": {"Brand":"shimano"},
       "projection":{
         "_id":1,
         "Brand":1,
