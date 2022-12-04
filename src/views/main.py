@@ -30,8 +30,11 @@ def html_head(title='Booking Bike', description='Booking Bike'):
 # BODY
 
 class body():
+
+    # Body de para home
+
     def body_pagina_principal():
-        body ="""    <body>
+        body = """    <body>
         <header>
             <h1>BookingBike</h1>
         </header>
@@ -75,6 +78,8 @@ class body():
         </main>"""
         print(body)
 
+    # Body para la pagina de contacto
+
     def body_contacto():
         body = """    <body>
         <header>
@@ -97,9 +102,39 @@ class body():
                 </form>
             </section>
         </main>"""
-        print(body)    
+        print(body)
 
+    def body_listado_total_bicis():
+        print("""    <body>
+        <header>
+            <h1> Bicis disponibles </h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="listadomarcabicis.html"> Marcas disponibles</a></li>
+                <li><a href="listadotipobicis.html"> Modelos disponibles</a></li>            
+                <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>            
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div>""")
+        x = 0
+        while x <= (len(bikes_json)-1):
+                print("""                <div>
+                    <img alt="imagen"></img>
+                    <br>"""
+                    f"<a href='{bikes_json[x]['_id']}.html'> <b>""", bikes_json[x]['Brand']  ,"""</b> </a><br>
+                    Bicicleta de tipo""", bikes_json[x]['Model']['Name']  ,"""27,5<br>
+                    """,bikes_json[x]['Price']['$numberInt']+"€/dia <br>"
+                """</div><br>""")
+                x += 1
+
+        print("""                </div>
+        </section>""")
 # FOOTER
+
 
 def footer():
     footer = """        <footer>
@@ -114,6 +149,7 @@ def footer():
 </html>"""
     print(footer)
 
+
 # GENERANDO PAGINAS
 
 
@@ -125,6 +161,7 @@ def pagina_principal():
     footer()
     sys.stdout.close()
 
+
 def contacto():
     sys.stdout = open('contacto.html', 'w', encoding="UTF-8")
     html_head(title="Pagina de contacto - BookingBike",
@@ -133,5 +170,16 @@ def contacto():
     footer()
     sys.stdout.close()
 
+
+def listado_total_bicis():
+    sys.stdout = open('listadototalbicis.html', 'w', encoding="UTF-8")
+    html_head(title="Listado de bicis - BookingBike",
+              description='Pagina que muestra todas las bicis disponibles')
+    body.body_listado_total_bicis()
+    footer()
+    sys.stdout.close()
+
+
 pagina_principal()
 contacto()
+listado_total_bicis()
