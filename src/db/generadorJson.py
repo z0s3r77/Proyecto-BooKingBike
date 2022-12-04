@@ -18,6 +18,7 @@ def convertResponseStringIntoObjtect(response):
 
 
 
+
 def generateJsonFileFromResponse(response):
     
     #Check response es object Dict
@@ -42,14 +43,10 @@ def generateJsonFileFromResponse(response):
         outFile.close()
 
 
-if __name__ == '__main__':
 
-    #Volcamos la respuesta de requestToMongoApi del modulo conexionApiMongo
-    response = requestToMongoApi()
+#Volcamos la respuesta de requestToMongoApi del modulo conexionApiMongo
 
-    def GeneradorJsonFile(response):
+def GeneradorJsonFile(response):
 
-        response = convertResponseStringIntoObjtect(response)
-        generateJsonFileFromResponse(response)
-    
-    GeneradorJsonFile(response)
+    response = convertResponseStringIntoObjtect(response)
+    generateJsonFileFromResponse(response)

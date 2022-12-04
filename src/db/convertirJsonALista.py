@@ -21,8 +21,8 @@ def checkBikesJsonFile(path):
         except ValueError:
             print('El fichero no es un json')
 
-#Convertimos el JSON en una lista
 
+#Convertimos el JSON en una lista
 def convertBikesJsonToList(path):
     json_file = open(path)
     json_file = json.load(json_file)
@@ -32,7 +32,7 @@ def convertBikesJsonToList(path):
 
 
 #Convertimos el JSON en una lista/diccionario python para poder tratarlo
-def main(path):  
+def convertJsonToList(path):  
 
     #Comprueba que el archivo exista en ese path y que sea JSON
     checkBikesJsonFile(path)
@@ -41,5 +41,3 @@ def main(path):
     
     return bikes_json
 
-
-bikes_json = main('json/bikes.json')
