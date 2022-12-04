@@ -8,7 +8,7 @@ def convertResponseStringIntoObjtect(response):
 
     #Damos el valor de la coleccion de bicicletas a response
     #Comprobamos que sea de tipo str
-    # response = requestToMongoApi()
+
     assert isinstance(response,str)
 
     #Json.loads detecta en el string un formato JSON y lo convierte en un objeto Dict
@@ -18,13 +18,14 @@ def convertResponseStringIntoObjtect(response):
 
 
 
+
 def generateJsonFileFromResponse(response):
     
-    #Check response es object Dict
+    #Comprobamos si la respuesta es object Dict
     assert isinstance(response, dict)
 
     try:
-        #Comprobamos si existe el directorio json <> lo crea
+        #Comprobamos si existe el directorio json , sino, lo crea
         if not os.path.exists('json/'):
             os.makedirs('json/')
 
@@ -42,14 +43,10 @@ def generateJsonFileFromResponse(response):
         outFile.close()
 
 
-if __name__ == '__main__':
 
-    #Volcamos la respuesta de requestToMongoApi del modulo conexionApiMongo
-    response = requestToMongoApi()
+#Volcamos la respuesta de requestToMongoApi del modulo conexionApiMongo
 
-    def GeneradorJsonFile(response):
+def GeneradorJsonFile(response):
 
-        response = convertResponseStringIntoObjtect(response)
-        generateJsonFileFromResponse(response)
-    
-    GeneradorJsonFile(response)
+    response = convertResponseStringIntoObjtect(response)
+    generateJsonFileFromResponse(response)
