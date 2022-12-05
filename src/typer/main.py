@@ -25,10 +25,10 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
         modelGroup = typer.prompt('Introduce grupo ')
         modelType = typer.prompt('Introduce de que tipo es la bicicleta(manual o automatica) ')
         priceday = typer.prompt('Introduce el precio por día ')
-        status = typer.prompt('Introduce disponibildiad (avaliable o rented)')
+        status = typer.prompt('Introduce disponibildiad (avaliable o rented)','\n')
 
 
-        print("[blue]Documento a insertar:[/blue]")
+        print("[blue]Documento a insertar:[/blue]",'\n')
         query = {
                 "_id" : _id,
                 "Brand": brand,
@@ -47,7 +47,7 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
                 "Status": status
             }
             
-        print(query)
+        print(query,'\n')
         confirm = typer.confirm("Seguro que quieres insertarlo?")
         if not confirm:
             print("Abortando...")
@@ -58,16 +58,7 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
     else:
 
         print("Subiendo archivo archivo JSON",'\n')
-
-        with open(jsonFile) as file:
-            file_data = json.load(file)
-
-        print(file_data)
-
-        # if isinstance(file_data, list):
-        #     Collection.insert_many(file_data)
-        # else:
-        #     Collection.insert_one(file_data)
+        mongoDBcrud.insert_json(jsonFile)
 
 
 
