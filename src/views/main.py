@@ -171,6 +171,42 @@ class body():
     </section>""")
         
 
+    def body_listado_marca_bicis():
+        print("""<body>
+    <header>
+        <h1>Listado de tipos de Bicis </h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="listadototalbicis.html">Todas las bicis</a></li>
+            <li><a href="listadotipobicis.html"> Tipos disponibles</a></li>
+            <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>            
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div>""")
+
+        x = 0
+        tipos_bicis = []
+        while x <= (len(bikes_json)-1):
+
+            tipo = bikes_json[x]['Brand']
+
+            if tipo in tipos_bicis:
+                pass
+            else:
+                tipos_bicis.append(tipo)
+
+            x += 1
+        
+        for x in tipos_bicis:
+            enlace = "<a href='{}.html'> {} </a>".format(x,x)
+            print("            <div>",enlace ,"</div>")  
+        print("""        </div>
+    </section>""")
+
     def body_marca_tipo_bicis():
         print("""<body>
     <header>
@@ -266,7 +302,7 @@ def listado_marca_bicis():
     sys.stdout = open('listadomarcabicis.html', 'w', encoding="UTF-8")
     html_head(title="Marcas de bicis disponibles - BookingBike",
               description='Pagina que muestra todas las marcas de bicis disponibles')
-    body.body_marca_tipo_bicis()
+    body.body_listado_marca_bicis()
     footer()
     sys.stdout.close()
 
