@@ -310,7 +310,7 @@ def listado_marca_bicis():
     footer()
     sys.stdout.close()
 
-def listado_marca_bicis():
+def listado_zona_bicis():
     sys.stdout = open('listadobicisporzona.html', 'w', encoding="UTF-8")
     html_head(title="Bicis disponible por zona - BookingBike",
               description='Pagina que muestra todas las zonas que tienen bicis disponibles')
@@ -324,3 +324,4 @@ contacto()
 listado_total_bicis()
 listado_tipo_bicis()
 listado_marca_bicis()
+listado_zona_bicis()
