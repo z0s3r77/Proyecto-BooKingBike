@@ -31,7 +31,7 @@ def html_head(title='Booking Bike', description='Booking Bike'):
 
 class body():
 
-    # Body de para home
+    # Body para home
 
     def body_pagina_principal():
         body = """    <body>
@@ -133,6 +133,8 @@ class body():
 
         print("""                </div>
         </section>""")
+    
+    # Body para la los tipos de bicis
 
     def body_listado_tipo_bicis():
         print("""<body>
@@ -170,11 +172,12 @@ class body():
         print("""        </div>
     </section>""")
         
+    # Body para las marcas de bicis 
 
     def body_listado_marca_bicis():
         print("""<body>
     <header>
-        <h1>Listado de tipos de Bicis </h1>
+        <h1>Listado de bicis por marca </h1>
     </header>
     <nav>
         <ul>
@@ -207,17 +210,19 @@ class body():
         print("""        </div>
     </section>""")
 
-    def body_marca_tipo_bicis():
+    #Ojo da error porque todavia no tenemos el campo de Location
+
+    def body_listado_por_zona_bicis():
         print("""<body>
     <header>
-        <h1>Listado de tipos de Bicis </h1>
+        <h1>Listado de Bicis por zona </h1>
     </header>
     <nav>
         <ul>
             <li><a href="home.html">Inicio</a></li>
             <li><a href="listadototalbicis.html">Todas las bicis</a></li>
             <li><a href="listadotipobicis.html"> Tipos disponibles</a></li>
-            <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>            
+            <li><a href="listadomarcabicis.html"> Marcas disponibles </a></li>            
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
@@ -228,7 +233,7 @@ class body():
         tipos_bicis = []
         while x <= (len(bikes_json)-1):
 
-            tipo = bikes_json[x]['Brand']
+            tipo = bikes_json[x]['Location']
 
             if tipo in tipos_bicis:
                 pass
@@ -242,7 +247,6 @@ class body():
             print("            <div>",enlace ,"</div>")  
         print("""        </div>
     </section>""")
-
 
 # FOOTER
 
@@ -305,6 +309,15 @@ def listado_marca_bicis():
     body.body_listado_marca_bicis()
     footer()
     sys.stdout.close()
+
+def listado_marca_bicis():
+    sys.stdout = open('listadobicisporzona.html', 'w', encoding="UTF-8")
+    html_head(title="Bicis disponible por zona - BookingBike",
+              description='Pagina que muestra todas las zonas que tienen bicis disponibles')
+    body.body_listado_por_zona_bicis()
+    footer()
+    sys.stdout.close()
+
 
 pagina_principal()
 contacto()
