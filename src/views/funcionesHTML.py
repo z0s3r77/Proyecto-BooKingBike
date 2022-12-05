@@ -1,4 +1,5 @@
 from src.db.convertirJsonALista import bikes_json
+from creardiccionarios import *
 from datetime import datetime
 import sys
 import os
@@ -136,7 +137,8 @@ class body():
                     f"<a href='{bikes_json[x]['_id']}.html'> <b>""", bikes_json[x]['Brand']  ,"""</b> </a><br>
                     Bicicleta de tipo""", bikes_json[x]['Model']['Name']  ,"""27,5<br>
                     """,bikes_json[x]['Price']['$numberInt']+"€/dia <br>"
-                """</div><br>""")
+                """
+                </div><br>""")
                 x += 1
 
         print("""                </div>
@@ -258,6 +260,7 @@ class body():
         </section>""")
 
 
+
 # FOOTER
 
 
@@ -275,41 +278,87 @@ def footer():
     print(footer)
 
 
-#Generar pagina por bici 
-
 def paginas_tipos_bicis():
     
     diccionarioBicisPorTipos = diccionario_tipos_bicis()
     
     for x in diccionarioBicisPorTipos:
 
-        page = x + '.html'
-        sys.stdout = open(page,'w')
+        page ='docs/types/'+ x + '.html'
+        sys.stdout = open(page,'w',encoding="UTF-8")
         html_head(title=f'Bicis tipo {x}', description=f'Pagina de listado de bicis tipo {x}')
-        print('<body>')
-        #Llamamos a las funciones de head y body
-        print('<table>')
-        print("<tr style='background-color: grey;'>")
-        print("     <th>IDENTIFICADOR</th>")
-        print("     <th>MODELO</th>")
-        print("     <th>MARCA</th>")
-        print("     <th>ESTILO</th>")
-        print("     <th>PRECIO</th>")
-        print("</tr>")
-        
+        print("""    <body>
+        <header>
+            <h1> Bicis disponibles </h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="listadomarcabicis.html"> Marcas disponibles</a></li>
+                <li><a href="listadotipobicis.html"> Modelos disponibles</a></li>            
+                <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>            
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div>""")
+
         for document in diccionarioBicisPorTipos[x]:
-            print("<tr>")
-            print("     <td>", document['_id'] ,"</td>")
-            print("     <td>", document['Model']['Name'] ,"</td>")
-            print("     <td>", document['Brand']  ,"</td>")
-            print("     <td>",document['Model']['Style'] ,"</td>")
-            print("     <td>",document['Price']['$numberInt'] ,"</td>")
-            print("  <td><a href='"+document['_id']+".html'> enlace</a></td> ")
-            print("</tr>")
+                print("""                <div>
+                    <img alt="imagen"></img>
+                    <br>"""
+                    f"<a href='{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
+                    Bicicleta de tipo""", document['Model']['Name']  ,"""27,5<br>
+                    """,document['Price']['$numberInt']+"€/dia <br>"
+                """
+                </div><br>""")
 
 
-        print('</table>')
-        print('</body>')
+        print("""                </div>
+        </section>""")
+
+        footer()
+        
+        sys.stdout.close()
+
+def paginas_tipos_bicis():
+    
+    diccionarioBicisPorMarcas = diccionario_marcas_bicis()
+    
+    for x in diccionarioBicisPorMarcas:
+
+        page ='docs/brand/'+ x + '.html'
+        sys.stdout = open(page,'w',encoding="UTF-8")
+        html_head(title=f'Bicis tipo {x}', description=f'Pagina de listado de bicis tipo {x}')
+        print("""    <body>
+        <header>
+            <h1> Bicis disponibles </h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="listadomarcabicis.html"> Marcas disponibles</a></li>
+                <li><a href="listadotipobicis.html"> Modelos disponibles</a></li>            
+                <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>            
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div>""")
+
+        for document in diccionarioBicisPorMarcas[x]:
+                print("""                <div>
+                    <img alt="imagen"></img>
+                    <br>"""
+                    f"<a href='{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
+                    Bicicleta de tipo""", document['Model']['Name']  ,"""27,5<br>
+                    """,document['Price']['$numberInt']+"€/dia <br>"
+                """
+                </div><br>""")
+
+
+        print("""                </div>
+        </section>""")
 
         footer()
         

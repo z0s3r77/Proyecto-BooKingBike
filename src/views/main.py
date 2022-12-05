@@ -1,5 +1,7 @@
 from src.views.funcionesHTML import *
+from src.views.crearPaginaPorBicicleta import pagina_por_bicicleta
 import sys
+import os
 """
     Generando archivos .HTML empleando funciones del modulo html_generator
 """
@@ -58,6 +60,11 @@ def listado_zona_bicis():
     footer()
     sys.stdout.close()
 
+def paginas_por_bicicletas():
+    pagina_por_bicicleta()
+
+def listado_paginas_por_tipos_de_bicis():
+    paginas_tipos_bicis()
 
 pagina_principal()
 contacto()
@@ -65,3 +72,5 @@ listado_total_bicis()
 listado_tipo_bicis()
 listado_marca_bicis()
 listado_zona_bicis()
+paginas_por_bicicletas()
+listado_paginas_por_tipos_de_bicis()
