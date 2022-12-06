@@ -113,10 +113,13 @@ def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los d
 
 @app.command()
 def actualizar_documento():
+
     """
-    Actualizar un campo en concreto de un documento mediante ID
+    Actualizar un campo en concreto de un documento proporcionando el ID
     """
+    
     targetId = typer.prompt("Indica el ID del documento a actualizar ")
+    
     with Progress(
         SpinnerColumn(),
         TextColumn("[progress.description]{task.description}"),
@@ -142,8 +145,24 @@ def actualizar_documento():
 
 
 
-    # result = mongoDBcrud.read(targetId)
-    # print(result)
+
+@app.command()
+def borrar_documento():
+    """
+    Eliminar documento indicando el ID correspondiente
+    """
+    _id = typer.prompt("Indica el ID del documento que se debe borrar")
+
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        transient=True,
+    )as progress:
+        progress.add_task(description="Borrando documento...", total=None) 
+        result = mongoDBcrud.delete(_id)
+        
+    print(result)
+    
 
 
 if __name__ == '__main__':
