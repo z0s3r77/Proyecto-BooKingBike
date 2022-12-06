@@ -73,6 +73,8 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
         mongoDBcrud.insert_json(jsonFile)
 
 
+
+
 @app.command()
 def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los documentos disponibles')):
     """
@@ -109,6 +111,39 @@ def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los d
 
 
 
+@app.command()
+def actualizar_documento():
+    """
+    Actualizar un campo en concreto de un documento mediante ID
+    """
+    targetId = typer.prompt("Indica el ID del documento a actualizar ")
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        transient=True,
+    )as progress:
+        progress.add_task(description="Buscando documento...", total=None)
+        result = mongoDBcrud.read(targetId)
+        print(result)
+
+    field = typer.prompt("Indica el campo a actualizar ")
+    value = typer.prompt("Indica el nuevo valor")
+
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        transient=True,
+    )as progress:
+        progress.add_task(description="Actualizando documento...", total=None)  
+        mongoDBcrud.update(targetId, field, value)
+        progress.add_task(description="Mostrando resultado...", total=None)
+        result = mongoDBcrud.read(targetId)
+        print(result)
+
+
+
+    # result = mongoDBcrud.read(targetId)
+    # print(result)
 
 
 if __name__ == '__main__':

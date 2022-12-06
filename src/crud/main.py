@@ -76,20 +76,19 @@ class mongoDBcrud():
 
 
 
-    def update(targetId, newvalues ):
+    def update(targetId, field, value ):
         
+        values = {field:value}
 
         MongoAtlas = pymongo.MongoClient("mongodb+srv://sestacio:trancas24@sandbox.dcnt9qr.mongodb.net/?retryWrites=true&w=majority")
         BookingBikeDb = MongoAtlas["BookingBike"]
         BikesCollection = BookingBikeDb["bikes"] 
 
         query = {"_id": targetId}
-        newValues = {"$set": newvalues}
+        newValues = {"$set": values}
+
 
         BikesCollection.update_one(query, newValues)
-
-        for x in BikesCollection.find(query):
-            print(x)
 
 
 
