@@ -43,7 +43,7 @@ class body():
     # Body para home
 
     def body_pagina_principal():
-        body = """    <body>
+        body = """    <body background-color="#333">
         <header>
             <h1>BookingBike</h1>
         </header>
@@ -94,6 +94,11 @@ class body():
         <header>
             <h1>Pagina de contacto</h1>
         </header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+            </ul>
+        </nav>
         <main>
             <section>
                 <form>
@@ -131,14 +136,14 @@ class body():
             <div>""")
         x = 0
         while x <= (len(bikes_json)-1):
-                print("""                <div>
-                    <img alt="imagen"></img>
+                print(f"""                <div>
+                    <img alt="imagen" width='200' height='200' src="{bikes_json[x]['img']}"></img>
                     <br>"""
-                    f"<a href='{bikes_json[x]['_id']}.html'> <b>""", bikes_json[x]['Brand']  ,"""</b> </a><br>
-                    Bicicleta de tipo""", bikes_json[x]['Model']['Name']  ,"""27,5<br>
-                    """,bikes_json[x]['Price']['$numberInt']+"€/dia <br>"
-                """
-                </div><br>""")
+                    f"<a href='bikes/{bikes_json[x]['_id']}.html'> <b>""", bikes_json[x]['Brand']  ,"""</b> </a><br>
+                    Bicicleta de tipo""", bikes_json[x]['Model']['Name'] ,bikes_json[x]['Model']['Wheel size']['$numberDouble']+'"<br>'
+                    ,bikes_json[x]['Price']['$numberInt']+"€/dia <br>"
+                
+                "</div><br>")
                 x += 1
 
         print("""                </div>
@@ -177,7 +182,7 @@ class body():
             x += 1
         
         for x in tipos_bicis:
-            enlace = "<a href='{}.html'> {} </a>".format(x,x)
+            enlace = "<a href='types/{}.html'> {} </a>".format(x,x)
             print("                <div>",enlace ,"</div>")  
         print("""            </div>
         </section>""")
@@ -216,7 +221,7 @@ class body():
             x += 1
         
         for x in marcas_bicis:
-            enlace = "<a href='{}.html'> {} </a>".format(x,x)
+            enlace = "<a href='brand/{}.html'> {} </a>".format(x,x)
             print("                <div>",enlace ,"</div>")  
         print("""            </div>
         </section>""")
@@ -254,7 +259,7 @@ class body():
             x += 1
         
         for x in zonas_bicis:
-            enlace = "<a href='{}.html'> {} </a>".format(x,x)
+            enlace = "<a href='location/{}.html'> {} </a>".format(x,x)
             print("                <div>",enlace ,"</div>")  
         print("""            </div>
         </section>""")
@@ -292,22 +297,22 @@ def paginas_tipos_bicis():
         </header>
         <nav>
             <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="listadomarcabicis.html"> Marcas disponibles</a></li>
-                <li><a href="listadotipobicis.html"> Modelos disponibles</a></li>            
-                <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>            
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="../home.html">Inicio</a></li>
+                <li><a href="../listadomarcabicis.html"> Marcas disponibles</a></li>
+                <li><a href="../listadotipobicis.html"> Modelos disponibles</a></li>            
+                <li><a href="../listadobicisporzona.html"> Zonas disponibles </a></li>            
+                <li><a href="../contacto.html">Contacto</a></li>
             </ul>
         </nav>
         <section>
             <div>""")
 
         for document in diccionarioBicisPorTipos[x]:
-                print("""                <div>
-                    <img alt="imagen"></img>
+                print(f"""                <div>
+                    <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
                     <br>"""
-                    f"<a href='{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
-                    Bicicleta de tipo""", document['Model']['Name']  ,"""27,5<br>
+                    f"<a href='../bikes/{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
+                    Bicicleta de tipo""", document['Model']['Name']  ,document['Model']['Wheel size']['$numberDouble']+'"',"""<br>
                     """,document['Price']['$numberInt']+"€/dia <br>"
                 """
                 </div><br>""")
@@ -335,22 +340,22 @@ def paginas_marcas_bicis():
         </header>
         <nav>
             <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="listadomarcabicis.html"> Marcas disponibles</a></li>
-                <li><a href="listadotipobicis.html"> Modelos disponibles</a></li>            
-                <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>            
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="../home.html">Inicio</a></li>
+                <li><a href="../listadomarcabicis.html"> Marcas disponibles</a></li>
+                <li><a href="../listadotipobicis.html"> Modelos disponibles</a></li>            
+                <li><a href="../listadobicisporzona.html"> Zonas disponibles </a></li>            
+                <li><a href="../contacto.html">Contacto</a></li>
             </ul>
         </nav>
         <section>
             <div>""")
 
         for document in diccionarioBicisPorMarcas[x]:
-                print("""                <div>
-                    <img alt="imagen"></img>
+                print(f"""                <div>
+                    <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
                     <br>"""
-                    f"<a href='{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
-                    Bicicleta de tipo""", document['Model']['Name']  ,"""27,5<br>
+                    f"<a href='../bikes/{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
+                    Bicicleta de tipo""", document['Model']['Name']  ,document['Model']['Wheel size']['$numberDouble']+'"',"""<br>
                     """,document['Price']['$numberInt']+"€/dia <br>"
                 """
                 </div><br>""")
@@ -378,22 +383,22 @@ def paginas_zonas_bicis():
         </header>
         <nav>
             <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="listadomarcabicis.html"> Marcas disponibles</a></li>
-                <li><a href="listadotipobicis.html"> Modelos disponibles</a></li>            
-                <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>            
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="../home.html">Inicio</a></li>
+                <li><a href="../listadomarcabicis.html"> Marcas disponibles</a></li>
+                <li><a href="../listadotipobicis.html"> Modelos disponibles</a></li>            
+                <li><a href="../listadobicisporzona.html"> Zonas disponibles </a></li>            
+                <li><a href="../contacto.html">Contacto</a></li>
             </ul>
         </nav>
         <section>
             <div>""")
 
         for document in diccionarioBicisPorZonas[x]:
-                print("""                <div>
-                    <img alt="imagen"></img>
+                print(f"""                <div>
+                    <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
                     <br>"""
-                    f"<a href='{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
-                    Bicicleta de tipo""", document['Model']['Name']  ,"""27,5<br>
+                    f"<a href='../bikes/{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
+                    Bicicleta de tipo""", document['Model']['Name']  ,document['Model']['Wheel size']['$numberDouble']+'"',"""<br>
                     """,document['Price']['$numberInt']+"€/dia <br>"
                 """
                 </div><br>""")
