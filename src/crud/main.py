@@ -1,6 +1,8 @@
 import pymongo
 import json
 import time
+from src.crud.MongoAtlasConexion import MongoAtlas
+
 
 # Se crea una clase con diferentes metodos
 #Dichos metodos se usan en src/typer/main.py
@@ -10,7 +12,6 @@ class mongoDBcrud():
     #Este metodo suber un archivo JSON a la colección Bikes
     def insert_json(jsonFile):
 
-        MongoAtlas = pymongo.MongoClient("mongodb+srv://sestacio:trancas24@sandbox.dcnt9qr.mongodb.net/?retryWrites=true&w=majority")
         BookingBikeDb = MongoAtlas["BookingBike"]
         BikesCollection = BookingBikeDb["bikes"]
         
@@ -59,7 +60,6 @@ class mongoDBcrud():
 
     def create(_id, brand, modelName, modelStyle, modelSuspension, modelMaterial, modelForkBrand, modelForklenght, modelDevelopments, modelGroup, modelType, priceday, status):
         
-        MongoAtlas = pymongo.MongoClient("mongodb+srv://sestacio:trancas24@sandbox.dcnt9qr.mongodb.net/?retryWrites=true&w=majority")
         BookingBikeDb = MongoAtlas["BookingBike"]
         BikesCollection = BookingBikeDb["bikes"]
             
@@ -90,7 +90,6 @@ class mongoDBcrud():
         
         values = {field:value}
 
-        MongoAtlas = pymongo.MongoClient("mongodb+srv://sestacio:trancas24@sandbox.dcnt9qr.mongodb.net/?retryWrites=true&w=majority")
         BookingBikeDb = MongoAtlas["BookingBike"]
         BikesCollection = BookingBikeDb["bikes"] 
 
@@ -104,7 +103,6 @@ class mongoDBcrud():
     #Este metodo tan solo muestra el documento por su ID
     def read(id):
 
-        MongoAtlas = pymongo.MongoClient("mongodb+srv://sestacio:trancas24@sandbox.dcnt9qr.mongodb.net/?retryWrites=true&w=majority")
         BookingBikeDb = MongoAtlas["BookingBike"]
         BikesCollection = BookingBikeDb["bikes"]
 
@@ -126,7 +124,6 @@ class mongoDBcrud():
     #Este metodo toma todos los documentos de la base de datos y los envia a src/typer/main.py
     def readall():
 
-        MongoAtlas = pymongo.MongoClient("mongodb+srv://sestacio:trancas24@sandbox.dcnt9qr.mongodb.net/?retryWrites=true&w=majority")
         BookingBikeDb = MongoAtlas["BookingBike"]
         BikesCollection = BookingBikeDb["bikes"]
         
@@ -143,7 +140,6 @@ class mongoDBcrud():
     #Este metodo borra el documento según su ID
     def delete(id):
 
-        MongoAtlas = pymongo.MongoClient("mongodb+srv://sestacio:trancas24@sandbox.dcnt9qr.mongodb.net/?retryWrites=true&w=majority")
         BookingBikeDb = MongoAtlas["BookingBike"]
         BikesCollection = BookingBikeDb["bikes"]
 
