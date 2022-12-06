@@ -18,7 +18,8 @@
         "Price": {
             "$numberInt": "40"
         },
-        "Status": "avaliable"
+        "Status": "avaliable",
+        "Location": "Palma"
     },
     {
         "_id": "B2",
@@ -39,7 +40,68 @@
         "Price": {
             "$numberInt": "60"
         },
-        "Status": "available"
+        "Status": "available",
+        "Location": "Santanyi"
+    },
+    {
+        "_id": "B3",
+        "Brand": "Canyon",
+        "Model": {
+            "Name": "CityBike",
+            "Style": "City",
+            "Suspension": "none",
+            "Material": "aluminum",
+            "Fork brand": "none",
+            "Fork length": "\"none\"",
+            "Developments": "1x7",
+            "Group": "Nexus",
+            "Type": "manual"
+        },
+        "Price": {
+            "$numberInt": "35"
+        },
+        "Status": "rented",
+        "Location": "Palma"
+    },
+    {
+        "_id": "B4",
+        "Brand": "Trek",
+        "Model": {
+            "Name": "MTB",
+            "Style": "Enduring",
+            "Suspension": "front suspension",
+            "Material": "carbon",
+            "Fork brand": "Fox",
+            "Fork length": "160",
+            "Developments": "1x12",
+            "Group": "Trek xtr",
+            "Type": "manual"
+        },
+        "Price": {
+            "$numberInt": "70"
+        },
+        "Status": "rented",
+        "Location": "Palma"
+    },
+    {
+        "_id": "B5",
+        "Brand": "Orbea",
+        "Model": {
+            "Name": "Roat Bike",
+            "Style": "none",
+            "Suspension": "none",
+            "Material": "full carbon",
+            "Fork brand": "Fox",
+            "Fork length": "160",
+            "Developments": "2x12",
+            "Group": "Orbea red",
+            "Type": "manual"
+        },
+        "Price": {
+            "$numberInt": "48"
+        },
+        "Status": "available",
+        "Location": "Palma"
     },
     {
         "_id": "B6",
@@ -59,6 +121,67 @@
         },
         "Price": {
             "$numberInt": "75"
-        }
+        },
+        "Location": "Palma"
+    },
+    {
+        "_id": "B8",
+        "Brand": "Trek",
+        "Model": {
+            "Name": "MTB",
+            "Style": "Downhill",
+            "Suspension": "Double suspension",
+            "Material": "gold",
+            "Fork brand": "Fox",
+            "Fork length": "130",
+            "Developments": "1x12",
+            "Group": "shimano xtr",
+            "Type": "manual"
+        },
+        "Price": {
+            "$numberInt": "50"
+        },
+        "Status": "avaliable",
+        "Location": "Palma"
+    },
+    {
+        "_id": "B9",
+        "Brand": "Shimano",
+        "Model": {
+            "Name": "MTB",
+            "Style": "Downhill",
+            "Suspension": "Triple suspension",
+            "Material": "aluminum",
+            "Fork brand": "Fox",
+            "Fork length": "110",
+            "Developments": "1x12",
+            "Group": "shimano xtr",
+            "Type": "automatica"
+        },
+        "Price": {
+            "$numberInt": "55"
+        },
+        "Status": "avaliable",
+        "Location": "Palma"
+    },
+    {
+        "_id": "B10",
+        "Brand": "shimano",
+        "Model": {
+            "Name": "MTB",
+            "Style": "Downhill",
+            "Suspension": "Doble suspension",
+            "Material": "aluminio",
+            "Fork brand": "Fox",
+            "Fork length": "90",
+            "Developments": "1x12",
+            "Group": "Shimano xtr",
+            "Type": "manual"
+        },
+        "Price": {
+            "$numberInt": "60"
+        },
+        "Status": "avaliable",
+        "Location": "Palma"
     }
 ]

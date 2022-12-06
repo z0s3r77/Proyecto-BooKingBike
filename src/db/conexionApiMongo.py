@@ -12,13 +12,13 @@ def requestToMongoApi():
       "collection": "bikes",
       "database": "BookingBike",
       "dataSource": "Sandbox",
-      "filter": {"Brand":"shimano"},
       "projection":{
         "_id":1,
         "Brand":1,
         "Model":1,
         "Price":1,
-        "Status":1
+        "Status":1,
+        "Location":1
         }
   })
   headers = {

@@ -203,25 +203,25 @@ class body():
             <div>""")
 
         x = 0
-        tipos_bicis = []
+        marcas_bicis = []
         while x <= (len(bikes_json)-1):
 
-            tipo = bikes_json[x]['Brand']
+            marca = bikes_json[x]['Brand']
 
-            if tipo in tipos_bicis:
+            if marca in marcas_bicis:
                 pass
             else:
-                tipos_bicis.append(tipo)
+                marcas_bicis.append(marca)
 
             x += 1
         
-        for x in tipos_bicis:
+        for x in marcas_bicis:
             enlace = "<a href='{}.html'> {} </a>".format(x,x)
             print("                <div>",enlace ,"</div>")  
         print("""            </div>
         </section>""")
 
-    #Ojo da error porque todavia no tenemos el campo de Location
+    #Body para mostrar las bicis segun su localización
 
     def body_listado_por_zona_bicis():
         print("""    <body>
@@ -241,24 +241,23 @@ class body():
             <div>""")
 
         x = 0
-        tipos_bicis = []
+        zonas_bicis = []
         while x <= (len(bikes_json)-1):
 
-            tipo = "Location"
+            zonas = bikes_json[x]['Location']
 
-            if tipo in tipos_bicis:
+            if zonas in zonas_bicis:
                 pass
             else:
-                tipos_bicis.append(tipo)
+                zonas_bicis.append(zonas)
 
             x += 1
         
-        for x in tipos_bicis:
+        for x in zonas_bicis:
             enlace = "<a href='{}.html'> {} </a>".format(x,x)
             print("                <div>",enlace ,"</div>")  
         print("""            </div>
         </section>""")
-
 
 
 # FOOTER
@@ -321,7 +320,7 @@ def paginas_tipos_bicis():
         
         sys.stdout.close()
 
-def paginas_tipos_bicis():
+def paginas_marcas_bicis():
     
     diccionarioBicisPorMarcas = diccionario_marcas_bicis()
     
@@ -347,6 +346,49 @@ def paginas_tipos_bicis():
             <div>""")
 
         for document in diccionarioBicisPorMarcas[x]:
+                print("""                <div>
+                    <img alt="imagen"></img>
+                    <br>"""
+                    f"<a href='{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
+                    Bicicleta de tipo""", document['Model']['Name']  ,"""27,5<br>
+                    """,document['Price']['$numberInt']+"€/dia <br>"
+                """
+                </div><br>""")
+
+
+        print("""                </div>
+        </section>""")
+
+        footer()
+        
+        sys.stdout.close()
+
+def paginas_zonas_bicis():
+    
+    diccionarioBicisPorZonas = diccionario_zonas_bicis()
+    
+    for x in diccionarioBicisPorZonas:
+
+        page ='docs/location/'+ x + '.html'
+        sys.stdout = open(page,'w',encoding="UTF-8")
+        html_head(title=f'Bicis tipo {x}', description=f'Pagina de listado de bicis tipo {x}')
+        print("""    <body>
+        <header>
+            <h1> Bicis disponibles </h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="listadomarcabicis.html"> Marcas disponibles</a></li>
+                <li><a href="listadotipobicis.html"> Modelos disponibles</a></li>            
+                <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>            
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div>""")
+
+        for document in diccionarioBicisPorZonas[x]:
                 print("""                <div>
                     <img alt="imagen"></img>
                     <br>"""

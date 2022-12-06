@@ -47,11 +47,11 @@ def diccionario_marcas_bicis():
         x = 0
         while x <= (len(bikes_json)-1):
 
-            tipo = bikes_json[x]['Brand']
-            if tipo in marcas_bicis:
+            marca = bikes_json[x]['Brand']
+            if marca in marcas_bicis:
                 pass
             else:
-                marcas_bicis.append(tipo)
+                marcas_bicis.append(marca)
 
             x += 1
 
@@ -71,3 +71,37 @@ def diccionario_marcas_bicis():
                 diccionarioMarcasBicis[x] = array
             
     return diccionarioMarcasBicis
+
+def diccionario_zonas_bicis():
+
+    zonas_bicis = []
+
+
+    def zonasBicis():
+        x = 0
+        while x <= (len(bikes_json)-1):
+
+            zona = bikes_json[x]['Location']
+            if zona in zonas_bicis:
+                pass
+            else:
+                zonas_bicis.append(zona)
+
+            x += 1
+
+
+    zonasBicis()
+
+
+
+    diccionarioZonasBicis = {}
+
+
+    for x in zonas_bicis:
+        array = []
+        for i in bikes_json:
+            if x == i['Location']:
+                array.append(i)
+                diccionarioZonasBicis[x] = array
+            
+    return diccionarioZonasBicis

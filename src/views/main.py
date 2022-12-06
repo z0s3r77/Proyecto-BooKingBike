@@ -65,6 +65,8 @@ def paginas_por_bicicletas():
 
 def listado_paginas_por_tipos_de_bicis():
     paginas_tipos_bicis()
+    paginas_marcas_bicis()
+    paginas_zonas_bicis()
 
 pagina_principal()
 contacto()
