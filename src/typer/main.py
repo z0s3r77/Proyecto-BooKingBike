@@ -3,17 +3,24 @@ from rich import print
 import json
 from src.crud.main import mongoDBcrud
 from rich.progress import Progress, SpinnerColumn, TextColumn
+import os
 
-app = typer.Typer(help="La CLI de BookingBike")
+app = typer.Typer(help="La CLI de BookingBike te permite realizar un CRUD sobre la colección Bikes de la base de datos BookingBike, ubicada en Mongo Atlas")
 
+
+#Comandos que se veran reflejados en la CLI mediante Typer
 @app.command()
-def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documento JSON directamente")):
+#La funcion permite insertar un documento fila por fila en la colección Bikes
+#También permite, mediante el parametro jsonFile subir directamente un archivo JSON
+def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documento tipo JSON directamente (especifica la ruta)")):
     """
     Insertar nuevo documento en la base de datos de MongoAtlas
     """
+
+    #En caso de no usar opcion jsonFile
     if not jsonFile:
 
-        print("Formulario: ")
+        print("Campos del documento: ")
         _id = typer.prompt('Introduce un id ')
         brand = typer.prompt('Introduce una brand ')
         modelName = typer.prompt('Introduce el tipo de Bicicleta ')
@@ -29,7 +36,7 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
         status = typer.prompt('Introduce disponibildiad (avaliable o rented)','\n')
 
 
-        print("[blue]Documento a insertar:[/blue]",'\n')
+        print("[blue]Previsualización del documento a insertar:[/blue]",'\n')
         query = {
                 "_id" : _id,
                 "Brand": brand,
@@ -49,6 +56,10 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
             }
             
         print(query,'\n')
+
+        #Pedimos confirmación, en caso de confirmar, pasa las variables a mongoDBcrud.create
+        #Posteriormente hace un read del documento
+
         confirm = typer.confirm("Seguro que quieres insertarlo?")
         print('\n')
         if not confirm:
@@ -65,12 +76,17 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
 
             print("[blue]Mostrando documento....[/blue]")
             result = mongoDBcrud.read(_id)
-
             print(result)
     
+
+    #En caso de usar el parametro jsonFile, enviará el nombre del documento a la función mongoDBcrud.insert_json
     else:
-        print("Subiendo archivo archivo JSON",'\n')
-        mongoDBcrud.insert_json(jsonFile)
+
+        print("[blue]Comprobando ruta... [/blue]")
+        if os.path.exists(jsonFile) == True:
+            print(mongoDBcrud.insert_json(jsonFile))
+        else:
+            print(f"[red]No existe el archivo en la ruta especificada: {jsonFile} [/red]")
 
 
 
@@ -162,7 +178,17 @@ def borrar_documento():
         result = mongoDBcrud.delete(_id)
         
     print(result)
-    
+
+
+
+
+@app.command()
+def mostrar_site():
+    """
+    Inicia el navegador con la pagina principal de BookingBike
+    """
+    typer.launch("https://bikesbooking.com/es/")
+
 
 
 if __name__ == '__main__':

@@ -2,14 +2,32 @@ import pymongo
 import json
 import time
 
+# Se crea una clase con diferentes metodos
+#Dichos metodos se usan en src/typer/main.py
 
 class mongoDBcrud():
 
+    #Este metodo suber un archivo JSON a la colección Bikes
     def insert_json(jsonFile):
 
         MongoAtlas = pymongo.MongoClient("mongodb+srv://sestacio:trancas24@sandbox.dcnt9qr.mongodb.net/?retryWrites=true&w=majority")
         BookingBikeDb = MongoAtlas["BookingBike"]
         BikesCollection = BookingBikeDb["bikes"]
+        
+        #Comprobamos que el archivo sea un JSON
+        with open(jsonFile) as jFile:
+            file_content = jFile.read()
+        try:
+            json.loads(file_content)
+        except ValueError:
+            print("La ruta es correcta pero el archivo no es de tipo JSON")
+            return "[red]Saliendo del programa...[/red]"
+            quit()
+        else:
+            print("El archivo es JSON")
+        
+
+        #Al ser JSON , se itera sobre el y se suben los documentos 
         with open(jsonFile) as file:
             file_data = json.load(file)
             
@@ -19,6 +37,7 @@ class mongoDBcrud():
             BikesCollection.insert_one(file_data)
 
 
+        #Por cada documento, se nos muestra si se ha insertado
         for i in file_data:
             
             i['_id']
@@ -26,15 +45,17 @@ class mongoDBcrud():
             check = BikesCollection.find_one({'_id':i['_id']})
 
             if check:
-                print(f"Se ha insertado correctamente el nuevo documento con id {i['_id']}")
+                return (f"Se ha insertado correctamente el nuevo documento con id {i['_id']}")
             elif check == None:
-                print(f"No se ha podido insetar el documento con id {i['_id']}")
+                return (f"No se ha podido insetar el documento con id {i['_id']}")
 
         
 
 
 
 
+    #Este metodo pide los datos para completar el documento JSON
+    #Seguidamente sube el resultado
 
     def create(_id, brand, modelName, modelStyle, modelSuspension, modelMaterial, modelForkBrand, modelForklenght, modelDevelopments, modelGroup, modelType, priceday, status):
         
@@ -60,22 +81,11 @@ class mongoDBcrud():
             "Status": status
         }
 
-
         insert = BikesCollection.insert_one(query)
-
-
-        # if check == True:
-        #     print("Se ha insertado correctamente el nuevo documento")
-        # else:
-        #     print("No se ha podido insetar el documento")
 
       
 
-
-
-
-
-
+    #Este metodo toma un ID de documento, un campo y un valor nuevo y lo actualiza
     def update(targetId, field, value ):
         
         values = {field:value}
@@ -91,7 +101,7 @@ class mongoDBcrud():
         BikesCollection.update_one(query, newValues)
 
 
-
+    #Este metodo tan solo muestra el documento por su ID
     def read(id):
 
         MongoAtlas = pymongo.MongoClient("mongodb+srv://sestacio:trancas24@sandbox.dcnt9qr.mongodb.net/?retryWrites=true&w=majority")
@@ -100,8 +110,8 @@ class mongoDBcrud():
 
         query = {"_id":id}
 
+        #Se guarda el documento en un array para poder hacerle un print (rich) desde src/typer/main.py
         result = []
-
         if BikesCollection.count_documents (query, limit=1) != 0:
             print('')
             for x in BikesCollection.find(query):
@@ -113,7 +123,7 @@ class mongoDBcrud():
             return result
 
 
-
+    #Este metodo toma todos los documentos de la base de datos y los envia a src/typer/main.py
     def readall():
 
         MongoAtlas = pymongo.MongoClient("mongodb+srv://sestacio:trancas24@sandbox.dcnt9qr.mongodb.net/?retryWrites=true&w=majority")
@@ -130,13 +140,14 @@ class mongoDBcrud():
         return result
 
 
+    #Este metodo borra el documento según su ID
     def delete(id):
+
         MongoAtlas = pymongo.MongoClient("mongodb+srv://sestacio:trancas24@sandbox.dcnt9qr.mongodb.net/?retryWrites=true&w=majority")
         BookingBikeDb = MongoAtlas["BookingBike"]
         BikesCollection = BookingBikeDb["bikes"]
 
         query = {"_id":id}
-
         BikesCollection.delete_one(query)
 
         if BikesCollection.count_documents (query, limit=1) != 0:
