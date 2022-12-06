@@ -1,5 +1,6 @@
 import pymongo
 import json
+import time
 
 
 class mongoDBcrud():
@@ -11,13 +12,27 @@ class mongoDBcrud():
         BikesCollection = BookingBikeDb["bikes"]
         with open(jsonFile) as file:
             file_data = json.load(file)
+            
+        if isinstance(file_data, list):
+            BikesCollection.insert_many(file_data)
+        else:
+            BikesCollection.insert_one(file_data)
 
-            print(file_data)
 
-        # if isinstance(file_data, list):
-        #     BikesCollection.insert_many(file_data)
-        # else:
-        #     BikesCollection.insert_one(file_data)
+        for i in file_data:
+            
+            i['_id']
+
+            check = BikesCollection.find_one({'_id':i['_id']})
+
+            if check:
+                print(f"Se ha insertado correctamente el nuevo documento con id {i['_id']}")
+            elif check == None:
+                print(f"No se ha podido insetar el documento con id {i['_id']}")
+
+        
+
+
 
 
 
@@ -49,6 +64,14 @@ class mongoDBcrud():
         insert = BikesCollection.insert_one(query)
 
 
+        # if check == True:
+        #     print("Se ha insertado correctamente el nuevo documento")
+        # else:
+        #     print("No se ha podido insetar el documento")
+
+      
+
+
 
 
 
@@ -78,8 +101,34 @@ class mongoDBcrud():
 
         query = {"_id":id}
 
-        for x in BikesCollection.find(query):
-            print(x, '\n')
+        result = []
+
+        if BikesCollection.count_documents (query, limit=1) != 0:
+            print('')
+            for x in BikesCollection.find(query):
+                result.append(x)
+        
+            return result
+        else:
+            result = f'[red]No existe ningún documento con ID:[/red]  {id}'
+            return result
+
+
+
+    def readall():
+
+        MongoAtlas = pymongo.MongoClient("mongodb+srv://sestacio:trancas24@sandbox.dcnt9qr.mongodb.net/?retryWrites=true&w=majority")
+        BookingBikeDb = MongoAtlas["BookingBike"]
+        BikesCollection = BookingBikeDb["bikes"]
+        
+        time.sleep(3)
+        
+        result=[]
+
+        for x in BikesCollection.find():
+            result.append(x)
+
+        return result
 
 
     def delete(id):
@@ -90,6 +139,5 @@ class mongoDBcrud():
         query = {"_id":id}
 
         BikesCollection.delete_one(query)
-
 
 
