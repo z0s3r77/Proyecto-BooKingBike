@@ -1,7 +1,8 @@
-from src.db.convertirJsonALista import bikes_json
+from src.db.convertirJsonALista import convertJsonToList
 from src.views.funcionesHTML import *
 import sys
 
+bikes_json = convertJsonToList('json/bikes.json')
 
 def pagina_por_bicicleta():
 

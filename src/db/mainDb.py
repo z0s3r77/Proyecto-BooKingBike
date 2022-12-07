@@ -1,7 +1,7 @@
 #Modulo principal de DB
-from conexionApiMongo import requestToMongoApi
-from generadorJson import GeneradorJsonFile
-from convertirJsonALista import convertJsonToList
+from src.db.conexionApiMongo import requestToMongoApi
+from src.db.generadorJson import GeneradorJsonFile
+from src.db.convertirJsonALista import convertJsonToList
 
 
 #Funcion Principal

@@ -1,4 +1,4 @@
-from conexionApiMongo import requestToMongoApi
+from src.db.conexionApiMongo import requestToMongoApi
 import os
 import json
 
