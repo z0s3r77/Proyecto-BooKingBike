@@ -17,7 +17,9 @@ def requestToMongoApi():
         "Brand":1,
         "Model":1,
         "Price":1,
-        "Status":1
+        "Status":1,
+        "Location":1,
+        "img":1
         }
   })
   headers = {

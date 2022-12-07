@@ -1,0 +1,223 @@
+[
+    {
+        "_id": "B1",
+        "Brand": "Shimano",
+        "Model": {
+            "Name": "MTB",
+            "Style": "Downhill",
+            "Suspension": "Double suspension",
+            "Material": "aluminum",
+            "Fork brand": "Fox",
+            "Fork length": {
+                "$numberInt": "120"
+            },
+            "Developments": "1x11",
+            "Group": "shimano xtr",
+            "Type": "manual",
+            "Wheel size": {
+                "$numberDouble": "27.5"
+            }
+        },
+        "Price": {
+            "$numberInt": "40"
+        },
+        "Status": "avaliable",
+        "Location": "Palma",
+        "img": "https://www.bcycles.it/2021-large_default/bicicleta-mtb-sierra-29-delantera-21v-shimano-aluminio.jpg"
+    },
+    {
+        "_id": "B2",
+        "Brand": "Shimano",
+        "Model": {
+            "Name": "MTB",
+            "Style": "Cross Country",
+            "Suspension": "Double suspension",
+            "Material": "carbon",
+            "Fork brand": "Rockshox",
+            "Fork length": {
+                "$numberInt": "120"
+            },
+            "Developments": "1x12",
+            "Group": "shimano xtr",
+            "Type": "manual",
+            "Wheel size": {
+                "$numberDouble": "20"
+            }
+        },
+        "Price": {
+            "$numberInt": "60"
+        },
+        "Status": "available",
+        "Location": "Santanyi",
+        "img": "https://www.bcycles.it/2011-large_default/bicicleta-mtb-shimano-diablo-275-delantera-21v-negro-verde.jpg"
+    },
+    {
+        "_id": "B3",
+        "Brand": "Canyon",
+        "Model": {
+            "Name": "CityBike",
+            "Style": "City",
+            "Suspension": "none",
+            "Material": "aluminum",
+            "Fork brand": "none",
+            "Fork length": "\"none\"",
+            "Developments": "1x7",
+            "Group": "Nexus",
+            "Type": "manual",
+            "Wheel size": {
+                "$numberDouble": "12"
+            }
+        },
+        "Price": {
+            "$numberInt": "35"
+        },
+        "Status": "rented",
+        "Location": "Palma",
+        "img": "https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Sites-canyon-master/default/dw518f44fe/images/full/full_2021_/2021/full_2021_commuter-6_2797_bu_P5.png"
+    },
+    {
+        "_id": "B4",
+        "Brand": "Trek",
+        "Model": {
+            "Name": "MTB",
+            "Style": "Enduring",
+            "Suspension": "front suspension",
+            "Material": "carbon",
+            "Fork brand": "Fox",
+            "Fork length": "160",
+            "Developments": "1x12",
+            "Group": "Trek xtr",
+            "Type": "manual",
+            "Wheel size": {
+                "$numberDouble": "27.5"
+            }
+        },
+        "Price": {
+            "$numberInt": "70"
+        },
+        "Status": "rented",
+        "Location": "Campos",
+        "img": "https://cicloboutique.com/wp-content/uploads/2022/05/525963-3-scaled.jpg"
+    },
+    {
+        "_id": "B5",
+        "Brand": "Orbea",
+        "Model": {
+            "Name": "Road Bike",
+            "Style": "none",
+            "Suspension": "none",
+            "Material": "full carbon",
+            "Fork brand": "Fox",
+            "Fork length": "160",
+            "Developments": "2x12",
+            "Group": "Orbea red",
+            "Type": "manual",
+            "Wheel size": {
+                "$numberDouble": "20"
+            }
+        },
+        "Price": {
+            "$numberInt": "48"
+        },
+        "Status": "available",
+        "Location": "Palma",
+        "img": "https://www.sanferbike.com/106325-home_default/bicicleta-orbea-orca-m21e-team-2021.jpg"
+    },
+    {
+        "_id": "B6",
+        "Brand": "Shimano",
+        "Model": {
+            "Name": "MTB",
+            "Style": "Downhill",
+            "Suspension": "Double suspension",
+            "Material": "full carbon",
+            "Fork brand": "Fox",
+            "Fork length": {
+                "$numberInt": "140"
+            },
+            "Developments": "1x12",
+            "Group": "shimano xtr",
+            "Type": "manual",
+            "Wheel size": {
+                "$numberDouble": "28"
+            }
+        },
+        "Price": {
+            "$numberInt": "75"
+        },
+        "Location": "Manacor",
+        "img": "https://www.bcycles.it/2010-large_default/bicicleta-mtb-diablo-275-delantera-21v-shimano-negro-azul.jpg"
+    },
+    {
+        "_id": "B8",
+        "Brand": "Trek",
+        "Model": {
+            "Name": "MTB",
+            "Style": "Downhill",
+            "Suspension": "Double suspension",
+            "Material": "gold",
+            "Fork brand": "Fox",
+            "Fork length": "130",
+            "Developments": "1x12",
+            "Group": "shimano xtr",
+            "Type": "manual",
+            "Wheel size": {
+                "$numberDouble": "28"
+            }
+        },
+        "Price": {
+            "$numberInt": "50"
+        },
+        "Status": "avaliable",
+        "Location": "Palma",
+        "img": "https://cicloboutique.com/wp-content/uploads/2022/09/525893-scaled.jpg"
+    },
+    {
+        "_id": "B9",
+        "Brand": "Shimano",
+        "Model": {
+            "Name": "MTB",
+            "Style": "Downhill",
+            "Suspension": "Triple suspension",
+            "Material": "aluminum",
+            "Fork brand": "Fox",
+            "Fork length": "110",
+            "Developments": "1x12",
+            "Group": "shimano xtr",
+            "Type": "automatica",
+            "Wheel size": {
+                "$numberDouble": "29"
+            }
+        },
+        "Price": {
+            "$numberInt": "55"
+        },
+        "Status": "avaliable",
+        "Location": "Palma",
+        "img": "https://www.bcycles.it/2009-large_default/bicicleta-mtb-shimano-diablo-275-delantera-21v-amarillo.jpg"
+    },
+    {
+        "_id": "B10",
+        "Brand": "shimano",
+        "Model": {
+            "Name": "MTB",
+            "Style": "Downhill",
+            "Suspension": "Doble suspension",
+            "Material": "aluminio",
+            "Fork brand": "Fox",
+            "Fork length": "90",
+            "Developments": "1x12",
+            "Group": "Shimano xtr",
+            "Type": "manual",
+            "Wheel size": {
+                "$numberDouble": "20"
+            }
+        },
+        "Price": {
+            "$numberInt": "60"
+        },
+        "Status": "avaliable",
+        "Location": "Manacor",
+        "img": "https://comerciallosangeles.com/wp-content/uploads/2021/06/Mesa-de-trabajo-1-18.jpg"
+    }
+]
