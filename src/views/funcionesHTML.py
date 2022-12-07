@@ -12,6 +12,28 @@ bikes_json = convertJsonToList('json/bikes.json')
 assert isinstance(bikes_json, list)
 
 """
+    COMPROBAMOS SI EXISTEN LAS CARPETAS, SI NO, LAS CREAMOS
+
+"""
+
+#Comprobamos si existe el directorio bikes , sino, lo crea
+if not os.path.exists('docs/bikes/'):
+    os.makedirs('docs/bikes/')
+
+#Comprobamos si existe el directorio brand , sino, lo crea
+if not os.path.exists('docs/brand/'):
+    os.makedirs('docs/brand/')
+
+#Comprobamos si existe el directorio location , sino, lo crea
+if not os.path.exists('docs/location/'):
+    os.makedirs('docs/location/')
+
+#Comprobamos si existe el directorio types , sino, lo crea
+if not os.path.exists('docs/types/'):
+    os.makedirs('docs/types/')
+
+
+"""
     FUNCIONES QUE GENERAN LAS PARTES HTML
 """
 
