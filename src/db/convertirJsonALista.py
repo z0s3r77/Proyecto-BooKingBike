@@ -7,7 +7,7 @@ def checkBikesJsonFile(path):
     isExist = os.path.exists(path)
 
     if isExist == True:
-        print(f"El JSON existe en este path: {path}")
+        pass
     else:
         print(f'El JSON no se encuentra en este path: {path}')
 
@@ -16,8 +16,8 @@ def checkBikesJsonFile(path):
     with open(path) as json_file:
         try:
             json.load(json_file)
-            print(f"El fichero bikes.json es efectivamente un JSON")
-
+            pass
+        
         except ValueError:
             print('El fichero bikes.json no es un json')
 
