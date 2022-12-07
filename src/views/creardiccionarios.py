@@ -114,7 +114,7 @@ def diccionario_tamaño_ruedas_bicis():
     tamaño_ruedas_bicis = []
 
 
-    def zonasBicis():
+    def tamaño_Ruedas_Bicis():
         x = 0
         while x <= (len(bikes_json)-1):
 
@@ -127,7 +127,7 @@ def diccionario_tamaño_ruedas_bicis():
             x += 1
 
 
-    zonasBicis()
+    tamaño_Ruedas_Bicis()
 
 
 
@@ -142,3 +142,38 @@ def diccionario_tamaño_ruedas_bicis():
                 diccionarioTamañoRuedasBicis[x] = array
             
     return diccionarioTamañoRuedasBicis
+
+
+def diccionario_desarrollo_bicis():
+
+    desarrollo_bicis = []
+
+
+    def desarrolloBicis():
+        x = 0
+        while x <= (len(bikes_json)-1):
+
+            desarrollo = bikes_json[x]['Model']['Developments']
+            if desarrollo in desarrollo_bicis:
+                pass
+            else:
+                desarrollo_bicis.append(desarrollo)
+
+            x += 1
+
+
+    desarrolloBicis()
+
+
+
+    diccionarioDesarrolloBicis = {}
+
+
+    for x in desarrollo_bicis:
+        array = []
+        for i in bikes_json:
+            if x == i['Model']['Developments']:
+                array.append(i)
+                diccionarioDesarrolloBicis[x] = array
+            
+    return diccionarioDesarrolloBicis

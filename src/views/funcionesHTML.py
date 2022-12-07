@@ -35,6 +35,10 @@ if not os.path.exists('docs/types/'):
 if not os.path.exists('docs/wheelsize/'):
     os.makedirs('docs/wheelsize/')
 
+#Comprobamos si existe el directorio types , sino, lo crea
+if not os.path.exists('docs/developments/'):
+    os.makedirs('docs/developments/')
+
 
 """
     FUNCIONES QUE GENERAN LAS PARTES HTML
@@ -336,6 +340,41 @@ class body():
             print("""            </div>
             </section>""")
 
+    def body_listado_por_desarollo_bicis():
+            print("""    <body>
+            <header>
+                <h1>Listado de Bicis por desarollo </h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="listadototalbicis.html">Todas las bicis</a></li>
+                    <li><a href="listadotipobicis.html"> Tipos disponibles</a></li>
+                    <li><a href="listadomarcabicis.html"> Marcas disponibles </a></li>            
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <section>
+                <div>""")
+
+            x = 0
+            desarollo_bicis = []
+            while x <= (len(bikes_json)-1):
+
+                desarollo = bikes_json[x]['Model']['Wheel size']['$numberDouble']
+
+                if desarollo in desarollo_bicis:
+                    pass
+                else:
+                    desarollo_bicis.append(desarollo)
+
+                x += 1
+            
+            for x in desarollo_bicis:
+                enlace = "<a href='wheelsize/{}.html'> {} </a>".format(x,x)
+                print("                <div>",enlace ,"</div>")  
+            print("""            </div>
+            </section>""")
 # FOOTER
 
 
@@ -512,6 +551,51 @@ def paginas_tamaño_ruedas_bicis():
             <div>""")
 
         for document in diccionarioBicisPorTamañoRuedas[x]:
+                print(f"""                <div>
+                    <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
+                    <br>"""
+                    f"<a href='../bikes/{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
+                    Bicicleta de tipo""", document['Model']['Name']  ,document['Model']['Wheel size']['$numberDouble']+'"',"""<br>
+                    """,document['Price']['$numberInt']+"€/dia <br>"
+                """
+                </div><br>""")
+
+
+        print("""                </div>
+        </section>""")
+
+        footer()
+        
+        sys.stdout.close()
+    
+
+
+def paginas_desarrollo_bicis():
+    
+    diccionarioBicisPordesarrollo = diccionario_desarrollo_bicis()
+    
+    for x in diccionarioBicisPordesarrollo:
+
+        page ='docs/developments/'+ x + '.html'
+        sys.stdout = open(page,'w',encoding="UTF-8")
+        html_head(title=f'Bicis con desarollo {x}', description=f'Pagina de listado de bicis segun su desarollo {x}')
+        print("""    <body>
+        <header>
+            <h1> Bicis disponibles </h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../home.html">Inicio</a></li>
+                <li><a href="../listadomarcabicis.html"> Marcas disponibles</a></li>
+                <li><a href="../listadotipobicis.html"> Modelos disponibles</a></li>            
+                <li><a href="../listadobicisporzona.html"> Zonas disponibles </a></li>            
+                <li><a href="../contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div>""")
+
+        for document in diccionarioBicisPordesarrollo[x]:
                 print(f"""                <div>
                     <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
                     <br>"""
