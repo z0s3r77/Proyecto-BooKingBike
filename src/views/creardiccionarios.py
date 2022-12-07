@@ -177,3 +177,38 @@ def diccionario_desarrollo_bicis():
                 diccionarioDesarrolloBicis[x] = array
             
     return diccionarioDesarrolloBicis
+
+
+def diccionario_cambios_bicis():
+
+    cambios_bicis = []
+
+
+    def cambioBicis():
+        x = 0
+        while x <= (len(bikes_json)-1):
+
+            cambios = bikes_json[x]['Model']['Type']
+            if cambios in cambios_bicis:
+                pass
+            else:
+                cambios_bicis.append(cambios)
+
+            x += 1
+
+
+    cambioBicis()
+
+
+
+    diccionarioCambiosBicis = {}
+
+
+    for x in cambios_bicis:
+        array = []
+        for i in bikes_json:
+            if x == i['Model']['Type']:
+                array.append(i)
+                diccionarioCambiosBicis[x] = array
+            
+    return diccionarioCambiosBicis

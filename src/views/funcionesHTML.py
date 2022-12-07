@@ -31,14 +31,17 @@ if not os.path.exists('docs/location/'):
 if not os.path.exists('docs/types/'):
     os.makedirs('docs/types/')
 
-#Comprobamos si existe el directorio types , sino, lo crea
+#Comprobamos si existe el directorio wheelsize , sino, lo crea
 if not os.path.exists('docs/wheelsize/'):
     os.makedirs('docs/wheelsize/')
 
-#Comprobamos si existe el directorio types , sino, lo crea
+#Comprobamos si existe el directorio developments , sino, lo crea
 if not os.path.exists('docs/developments/'):
     os.makedirs('docs/developments/')
 
+#Comprobamos si existe el directorio shifts , sino, lo crea
+if not os.path.exists('docs/shifts/'):
+    os.makedirs('docs/shifts/')
 
 """
     FUNCIONES QUE GENERAN LAS PARTES HTML
@@ -86,7 +89,8 @@ class body():
                 <li><a href="listadomarcabicis.html"> Marcas disponibles</a></li>
                 <li><a href="listadotipobicis.html"> Modelos disponibles</a></li>            
                 <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>
-                <li><a href="listadobicisportamañorueda.html">Tamaños de rueda disponibles </a></li>            
+                <li><a href="listadobicisportamañorueda.html">Tamaños de rueda disponibles </a></li>
+                <li><a href="listadobicispordesarrollo.html">Desarollos disponibles </a></li>            
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -163,7 +167,8 @@ class body():
                 <li><a href="listadomarcabicis.html"> Marcas disponibles</a></li>
                 <li><a href="listadotipobicis.html"> Modelos disponibles</a></li>            
                 <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>
-                <li><a href="listadobicisportamañorueda.html">Tamaños de rueda disponibles </a></li>            
+                <li><a href="listadobicisportamañorueda.html">Tamaños de rueda disponibles </a></li>
+                <li><a href="listadobicispordesarrollo.html">Desarollos disponibles </a></li>            
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -197,7 +202,8 @@ class body():
                 <li><a href="listadototalbicis.html">Todas las bicis</a></li>
                 <li><a href="listadomarcabicis.html"> Marcas disponibles</a></li>
                 <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>
-                <li><a href="listadobicisportamañorueda.html">Tamaños de rueda disponibles </a></li>            
+                <li><a href="listadobicisportamañorueda.html">Tamaños de rueda disponibles </a></li>
+                <li><a href="listadobicispordesarrollo.html">Desarollos disponibles </a></li>            
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -237,7 +243,8 @@ class body():
                 <li><a href="listadototalbicis.html">Todas las bicis</a></li>
                 <li><a href="listadotipobicis.html"> Tipos disponibles</a></li>
                 <li><a href="listadobicisporzona.html"> Zonas disponibles </a></li>
-                <li><a href="listadobicisportamañorueda.html">Tamaños de rueda disponibles </a></li>            
+                <li><a href="listadobicisportamañorueda.html">Tamaños de rueda disponibles </a></li>
+                <li><a href="listadobicispordesarrollo.html">Desarollos disponibles </a></li>            
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -358,23 +365,62 @@ class body():
                 <div>""")
 
             x = 0
-            desarollo_bicis = []
+            desarrollo_bicis = []
             while x <= (len(bikes_json)-1):
 
-                desarollo = bikes_json[x]['Model']['Wheel size']['$numberDouble']
+                desarrollo = bikes_json[x]['Model']['Wheel size']['$numberDouble']
 
-                if desarollo in desarollo_bicis:
+                if desarrollo in desarrollo_bicis:
                     pass
                 else:
-                    desarollo_bicis.append(desarollo)
+                    desarrollo_bicis.append(desarrollo)
 
                 x += 1
             
-            for x in desarollo_bicis:
+            for x in desarrollo_bicis:
                 enlace = "<a href='wheelsize/{}.html'> {} </a>".format(x,x)
                 print("                <div>",enlace ,"</div>")  
             print("""            </div>
             </section>""")
+
+    
+    def body_listado_por_cambio_bicis():
+            print("""    <body>
+            <header>
+                <h1>Listado de Bicis por tipo de cambio </h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="listadototalbicis.html">Todas las bicis</a></li>
+                    <li><a href="listadotipobicis.html"> Tipos disponibles</a></li>
+                    <li><a href="listadomarcabicis.html"> Marcas disponibles </a></li>            
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <section>
+                <div>""")
+
+            x = 0
+            cambio_bicis = []
+            while x <= (len(bikes_json)-1):
+
+                cambio = bikes_json[x]['Model']['Type']
+
+                if cambio in cambio_bicis:
+                    pass
+                else:
+                    cambio_bicis.append(cambio)
+
+                x += 1
+            
+            for x in cambio_bicis:
+                enlace = "<a href='wheelsize/{}.html'> {} </a>".format(x,x)
+                print("                <div>",enlace ,"</div>")  
+            print("""            </div>
+            </section>""")
+
+
 # FOOTER
 
 
@@ -411,7 +457,8 @@ def paginas_tipos_bicis():
                 <li><a href="../listadomarcabicis.html"> Marcas disponibles</a></li>
                 <li><a href="../listadotipobicis.html"> Modelos disponibles</a></li>            
                 <li><a href="../listadobicisporzona.html"> Zonas disponibles </a></li>
-                <li><a href="../listadobicisportamañorueda.html">Tamaños de rueda disponibles </a><li>                                     
+                <li><a href="../listadobicisportamañorueda.html">Tamaños de rueda disponibles </a><li>
+                <li><a href="listadobicispordesarrollo.html">Desarollos disponibles </a></li>                                     
                 <li><a href="../contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -455,7 +502,8 @@ def paginas_marcas_bicis():
                 <li><a href="../listadomarcabicis.html"> Marcas disponibles</a></li>
                 <li><a href="../listadotipobicis.html"> Modelos disponibles</a></li>            
                 <li><a href="../listadobicisporzona.html"> Zonas disponibles </a></li>
-                <li><a href="../listadobicisportamañorueda.html">Tamaños de rueda disponibles </a><li>                                     
+                <li><a href="../listadobicisportamañorueda.html">Tamaños de rueda disponibles </a><li>
+                <li><a href="listadobicispordesarrollo.html">Desarollos disponibles </a></li>                                     
                 <li><a href="../contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -499,7 +547,8 @@ def paginas_zonas_bicis():
                 <li><a href="../listadomarcabicis.html"> Marcas disponibles</a></li>
                 <li><a href="../listadotipobicis.html"> Modelos disponibles</a></li>            
                 <li><a href="../listadobicisporzona.html"> Zonas disponibles </a></li>
-                <li><a href="../listadobicisportamañorueda.html">Tamaños de rueda disponibles </a><li>                                     
+                <li><a href="../listadobicisportamañorueda.html">Tamaños de rueda disponibles </a><li>
+                <li><a href="listadobicispordesarrollo.html">Desarollos disponibles </a></li>                                     
                 <li><a href="../contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -543,7 +592,8 @@ def paginas_tamaño_ruedas_bicis():
                 <li><a href="../home.html">Inicio</a></li>
                 <li><a href="../listadomarcabicis.html"> Marcas disponibles</a></li>
                 <li><a href="../listadotipobicis.html"> Modelos disponibles</a></li>            
-                <li><a href="../listadobicisporzona.html"> Zonas disponibles </a></li>            
+                <li><a href="../listadobicisporzona.html"> Zonas disponibles </a></li>
+                <li><a href="../listadobicispordesarrollo.html">Desarollos disponibles </a></li>            
                 <li><a href="../contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -588,7 +638,8 @@ def paginas_desarrollo_bicis():
                 <li><a href="../home.html">Inicio</a></li>
                 <li><a href="../listadomarcabicis.html"> Marcas disponibles</a></li>
                 <li><a href="../listadotipobicis.html"> Modelos disponibles</a></li>            
-                <li><a href="../listadobicisporzona.html"> Zonas disponibles </a></li>            
+                <li><a href="../listadobicisporzona.html"> Zonas disponibles </a></li>
+                <li><a href="../listadobicispordesarrollo.html">Desarollos disponibles </a></li>            
                 <li><a href="../contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -596,6 +647,51 @@ def paginas_desarrollo_bicis():
             <div>""")
 
         for document in diccionarioBicisPordesarrollo[x]:
+                print(f"""                <div>
+                    <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
+                    <br>"""
+                    f"<a href='../bikes/{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
+                    Bicicleta de tipo""", document['Model']['Name']  ,document['Model']['Wheel size']['$numberDouble']+'"',"""<br>
+                    """,document['Price']['$numberInt']+"€/dia <br>"
+                """
+                </div><br>""")
+
+
+        print("""                </div>
+        </section>""")
+
+        footer()
+        
+        sys.stdout.close()
+    
+
+def paginas_cambio_bicis():
+    
+    diccionarioBicisPorCambio = diccionario_cambios_bicis()
+    
+    for x in diccionarioBicisPorCambio:
+
+        page ='docs/shifts/'+ x + '.html'
+        sys.stdout = open(page,'w',encoding="UTF-8")
+        html_head(title=f'Bicis con cambio {x}', description=f'Pagina de listado de bicis segun su tipo de cambio {x}')
+        print("""    <body>
+        <header>
+            <h1> Bicis disponibles </h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../home.html">Inicio</a></li>
+                <li><a href="../listadomarcabicis.html"> Marcas disponibles</a></li>
+                <li><a href="../listadotipobicis.html"> Modelos disponibles</a></li>            
+                <li><a href="../listadobicisporzona.html"> Zonas disponibles </a></li>
+                <li><a href="../listadobicispordesarrollo.html">Desarollos disponibles </a></li>            
+                <li><a href="../contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div>""")
+
+        for document in diccionarioBicisPorCambio[x]:
                 print(f"""                <div>
                     <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
                     <br>"""

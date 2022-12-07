@@ -80,7 +80,13 @@ def listado_desarollo_bicis():
     footer()
     sys.stdout.close()
 
-    
+def listado_cambios_bicis():
+    sys.stdout = open('docs/listadobicisporcambio.html', 'w', encoding="UTF-8")
+    html_head(title="Bicis disponible por tipo de cambio - BookingBike",
+              description='Pagina que muestra todos los cambios disponibles')
+    body.body_listado_por_cambio_bicis()
+    footer()
+    sys.stdout.close()
 
 
 def paginas_por_bicicletas():
@@ -92,6 +98,7 @@ def listado_paginas_por_agrupaciones():
     paginas_zonas_bicis()
     paginas_desarrollo_bicis()
     paginas_tamaño_ruedas_bicis()
+    paginas_cambio_bicis()
     
 
 pagina_principal()
@@ -102,5 +109,6 @@ listado_marca_bicis()
 listado_zona_bicis()
 listado_tamaño_rueda_bicis()
 listado_desarollo_bicis()
+listado_cambios_bicis()
 paginas_por_bicicletas()
 listado_paginas_por_agrupaciones()
