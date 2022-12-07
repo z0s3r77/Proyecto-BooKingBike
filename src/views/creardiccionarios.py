@@ -106,3 +106,39 @@ def diccionario_zonas_bicis():
                 diccionarioZonasBicis[x] = array
             
     return diccionarioZonasBicis
+
+
+
+def diccionario_tamaño_ruedas_bicis():
+
+    tamaño_ruedas_bicis = []
+
+
+    def zonasBicis():
+        x = 0
+        while x <= (len(bikes_json)-1):
+
+            tamaño_rueda = bikes_json[x]['Model']['Wheel size']['$numberDouble']
+            if tamaño_rueda in tamaño_ruedas_bicis:
+                pass
+            else:
+                tamaño_ruedas_bicis.append(tamaño_rueda)
+
+            x += 1
+
+
+    zonasBicis()
+
+
+
+    diccionarioTamañoRuedasBicis = {}
+
+
+    for x in tamaño_ruedas_bicis:
+        array = []
+        for i in bikes_json:
+            if x == i['Model']['Wheel size']['$numberDouble']:
+                array.append(i)
+                diccionarioTamañoRuedasBicis[x] = array
+            
+    return diccionarioTamañoRuedasBicis
