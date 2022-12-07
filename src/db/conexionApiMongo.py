@@ -1,4 +1,5 @@
 import requests
+from src.crud.MongoAtlasConexion import MongoKey
 import json
 
 # Creamos una función que nos permite hacer una petición de datos a MongoAtlas
@@ -25,7 +26,7 @@ def requestToMongoApi():
   headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Headers': '*',
-    'api-key': 'yvkotEFnlbULNH9Zm14y8LSGZMYcbuA26YF5P9nZlXDpG4LEcEhlJYI3tALDVh5q',
+    'api-key': f'{MongoKey}',
     'Accept': 'application/ejson' 
   }
 
