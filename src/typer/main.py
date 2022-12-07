@@ -7,6 +7,31 @@ import os
 
 app = typer.Typer(help="La CLI de BookingBike te permite realizar un CRUD sobre la colección Bikes de la base de datos BookingBike, ubicada en Mongo Atlas")
 
+@app.command()
+def desplegar_site():
+    """
+    Ejecuta el modulo main de SRC/VIEWS que despliega todo el SITE
+    """
+    with Progress(
+    SpinnerColumn(),
+    TextColumn("[progress.description]{task.description}"),
+    transient=True,
+    )as progress:
+        progress.add_task(description="Desplegando site...", total=None)
+        import src.views.main
+
+    print("[blue] Site Desplegado [/blue]")
+    confirm = typer.confirm("Quieres ir al dominio?")
+    if confirm:
+        typer.launch("file:///home/z0s3r77/Documentos/BooKingBikeV2/docs/home.html")
+        print("[blue] Proceso finalizado [/blue]")
+        quit()
+    else:
+        print("[blue]Proceso finalizado[/blue]")
+
+
+
+
 
 #Comandos que se veran reflejados en la CLI mediante Typer
 @app.command()
