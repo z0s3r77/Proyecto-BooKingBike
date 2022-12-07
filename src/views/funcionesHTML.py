@@ -53,23 +53,23 @@ assert isinstance(bikes_json, list)
 
 # HEAD
 
-def html_head(title='Booking Bike', description='Booking Bike'):
+def html_head(title, description):
     # Obtenemos la fecha actual
     date = datetime.today().strftime('%Y-%m-%d')
-    head = f"""<!DOCTYPE html>
+    print(f"""<!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="author" content="Miguel & Sebastian">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name='description' content='Pagina de inicio de BookingBike'>
+        <meta name='description' content='{description}'>
         <meta name="keywords" content="MTB, Ebike , CityBike, Bikes , Renting">
         <meta http-equiv="last-modified" content='2022-12-01'>
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3714/3714324.png">
-        <title>Contacto</title>
-    </head>"""
-    print(head)
+        <title>"""+title+"""</title>
+        </head>""")
+
 
 
 # BODY

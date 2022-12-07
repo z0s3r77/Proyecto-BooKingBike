@@ -16,8 +16,8 @@ import os
 
 def pagina_principal():
     sys.stdout = open('docs/home.html', 'w', encoding="UTF-8")
-    html_head(title="Pagina principal - BookingBike",
-              description='Pagina de inicio de BookingBike')
+    html_head("Pagina principal - BookingBike",
+              'Pagina de inicio de BookingBike')
     body.body_pagina_principal()
     footer()
     sys.stdout.close()
