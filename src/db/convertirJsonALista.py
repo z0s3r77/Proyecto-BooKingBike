@@ -17,7 +17,7 @@ def checkBikesJsonFile(path):
         try:
             json.load(json_file)
             pass
-
+          
         except ValueError:
             print('El fichero bikes.json no es un json')
 
