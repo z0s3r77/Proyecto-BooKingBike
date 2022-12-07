@@ -1,3 +1,7 @@
+from src.db.mainDb import mainDb
+mainDb()
+
+
 from src.views.funcionesHTML import *
 from src.views.crearPaginaPorBicicleta import pagina_por_bicicleta
 import sys
