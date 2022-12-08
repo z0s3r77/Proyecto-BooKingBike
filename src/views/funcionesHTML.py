@@ -321,7 +321,7 @@ class body():
         desarrollo_bicis = []
         while x <= (len(bikes_json)-1):
 
-            desarrollo = bikes_json[x]['Model']['Wheel size']['$numberDouble']
+            desarrollo = bikes_json[x]['Model']['Developments']
 
             if desarrollo in desarrollo_bicis:
                 pass
