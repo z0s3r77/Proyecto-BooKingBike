@@ -9,17 +9,19 @@ def checkBikesJsonFile(path):
     if isExist == True:
         pass
     else:
-        print(f'El JSON no se encuentra en este path: {path}')
+        # print(f'El JSON no se encuentra en este path: {path}')
+        return False
 
 
     #Comprobamos que el JSON es un JSON verdadero 
     with open(path) as json_file:
         try:
             json.load(json_file)
-            pass
-          
         except ValueError:
-            print('El fichero bikes.json no es un json')
+            # print('El fichero bikes.json no es un json')
+            return False
+        else:
+            return True
 
 
 #Convertimos el JSON en una lista
