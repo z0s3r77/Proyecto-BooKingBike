@@ -44,8 +44,11 @@ def convertBikesJsonToList(path):
 def convertJsonToList(path):  
 
     #Comprueba que el archivo exista en ese path y que sea JSON
-    checkBikesJsonFile(path)
+    if checkBikesJsonFile(path) == True:
     #Convierte el JSON en una lista llamada bikes_json
-    bikes_json = convertBikesJsonToList(path)
-    
-    return bikes_json
+        bikes_json = convertBikesJsonToList(path)
+        return bikes_json
+
+    else:
+        return False
+

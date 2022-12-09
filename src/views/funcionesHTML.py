@@ -1,4 +1,7 @@
 # from src.db.convertirJsonALista import bikes_json
+from src.db.mainDb import mainDb
+mainDb()
+
 from src.db.convertirJsonALista import convertJsonToList
 from src.views.creardiccionarios import *
 from datetime import datetime
