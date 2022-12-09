@@ -20,3 +20,4 @@ def mainDb():
     return bikesList
 
 
+mainDb()

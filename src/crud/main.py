@@ -1,7 +1,7 @@
 import pymongo
 import json
 import time
-from src.crud.MongoAtlasConexion import MongoAtlas
+from src.db.MongoAtlasConexion import MongoAtlas
 
 
 # Se crea una clase con diferentes metodos

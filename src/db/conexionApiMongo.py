@@ -1,5 +1,5 @@
 import requests
-from src.crud.MongoAtlasConexion import MongoKey
+from src.db.MongoAtlasConexion import MongoKey
 import json
 
 # Creamos una función que nos permite hacer una petición de datos a MongoAtlas
