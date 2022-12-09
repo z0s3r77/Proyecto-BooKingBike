@@ -26,10 +26,17 @@ def checkBikesJsonFile(path):
 
 #Convertimos el JSON en una lista
 def convertBikesJsonToList(path):
-    json_file = open(path)
-    json_file = json.load(json_file)
+
+    if checkBikesJsonFile(path) == True:
+
+        json_file = open(path)
+        json_file = json.load(json_file)
+        
+        return json_file
     
-    return json_file
+    else:
+        
+        return False
 
 
 
