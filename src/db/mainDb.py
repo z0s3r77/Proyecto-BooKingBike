@@ -19,5 +19,3 @@ def mainDb():
     #Devolvemos una lista con los documentos de la colección de Bicicletas
     return bikesList
 
-
-mainDb()
