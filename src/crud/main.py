@@ -153,12 +153,25 @@ class mongoDBcrud():
         BikesCollection = BookingBikeDb["bikes"]
 
         query = {"_id":id}
-        BikesCollection.delete_one(query)
 
-        if BikesCollection.count_documents (query, limit=1) != 0:
-            result = f'[red]No se ha podido borrar el documento[/red] {id}'
+        if mongoDBcrud.read(id) == False:
+            result = '[red]No hay ningún documento con ese ID[/red]'
             return result
 
+        try:
+            BikesCollection.delete_one(query)
+        except:
+            result = '[red]Algo ha ido mal, no se ha podido borrar[/red]'
+            return result
         else:
-            result = f'[blue]Se ha borrado correctamente el documento[/blue] {id}'
+            result = '[blue]Se ha borrado el documento correctamente[/blue]'
             return result
+
+
+        # if BikesCollection.count_documents (query, limit=1) != 0:
+        #     result = f'[red]No se ha podido borrar el documento[/red] {id}'
+        #     return result
+
+        # else:
+        #     result = f'[blue]Se ha borrado correctamente el documento[/blue] {id}'
+        #     return result
