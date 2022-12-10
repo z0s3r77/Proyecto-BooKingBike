@@ -132,13 +132,23 @@ def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los d
             progress.add_task(description="Procesando...", total=None)
             result = mongoDBcrud.readall()
     
-        for x in result:
-            print(x)
+        if result == False:
+            result = f'[red]No se han encontrado documentos[/red]'
+            print(result)
+        
+        else:
+            contador = 0
+            for x in result:
+                print(x)
+                contador += 1
+
+            print(f"[blue]Estos son todos los resultados: {contador} documentos[/blue]")
+            print("[blue]Finalizado con exito[/blue]")
 
     else:
 
         _id = typer.prompt("Indica el id del documento")
-
+        # _id = "B5"
         with Progress(
             SpinnerColumn(),
             TextColumn("[progress.description]{task.description}"),
@@ -147,7 +157,13 @@ def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los d
             progress.add_task(description="Procesando...", total=None)
             result = mongoDBcrud.read(_id)
 
-        print(result)
+            if result == False:
+                result = f'[red]No existe ningún documento con ID:[/red]  {_id}'
+                print(result)
+                return False
+            else:
+                print(result)
+                print("finalizado")
 
 
 

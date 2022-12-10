@@ -117,8 +117,7 @@ class mongoDBcrud():
         
             return result
         else:
-            result = f'[red]No existe ningún documento con ID:[/red]  {id}'
-            return result
+            return False
 
 
     #Este metodo toma todos los documentos de la base de datos y los envia a src/typer/main.py
@@ -134,7 +133,10 @@ class mongoDBcrud():
         for x in BikesCollection.find():
             result.append(x)
 
-        return result
+        if len(result) == 0:
+            return False
+        else:
+            return result
 
 
     #Este metodo borra el documento según su ID
