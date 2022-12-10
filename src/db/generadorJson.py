@@ -93,8 +93,11 @@ def generateJsonFileFromResponse(response, file):
         if not os.path.exists('json/'):
             os.makedirs('json/')
 
+        if isinstance(file, str):
         #Abrimos el archivo bikes.json con el fin de escribir en este "w"
-        outFile = open(f"json/{file}.json", "w")
+            outFile = open(f"json/{file}.json", "w")
+        else:
+            return False
 
     except OSError:
         print("No se puede abrir el archivo")
@@ -111,8 +114,11 @@ def generateJsonFileFromResponse(response, file):
 
 #Volcamos la respuesta de requestToMongoApi del modulo conexionApiMongo
 
-def GeneradorJsonFile(response):
+def GeneradorJsonFile(response, newjsonfile):
 
     response = convertResponseStringIntoObjtect(response)
     checkSchemaDocument(response)
-    generateJsonFileFromResponse(response, "bikes")
+    if generateJsonFileFromResponse(response, newjsonfile) == False:
+        return False
+    else:
+        return True
