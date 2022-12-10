@@ -15,7 +15,7 @@ resultado = [
     }
 ]
 
-
+@pytest.mark.test_generarUnFicheroJsonDeLaRespuestaAPI
 def test_generateJsonFromResponseApi():
     
     #La función nos genera un json con el nombre del parametro
@@ -28,7 +28,7 @@ def test_generateJsonFromResponseApi():
     assert generateJsonFromResponseApi('prueba2') == True
 
 
-
+@pytest.mark.test_generarListaDesdeUnFicheroJSON
 def test_getListfromJsonFile():
 
     #La funcion genera un objeto List de un archivo JSON
@@ -41,6 +41,7 @@ def test_getListfromJsonFile():
     assert getListfromJsonFile({"Esto":"Es un dict"}) == False
 
 
+@pytest.mark.test_generarElArchivoBikesYQueSeDevuelvaUnaLista
 def test_mainDB():
 
     #MainDB obtiene una ruta y el nombre del fichero.

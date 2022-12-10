@@ -14,6 +14,7 @@ resultado = [
     }
 ]
 
+@pytest.mark.test_comprobarSiElContenidoDeUnFicheroEsJSON
 def test_checkBikesJsonFile():
 
     #A la función se le pasa la ruta de un fichero 
@@ -25,6 +26,7 @@ def test_checkBikesJsonFile():
     assert checkBikesJsonFile('test/pruebas/buenjson.txt') == True
 
 
+@pytest.mark.test_convierteElResultadoDelFicheroEnUnaListaDeDocumentos
 def test_convertBikesJsonToList():
 
     #A la función se le pasa la ruta de un fichero 
