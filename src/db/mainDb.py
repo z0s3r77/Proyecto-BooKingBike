@@ -4,18 +4,36 @@ from src.db.generadorJson import GeneradorJsonFile
 from src.db.convertirJsonALista import convertJsonToList
 
 
-#Funcion Principal
-def mainDb(): 
+def generateJsonFromResponseApi(newjsonfile):
 
-    #Obtenemos la respuesta de la API
     response = requestToMongoApi()
 
-    #Generamos un archivo JSON a partir de la respuesta
-    GeneradorJsonFile(response)
+    if type(response) == str:
 
-    #Obtenemos la lista de documentos a partir del archivo JSON
-    bikesList = convertJsonToList('json/bikes.json')
+        try:
+            if GeneradorJsonFile(response, newjsonfile) == False:
+                return False
+        except:
+            return False
+        else:
+            return True
 
-    #Devolvemos una lista con los documentos de la colección de Bicicletas
-    return bikesList
+
+def getListfromJsonFile(rute):
+
+    listResult =  convertJsonToList(rute)
+    if type(listResult) == list:
+        return listResult
+    else:
+        return False
+
+
+
+def mainDB(rute,newjsonfile):
+    
+    if generateJsonFromResponseApi(newjsonfile) == True:
+        listResult = getListfromJsonFile(rute)
+        return listResult
+    else:
+        return False
 

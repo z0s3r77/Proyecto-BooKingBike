@@ -3,6 +3,12 @@ import os
 
 def checkBikesJsonFile(path): 
 
+    if type(path) == list:
+        return False
+    
+    if type(path) == dict:
+        return False
+        
     #Comprobamos que el JSON exista en el path
     isExist = os.path.exists(path)
 

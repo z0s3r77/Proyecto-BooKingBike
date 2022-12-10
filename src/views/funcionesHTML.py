@@ -1,15 +1,12 @@
-# from src.db.convertirJsonALista import bikes_json
-from src.db.mainDb import mainDb
-mainDb()
+from src.db.mainDb import mainDB
+bikes_json = mainDB('json/bikes.json','bikes')
 
-from src.db.convertirJsonALista import convertJsonToList
 from src.views.creardiccionarios import *
 from datetime import datetime
 import sys
 import os
 
 
-bikes_json = convertJsonToList('json/bikes.json')
 
 #Comprobar que existe bikes_json
 assert isinstance(bikes_json, list)
