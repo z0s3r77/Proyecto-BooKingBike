@@ -2,13 +2,15 @@ import pytest
 from src.db.mainDb import generateJsonFromResponseApi, getListfromJsonFile, mainDB
 import os
 
-resultado = [
+resultado =[
     {
+        "_id": "BSebas",
         "Nombre": "Sebas",
         "Apellido": "Estacio",
         "Edad": "21"
     },
     {
+        "_id": "GMiguel",
         "Nombre": "Miguel",
         "Apellido": "Vidal",
         "Edad": "21"

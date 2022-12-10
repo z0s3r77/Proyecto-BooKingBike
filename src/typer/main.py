@@ -45,7 +45,7 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
     #En caso de no usar opcion jsonFile
     if not jsonFile:
 
-        print("Campos del documento: ")
+        print("[blue]Campos del documento:[/blue] ")
         _id = typer.prompt('Introduce un id ')
         brand = typer.prompt('Introduce una brand ')
         modelName = typer.prompt('Introduce el tipo de Bicicleta ')
@@ -57,9 +57,12 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
         modelDevelopments = typer.prompt('Introduce el tipo de desarrollos ')
         modelGroup = typer.prompt('Introduce grupo ')
         modelType = typer.prompt('Introduce de que tipo es la bicicleta(manual o automatica) ')
+        modelWheelSize = typer.prompt('Introduce el tamaño de la rueda')
+        modelWeight = typer.prompt('Introduce el peso de la bicicleta')
         priceday = typer.prompt('Introduce el precio por día ')
         status = typer.prompt('Introduce disponibildiad (avaliable o rented)','\n')
-
+        location = typer.prompt('Introduce la localización de la bicicleta')
+        img = typer.prompt('Introduce la dirección URL de la imagen de la bicicleta')
 
         print("[blue]Previsualización del documento a insertar:[/blue]",'\n')
         query = {
@@ -74,10 +77,14 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
                     "Fork length": modelForklenght,
                     "Developments": modelDevelopments,
                     "Group": modelGroup,
-                    "Type": modelType
+                    "Type": modelType,
+                    "Wheel size": int(modelWheelSize),
+                    "Weight": modelWeight
                 },
                 "Price": priceday,
-                "Status": status
+                "Status": status,
+                "Location": location,
+                "img": img
             }
             
         print(query,'\n')
@@ -88,8 +95,8 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
         confirm = typer.confirm("Seguro que quieres insertarlo?")
         print('\n')
         if not confirm:
-            print("Abortando...")
-            raise typer.Abort()
+            print("[red]Se ha abortado el proceso[/red]")
+            quit()
         else:
             with Progress(
                     SpinnerColumn(),
@@ -97,11 +104,17 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
                     transient=True,
                 ) as progress:
                 progress.add_task(description="Insertando...", total=None)
-                mongoDBcrud.create(_id, brand, modelName, modelStyle, modelSuspension, modelMaterial, modelForkBrand, modelForklenght, modelDevelopments, modelGroup, modelType, priceday, status)
+                result = mongoDBcrud.create(_id,brand,modelName, modelStyle, modelSuspension, modelMaterial, modelForkBrand, modelForklenght, modelDevelopments, modelGroup, modelType, modelWheelSize, modelWeight, priceday, status, location, img)
 
-            print("[blue]Mostrando documento....[/blue]")
-            result = mongoDBcrud.read(_id)
-            print(result)
+            if result == False:
+                print("[red]No se ha podido insertar el documento[/red]\n")
+
+            elif result == True:
+
+                print("[blue]Mostrando documento....[/blue]")
+                result = mongoDBcrud.read(_id)
+                print(result)
+                print("[blue]Se ha insertado con exito[/blue]")
     
 
     #En caso de usar el parametro jsonFile, enviará el nombre del documento a la función mongoDBcrud.insert_json
@@ -109,7 +122,10 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
 
         print("[blue]Comprobando ruta... [/blue]")
         if os.path.exists(jsonFile) == True:
-            print(mongoDBcrud.insert_json(jsonFile))
+            if mongoDBcrud.insert_json(jsonFile) == True:
+                print("[blue]Se han insertado todos los documentos[/blue]")
+            else:
+                print("[red] Algo ha ido mal")
         else:
             print(f"[red]No existe el archivo en la ruta especificada: {jsonFile} [/red]")
 
