@@ -23,7 +23,7 @@ resultado_prueba3 = {'documents': [{'_id': 'B1', 'Brand': 'Nukeproof', 'Model': 
 {'_id': 'B2', 'Brand': 'Orbea', 'Model': {'Name': 'MTB', 'Style': 'Cross Country', 'Suspension': 'Double suspension', 'Material': 'Carbono', 'Fork brand': 'Fox', 'Fork length': {'$numberInt': '140'}, 'Developments': '1x12', 'Group': 'Orbea Occram', 'Type': 'manual', 'Wheel size': {'$numberDouble': '29'}, 'Weight': {'$numberDouble': '13.65'}}, 'Price': {'$numberInt': '60'}, 'Status': 'available', 'Location': 'Santanyi', 'img': 'https://images.internetstores.de/products/1491758/02/bf7323/orbea-occam-m30-ice-green-jade-green-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400'}]}
 
 
-@pytest.mark.test_convertirStrConFormatoJsonAObjetoPy
+@pytest.mark.test_DB
 def test_convertResponseStringIntoObject():
 
     #A la funcion se le pasa un str y comprueba si es formato JSON,
@@ -35,7 +35,7 @@ def test_convertResponseStringIntoObject():
     assert convertResponseStringIntoObjtect(prueba1) == resultado_prueba1
 
 
-@pytest.mark.test_generarJsonApartirDeUnStr
+@pytest.mark.test_DB
 def test_generateJsonFileFromResponse():
     #A la funcion se le pasas una lista de documentos y crea un directorio json 
     # y añade el contenido
@@ -44,7 +44,7 @@ def test_generateJsonFileFromResponse():
     assert generateJsonFileFromResponse(resultado_prueba2, "prueba") == True
 
 
-@pytest.mark.test_comprobarSchemaDeUnDiccionario
+@pytest.mark.test_DB
 def test_checkSchemaDocument():
     #A la funcion se le pasa un argumento, este argumento debe ser un diccionario con un array 
     #con los documentos de la colección Bicicleta

@@ -4,7 +4,7 @@ import pytest
 
 runner = CliRunner()
 
-@pytest.mark.test_InsertarDocumentoJsonDesdeTyper
+@pytest.mark.test_TYPER_primera_parte
 def test_insertar_documento():
 
     # Probamos a insertar un documento correcto

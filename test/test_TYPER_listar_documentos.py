@@ -4,7 +4,7 @@ import pytest
 
 runner = CliRunner()
 
-@pytest.mark.test_TYPER_listarDocumentos
+@pytest.mark.test_TYPER_primera_parte
 def test_listarDocumentos():
     
     result = runner.invoke(app, ["listar-documento"], input="B5")
