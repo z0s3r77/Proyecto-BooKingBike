@@ -4,20 +4,20 @@ import sys
 
 bikes_json = convertJsonToList('json/bikes.json')
 
-def pagina_por_bicicleta(nav_2):
+def pagina_por_bicicleta():
 
     x = 0
     while x <= (len(bikes_json)-1):
 
         page = 'docs/bikes/' +bikes_json[x]['_id'] + '.html'
         sys.stdout = open(f'{page}', 'w', encoding="UTF-8")
-        html_head(title="BookingBike",
+        html_head_externo(title="BookingBike",
                   description='Bici en concreto')
         print("""    <body>
         <header>
             <h1>BookingBike</h1>
         </header>""")
-        print(nav_2)
+        nav_body_externo()
         print("""        <main>
             <h2>Especificaciones técnicas:</h2>
             <div>""")
