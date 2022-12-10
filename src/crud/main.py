@@ -171,11 +171,3 @@ class mongoDBcrud():
             result = '[blue]Se ha borrado el documento correctamente[/blue]'
             return result
 
-
-        # if BikesCollection.count_documents (query, limit=1) != 0:
-        #     result = f'[red]No se ha podido borrar el documento[/red] {id}'
-        #     return result
-
-        # else:
-        #     result = f'[blue]Se ha borrado correctamente el documento[/blue] {id}'
-        #     return result
