@@ -199,8 +199,10 @@ def actualizar_documento():
         transient=True,
     )as progress:
         progress.add_task(description="Buscando documento...", total=None)
-        result = mongoDBcrud.read(targetId)
-        print(result)
+        
+        if mongoDBcrud.read(targetId) == False:
+            print("[red]No hay ningún documento con ese ID[/red]")
+            quit()
 
     field = typer.prompt("Indica el campo a actualizar ")
     value = typer.prompt("Indica el nuevo valor")
@@ -211,10 +213,17 @@ def actualizar_documento():
         transient=True,
     )as progress:
         progress.add_task(description="Actualizando documento...", total=None)  
-        mongoDBcrud.update(targetId, field, value)
-        progress.add_task(description="Mostrando resultado...", total=None)
-        result = mongoDBcrud.read(targetId)
-        print(result)
+        
+        if mongoDBcrud.update(targetId, field, value) == False:
+            print("[red]No se ha podido actualizar el documento[/red]")
+            quit()
+        else:
+            print("[blue]Documento actualizado[/blue]")
+            progress.add_task(description="Mostrando resultado...", total=None)
+            result = mongoDBcrud.read(targetId)
+            print(result)
+            print("[blue]Proceso finalizado[/blue]")
+
 
 
 

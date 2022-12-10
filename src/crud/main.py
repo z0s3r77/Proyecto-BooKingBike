@@ -104,7 +104,11 @@ class mongoDBcrud():
         newValues = {"$set": values}
 
 
-        BikesCollection.update_one(query, newValues)
+
+        if BikesCollection.update_one(query, newValues) == False:
+            return False
+        else:
+            return True
 
 
     #Este metodo tan solo muestra el documento por su ID
