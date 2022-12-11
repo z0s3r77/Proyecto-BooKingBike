@@ -32,7 +32,7 @@ def pagina_por_bicicleta():
                         <b>Tamaño de las ruedas: </b> 20" <br>
                         <b>Desarrollos:</b> """,bikes_json[x]['Model']['Developments'],"""  <br>
                         <b>Localizacion:</b> Palma <br>
-                        <b>Precio por día:</b> """,bikes_json[x]['Price']['$numberInt'],""" <br>
+                        <b>Precio por día:</b> """,bikes_json[x]['Price']['$numberInt']+"""€ <br>
                     </p>
                     <a href="#aningunlugar">RESERVAR</a>
                 </div>

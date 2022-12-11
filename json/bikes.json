@@ -115,7 +115,7 @@
         "_id": "B5",
         "Brand": "RONDO",
         "Model": {
-            "Name": "Road Bike",
+            "Name": "RoadBike",
             "Style": "Gravel",
             "Suspension": "none",
             "Material": "Aluminio",
@@ -197,7 +197,7 @@
         "_id": "B9",
         "Brand": "BMC",
         "Model": {
-            "Name": "Road bike",
+            "Name": "RoadBike",
             "Style": "Gravel",
             "Suspension": "Triple suspension",
             "Material": "Carbono",
@@ -307,7 +307,7 @@
         "_id": "B12",
         "Brand": "Orbea",
         "Model": {
-            "Name": "Road Bike",
+            "Name": "RoadBike",
             "Style": "Gravel",
             "Suspension": "front suspension",
             "Material": "Aluminio",

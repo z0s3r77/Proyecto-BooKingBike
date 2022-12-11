@@ -119,7 +119,7 @@ def nav_body():
     print("""                    </div>
                 </li>
                 <li class="dropdown">
-                    <a  class="dropbtn" href="listadomarcabicis.html" >Modelos</a>    
+                    <a  class="dropbtn" href="listadotipobicis.html" >Modelos</a>    
                     <div class="dropdown-content">""")       
     x = 0
     modelos_bicis = []
@@ -142,7 +142,7 @@ def nav_body():
     print("""                    </div>
                 </li>
                 <li class="dropdown">
-                    <a  class="dropbtn" href="listadomarcabicis.html" >Zonas</a>    
+                    <a  class="dropbtn" href="listadobicisporzona.html" >Zonas</a>    
                     <div class="dropdown-content">""")       
     x = 0
     zonas_bicis = []
@@ -185,7 +185,7 @@ def nav_body_externo():
                 <li><a href="../home.html" class="active2">Inicio</a></li>
                 <li><a href="../listadototalbicis.html">Listado Bicicletas</a></li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn" >Marcas</a>    
+                    <a  class="dropbtn" href="../listadomarcabicis.html" >Marcas</a>    
                     <div class="dropdown-content">""")
     x = 0
     marcas_bicis = []
@@ -208,7 +208,7 @@ def nav_body_externo():
     print("""                    </div>
                 </li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Modelos</a>    
+                    <a  class="dropbtn" href="../listadotipobicis.html" >Modelos</a>     
                     <div class="dropdown-content">""")       
     x = 0
     modelos_bicis = []
@@ -231,7 +231,7 @@ def nav_body_externo():
     print("""                    </div>
                 </li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Zonas</a>    
+                    <a  class="dropbtn" href="../listadobicisporzona.html" >Zonas</a>    
                     <div class="dropdown-content">""")       
     x = 0
     zonas_bicis = []
@@ -363,7 +363,7 @@ class body():
                     </div>
                 </div>""")
                 x += 1
-        print("            </div>")
+        print("            </div><br><br><br><br>")
 
     
     # Body para la los tipos de bicis
@@ -536,7 +536,7 @@ class body():
         </header>""")
         nav_body()
         print("""        <section>
-            <div>""")
+            <div class="flex-container">""")
 
         x = 0
         desarrollo_bicis = []
@@ -553,7 +553,7 @@ class body():
         
         for x in desarrollo_bicis:
             enlace = "<a href='developments/{}.html'> {} </a>".format(x,x)
-            print("                <div>",enlace ,"</div>")  
+            print("                <div class='container-subpage'><p class=''>",enlace ,"</p></div>")  
         print("""            </div>
         </section>""")
 
