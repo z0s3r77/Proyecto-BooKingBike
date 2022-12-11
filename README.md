@@ -56,3 +56,6 @@ file:///home/z0s3r77/Descargas/Conceptos%20relacionados(2).jpg![imagen](https://
 
 ## Diagrama de componenetes
 
+file:///home/z0s3r77/Descargas/diagramamodelos.jpg![imagen](https://user-images.githubusercontent.com/80277545/206929865-c167b0b6-b298-4d5f-a247-1de6c2ce781f.png)
+
+
