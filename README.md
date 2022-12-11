@@ -56,6 +56,17 @@ file:///home/z0s3r77/Descargas/Conceptos%20relacionados(2).jpg![imagen](https://
 
 ## Diagrama de componenetes
 
-file:///home/z0s3r77/Descargas/diagramamodelos.jpg![imagen](https://user-images.githubusercontent.com/80277545/206929865-c167b0b6-b298-4d5f-a247-1de6c2ce781f.png)
+file:///home/z0s3r77/Descargas/diagrama_componentes.jpg![imagen](https://user-images.githubusercontent.com/80277545/206933261-e2edfa93-732e-45fe-884c-0265eedf2546.png)
+
+
+En el este diagrama se indica el flujo de trabajo del Programa. El diagrama empieza con el modulo de TYPER_main.py, que despliega una CLI para poder desplegar el site o interactuar con el CRUD.
+
+Por este motivo modulo TYPER_main.py se divide en VIEWS y CRUD. Cuando se quiere lanzar el CRUD se despliega mediante TYPER una CLI que en el cual se indican las operaciones que se pueden hacer:
+
+![imagen](https://user-images.githubusercontent.com/80277545/206933144-84d09b78-e67d-43a5-9c03-a0e9aab22bec.png)
+
+Por otro lado, si desplegamos el site, seguiriamos el otro flujo, el de VIEWS_main.py y se ejecutarían todos los modulos de abajo arriba.
+
+
 
 
