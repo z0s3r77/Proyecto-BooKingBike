@@ -96,7 +96,7 @@ def nav_body():
                 <li><a href="home.html" class="active2">Inicio</a></li>
                 <li><a href="listadototalbicis.html">Listado Bicicletas</a></li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn" >Marcas</a>    
+                    <a  class="dropbtn" href="listadomarcabicis.html" >Marcas</a>    
                     <div class="dropdown-content">""")
     x = 0
     marcas_bicis = []
@@ -119,7 +119,7 @@ def nav_body():
     print("""                    </div>
                 </li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Modelos</a>    
+                    <a  class="dropbtn" href="listadomarcabicis.html" >Modelos</a>    
                     <div class="dropdown-content">""")       
     x = 0
     modelos_bicis = []
@@ -142,7 +142,7 @@ def nav_body():
     print("""                    </div>
                 </li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Zonas</a>    
+                    <a  class="dropbtn" href="listadomarcabicis.html" >Zonas</a>    
                     <div class="dropdown-content">""")       
     x = 0
     zonas_bicis = []
@@ -432,22 +432,41 @@ class body():
                 <tr>
                     <th>Marcas Disponibles</th>
                     <th>Nº de Bicicletas</th>
+                    <th>Enlace</th>
                 </tr>""")
+
+        lista_auxiliar= []
+        
         for x in marcas_bicis:
             brand = "{}".format(x,x)
             enlace = "<a href='brand/{}.html'> Listar </a>".format(x,x)
-        
-            print("""                <tr>
-                    <td>""",brand,"""</td>""")
+            lista_auxiliar.append(enlace)
+            # print("""                <tr>
+            #         <td>""",brand,"""</td>""")
+
+
+        cantidades=[]
+        marcas=[]
         diccionarioBicisPorMarcas = diccionario_marcas_bicis()
-        
         for z in diccionarioBicisPorMarcas:
+            marcas.append(z)
             cantidad = 0
             for document in diccionarioBicisPorMarcas[z]:
-                cantidad = len(diccionarioBicisPorMarcas[z])    
-        
-            print("""<td>""",cantidad,"""</td>
-                    </tr>""")
+                cantidad = len(diccionarioBicisPorMarcas[z])       
+            cantidades.append(str(cantidad))
+
+        i = 0
+        while i <= len(marcas)-1:
+            print("<tr>")
+            print("<td>", marcas[i],"</td>")
+            print("<td>", cantidades[i],"</td>")
+            print("<td>", lista_auxiliar[i],"</td>")
+            print("</tr>")
+            i +=1
+        # print(lista_auxiliar, marcas, cantidades)
+        # print(lista_auxiliar[0], marcas[0], cantidades[0])
+            # print("""<td>""",cantidad,"""</td>
+            #         </tr>""")
         print("""</table>
         </section>""")
 
