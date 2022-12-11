@@ -162,19 +162,19 @@ def nav_body():
     for x in zonas_bicis:
        print("                        <a href='location/{}.html'> {} </a>".format(x,x))    
 
-    print("""                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Caracteristicas</a>    
-                    <div class="dropdown-content">
-                        <a href="listadobicisportamañorueda.html">Tamaño rueda</a>
-                        <a href="listadobicispordesarrollo.html">Desarrollos</a>
-                        <a href="listadobicisporcambio.html">Cambios</a>
-                    </div>
-                </li>
-            <li style="float:right; background-color: #005763;;"><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>""")
+    print("""                 </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Caracteristicas</a>    
+                        <div class="dropdown-content">
+                            <a href="listadobicisportamañorueda.html">Tamaño rueda</a>
+                            <a href="listadobicispordesarrollo.html">Desarrollos</a>
+                            <a href="listadobicisporcambio.html">Cambios</a>
+                        </div>
+                    </li>
+                <li style="float:right; background-color: #005763;;"><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>""")
     
           
       
@@ -251,19 +251,19 @@ def nav_body_externo():
     for x in zonas_bicis:
        print("                        <a href='../location/{}.html'> {} </a>".format(x,x))    
 
-    print("""                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Caracteristicas</a>    
-                    <div class="dropdown-content">
-                        <a href="../listadobicisportamañorueda.html">Tamaño rueda</a>
-                        <a href="../listadobicispordesarrollo.html">Desarrollos</a>
-                        <a href="../listadobicisporcambio.html">Cambios</a>
-                    </div>
-                </li>
-            <li style="float:right; background-color: #005763;;"><a href="../contacto.html">Contacto</a></li>
-        </ul>
-    </nav>""")
+    print("""                 </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Caracteristicas</a>    
+                        <div class="dropdown-content">
+                            <a href="../listadobicisportamañorueda.html">Tamaño rueda</a>
+                            <a href="../listadobicispordesarrollo.html">Desarrollos</a>
+                            <a href="../listadobicisporcambio.html">Cambios</a>
+                        </div>
+                    </li>
+                <li style="float:right; background-color: #005763;;"><a href="../contacto.html">Contacto</a></li>
+            </ul>
+        </nav>""")
 
 # BODY
 
@@ -363,6 +363,7 @@ class body():
                     </div>
                 </div>""")
                 x += 1
+        print("            </div>")
 
     
     # Body para la los tipos de bicis
@@ -532,7 +533,7 @@ class body():
             x += 1
         
         for x in desarrollo_bicis:
-            enlace = "<a href='wheelsize/{}.html'> {} </a>".format(x,x)
+            enlace = "<a href='developments/{}.html'> {} </a>".format(x,x)
             print("                <div>",enlace ,"</div>")  
         print("""            </div>
         </section>""")
@@ -561,7 +562,7 @@ class body():
             x += 1
         
         for x in cambio_bicis:
-            enlace = "<a href='wheelsize/{}.html'> {} </a>".format(x,x)
+            enlace = "<a href='shifts/{}.html'> {} </a>".format(x,x)
             print("                <div>",enlace ,"</div>")  
         print("""            </div>
         </section>""")
@@ -595,24 +596,28 @@ def paginas_tipos_bicis():
         html_head_externo(title=f'Bicis tipo {x}', description=f'Pagina de listado de bicis tipo {x}')
         print("""    <body>
         <header>
-            <h1> Bicis disponibles </h1>
+            <h1> Modelos""", x ,"""</h1>
         </header>""")
         nav_body_externo()
-        print("""<section>
-            <div>""")
-
+        print("""        <section>
+            <div class="flex-container">""")
+        
         for document in diccionarioBicisPorTipos[x]:
-                print(f"""                <div>
-                    <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
-                    <br>"""
-                    f"<a href='../bikes/{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
-                    Bicicleta de tipo""", document['Model']['Name']  ,document['Model']['Wheel size']['$numberDouble']+'"',"""<br>
-                    """,document['Price']['$numberInt']+"€/dia <br>"
-                """
-                </div><br>""")
+                print(f"""                <div class="container">
+                    <div class="images">
+                        <img alt="imagen" width='175' height='175' src="{document['img']}"></img>
+                    </div>
+                    <div class="product">
+                        <p class="desc">""", document['Brand'] ,"""</p>
+                        <p class="desc"> Bicicleta de tipo:  """, document['Model']['Name'] ,"""</p>
+                        <p class="desc"> Tamaño de rueda: """, document['Model']['Wheel size']['$numberDouble']+'"<br>'
+                        ,"""<p class="desc"> """,document['Price']['$numberInt']+"""€/dia"""
+                        f"""<p class="desc"><a href='../bikes/{document['_id']}.html' class="button"> Más info </a>
+                    </div>
+                </div>""")
+                
 
-
-        print("""                </div>
+        print("""            </div>
         </section>""")
 
         footer()
@@ -630,25 +635,28 @@ def paginas_marcas_bicis():
         html_head_externo(title=f'Bicis marca {x}', description=f'Pagina de listado de bicis marca {x}')
         print("""    <body>
         <header>
-            <h1> Bicis disponibles </h1>
+            <h1> Marca""", x ,"""</h1>
         </header>""")
         nav_body_externo()
-        print("""<section>
-            <div>""")
-        cantidad = 0
+        print("""        <section>
+            <div class="flex-container">""")
+        
         for document in diccionarioBicisPorMarcas[x]:
-                cantidad = len(diccionarioBicisPorMarcas[x])
-                print(f"""                <div>
-                    <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
-                    <br>"""
-                    f"<a href='../bikes/{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
-                    Bicicleta de tipo""", document['Model']['Name']  ,document['Model']['Wheel size']['$numberDouble']+'"',"""<br>
-                    """,document['Price']['$numberInt']+"€/dia <br>"
-                """
-                </div><br>""")
+                print(f"""                <div class="container">
+                    <div class="images">
+                        <img alt="imagen" width='175' height='175' src="{document['img']}"></img>
+                    </div>
+                    <div class="product">
+                        <p class="desc">""", document['Brand'] ,"""</p>
+                        <p class="desc"> Bicicleta de tipo:  """, document['Model']['Name'] ,"""</p>
+                        <p class="desc"> Tamaño de rueda: """, document['Model']['Wheel size']['$numberDouble']+'"<br>'
+                        ,"""<p class="desc"> """,document['Price']['$numberInt']+"""€/dia"""
+                        f"""<p class="desc"><a href='../bikes/{document['_id']}.html' class="button"> Más info </a>
+                    </div>
+                </div>""")
                 
 
-        print("""                </div>
+        print("""            </div>
         </section>""")
 
         footer()
@@ -666,24 +674,28 @@ def paginas_zonas_bicis():
         html_head_externo(title=f'Bicis zona {x}', description=f'Pagina de listado de bicis por zona {x}')
         print("""    <body>
         <header>
-            <h1> Bicis disponibles </h1>
+            <h1> Zona""", x ,"""</h1>
         </header>""")
         nav_body_externo()
-        print("""<section>
-            <div>""")
-
+        print("""        <section>
+            <div class="flex-container">""")
+        
         for document in diccionarioBicisPorZonas[x]:
-                print(f"""                <div>
-                    <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
-                    <br>"""
-                    f"<a href='../bikes/{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
-                    Bicicleta de tipo""", document['Model']['Name']  ,document['Model']['Wheel size']['$numberDouble']+'"',"""<br>
-                    """,document['Price']['$numberInt']+"€/dia <br>"
-                """
-                </div><br>""")
+                print(f"""                <div class="container">
+                    <div class="images">
+                        <img alt="imagen" width='175' height='175' src="{document['img']}"></img>
+                    </div>
+                    <div class="product">
+                        <p class="desc">""", document['Brand'] ,"""</p>
+                        <p class="desc"> Bicicleta de tipo:  """, document['Model']['Name'] ,"""</p>
+                        <p class="desc"> Tamaño de rueda: """, document['Model']['Wheel size']['$numberDouble']+'"<br>'
+                        ,"""<p class="desc"> """,document['Price']['$numberInt']+"""€/dia"""
+                        f"""<p class="desc"><a href='../bikes/{document['_id']}.html' class="button"> Más info </a>
+                    </div>
+                </div>""")
+                
 
-
-        print("""                </div>
+        print("""            </div>
         </section>""")
 
         footer()
@@ -702,24 +714,28 @@ def paginas_tamaño_ruedas_bicis():
         html_head_externo(title=f'Bicis con tamaño de rueda {x}', description=f'Pagina de listado de bicis tamaño de rueda {x}')
         print("""    <body>
         <header>
-            <h1> Bicis disponibles </h1>
+            <h1> Tamaño Rueda""", x +""""</h1>
         </header>""")
         nav_body_externo()
-        print("""<section>
-            <div>""")
-
+        print("""        <section>
+            <div class="flex-container">""")
+        
         for document in diccionarioBicisPorTamañoRuedas[x]:
-                print(f"""                <div>
-                    <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
-                    <br>"""
-                    f"<a href='../bikes/{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
-                    Bicicleta de tipo""", document['Model']['Name']  ,document['Model']['Wheel size']['$numberDouble']+'"',"""<br>
-                    """,document['Price']['$numberInt']+"€/dia <br>"
-                """
-                </div><br>""")
+                print(f"""                <div class="container">
+                    <div class="images">
+                        <img alt="imagen" width='175' height='175' src="{document['img']}"></img>
+                    </div>
+                    <div class="product">
+                        <p class="desc">""", document['Brand'] ,"""</p>
+                        <p class="desc"> Bicicleta de tipo:  """, document['Model']['Name'] ,"""</p>
+                        <p class="desc"> Tamaño de rueda: """, document['Model']['Wheel size']['$numberDouble']+'"<br>'
+                        ,"""<p class="desc"> """,document['Price']['$numberInt']+"""€/dia"""
+                        f"""<p class="desc"><a href='../bikes/{document['_id']}.html' class="button"> Más info </a>
+                    </div>
+                </div>""")
+                
 
-
-        print("""                </div>
+        print("""            </div>
         </section>""")
 
         footer()
@@ -739,24 +755,28 @@ def paginas_desarrollo_bicis():
         html_head_externo(title=f'Bicis con desarollo {x}', description=f'Pagina de listado de bicis segun su desarollo {x}')
         print("""    <body>
         <header>
-            <h1> Bicis disponibles </h1>
+            <h1> Desarrollo""", x ,"""</h1>
         </header>""")
         nav_body_externo()
-        print("""<section>
-            <div>""")
-
+        print("""        <section>
+            <div class="flex-container">""")
+        
         for document in diccionarioBicisPordesarrollo[x]:
-                print(f"""                <div>
-                    <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
-                    <br>"""
-                    f"<a href='../bikes/{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
-                    Bicicleta de tipo""", document['Model']['Name']  ,document['Model']['Wheel size']['$numberDouble']+'"',"""<br>
-                    """,document['Price']['$numberInt']+"€/dia <br>"
-                """
-                </div><br>""")
+                print(f"""                <div class="container">
+                    <div class="images">
+                        <img alt="imagen" width='175' height='175' src="{document['img']}"></img>
+                    </div>
+                    <div class="product">
+                        <p class="desc">""", document['Brand'] ,"""</p>
+                        <p class="desc"> Bicicleta de tipo:  """, document['Model']['Name'] ,"""</p>
+                        <p class="desc"> Tamaño de rueda: """, document['Model']['Wheel size']['$numberDouble']+'"<br>'
+                        ,"""<p class="desc"> """,document['Price']['$numberInt']+"""€/dia"""
+                        f"""<p class="desc"><a href='../bikes/{document['_id']}.html' class="button"> Más info </a>
+                    </div>
+                </div>""")
+                
 
-
-        print("""                </div>
+        print("""            </div>
         </section>""")
 
         footer()
@@ -775,24 +795,28 @@ def paginas_cambio_bicis():
         html_head_externo(title=f'Bicis con cambio {x}', description=f'Pagina de listado de bicis segun su tipo de cambio {x}')
         print("""    <body>
         <header>
-            <h1> Bicis disponibles </h1>
+            <h1> Cambio Tipo""", x ,"""</h1>
         </header>""")
         nav_body_externo()
-        print("""<section>
-            <div>""")
-
+        print("""        <section>
+            <div class="flex-container">""")
+        
         for document in diccionarioBicisPorCambio[x]:
-                print(f"""                <div>
-                    <img alt="imagen" width='200' height='200' src="{document['img']}"></img>
-                    <br>"""
-                    f"<a href='../bikes/{document['_id']}.html'> <b>""", document['Brand']  ,"""</b> </a><br>
-                    Bicicleta de tipo""", document['Model']['Name']  ,document['Model']['Wheel size']['$numberDouble']+'"',"""<br>
-                    """,document['Price']['$numberInt']+"€/dia <br>"
-                """
-                </div><br>""")
+                print(f"""                <div class="container">
+                    <div class="images">
+                        <img alt="imagen" width='175' height='175' src="{document['img']}"></img>
+                    </div>
+                    <div class="product">
+                        <p class="desc">""", document['Brand'] ,"""</p>
+                        <p class="desc"> Bicicleta de tipo:  """, document['Model']['Name'] ,"""</p>
+                        <p class="desc"> Tamaño de rueda: """, document['Model']['Wheel size']['$numberDouble']+'"<br>'
+                        ,"""<p class="desc"> """,document['Price']['$numberInt']+"""€/dia"""
+                        f"""<p class="desc"><a href='../bikes/{document['_id']}.html' class="button"> Más info </a>
+                    </div>
+                </div>""")
+                
 
-
-        print("""                </div>
+        print("""            </div>
         </section>""")
 
         footer()
