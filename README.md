@@ -6,6 +6,7 @@ Enlace del proyecto: https://z0s3r77.github.io/BooKingBikeV2/
 
 - [Introducción](#introducción)
 - [Descripción técnica](#Descripción técnica)
+-   [Arquitectura de la aplicación](## Arquitectura de la aplicación)
 
 
 # Introducción 
