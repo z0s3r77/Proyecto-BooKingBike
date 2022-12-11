@@ -12,9 +12,10 @@
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3714/3714324.png">
         <title>Pagina de contacto - BookingBike</title>
         </head>
-    <body>
+    <body class="contact">
         <header>
-            <h1>BookingBike</h1>
+            <h1>BooKingBike</h1>
+            <h2>Página de contacto</h2>
         </header>
         <nav>
             <ul>
@@ -60,7 +61,7 @@
                         <div class="dropdown-content">
                             <a href="listadobicisportamañorueda.html">Tamaño rueda</a>
                             <a href="listadobicispordesarrollo.html">Desarrollos</a>
-                            <a href="listadobicisporcambio.html">Cambios</a>
+                            <a href="listadobicisporcambio.html">Tipo de cambios</a>
                         </div>
                     </li>
                 <li style="float:right; background-color: #005763;;"><a href="contacto.html">Contacto</a></li>
@@ -68,21 +69,61 @@
         </nav>
         <main>
             <section>
-                <form>
-                    <fieldset>
-                        <legend>Contacta con nosotros</legend>
-                        <label for='nombre'> Nombre: </label>
-                        <input type='text' name='nombre' id='nombre'><br><br>
-                        <label for='correo'> Correo: </label>
-                        <input type='text' name='correo' id='correo'><br><br>
-                        <label for='mensaje'> Mensaje: </label><br>
-                        <textarea type='text' name='mensaje' id='mensaje'></textarea><br>
-                        <input type='submit' value='enviar'>
-                        <input type='reset' value='borrar'>
-                    </fieldset>
-                </form>
+                <div class="contact_form">
+
+                    <div class="formulario">      
+                    <h1>Formulario de contacto</h1>
+                        <h3>Escríbenos y en breve nos pondremos en contacto contigo</h3>
+
+
+                        <form action="" method="post">       
+
+                            
+                                <p>
+                                <label for="nombre" class="colocar_nombre">Nombre
+                                    <span class="obligatorio">*</span>
+                                </label>
+                                    <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
+                                </p>
+                            
+                                <p>
+                                <label for="email" class="colocar_email">Email
+                                    <span class="obligatorio">*</span>
+                                </label>
+                                    <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
+                                </p>
+                            
+                                <p>
+                                <label for="telefone" class="colocar_telefono">Teléfono
+                                </label>
+                                    <input type="number" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+                                </p>     
+                            
+                                <p>
+                                <label for="asunto" class="colocar_asunto">Asunto
+                                    <span class="obligatorio">*</span>
+                                </label>
+                                    <input type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Escribe un asunto">
+                                </p>    
+                            
+                                <p>
+                                <label for="mensaje" class="colocar_mensaje">Mensaje
+                                    <span class="obligatorio">*</span>
+                                </label>                     
+                                                    <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
+                                                </p>                    
+                            
+                                <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+
+                                <p class="aviso">
+                                <span class="obligatorio"> * </span>los campos son obligatorios.
+                                </p>          
+                            
+                        </form>
+                    </div>  
+                </div>
             </section>
-        </main>
+        </main><br><br>
         <footer class="footer">
             <p>Esta página es de @Miguel & @Sebastian</p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licencia Creative Commons"

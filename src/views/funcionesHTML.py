@@ -169,7 +169,7 @@ def nav_body():
                         <div class="dropdown-content">
                             <a href="listadobicisportamañorueda.html">Tamaño rueda</a>
                             <a href="listadobicispordesarrollo.html">Desarrollos</a>
-                            <a href="listadobicisporcambio.html">Cambios</a>
+                            <a href="listadobicisporcambio.html">Tipo de cambios</a>
                         </div>
                     </li>
                 <li style="float:right; background-color: #005763;;"><a href="contacto.html">Contacto</a></li>
@@ -258,7 +258,7 @@ def nav_body_externo():
                         <div class="dropdown-content">
                             <a href="../listadobicisportamañorueda.html">Tamaño rueda</a>
                             <a href="../listadobicispordesarrollo.html">Desarrollos</a>
-                            <a href="../listadobicisporcambio.html">Cambios</a>
+                            <a href="../listadobicisporcambio.html"> Tipo de cambios</a>
                         </div>
                     </li>
                 <li style="float:right; background-color: #005763;;"><a href="../contacto.html">Contacto</a></li>
@@ -274,7 +274,7 @@ class body():
     def body_pagina_principal():
         print("""    <body>
         <header>
-            <h1>BookingBike</h1>
+            <h1>BooKingBike</h1>
         </header>""")
         nav_body()
         print("""        <main>
@@ -304,8 +304,8 @@ class body():
                 <img src="https://phantom-elmundo.unidadeditorial.es/3b1354948ed5ae7cc056652e823b726b/resize/700/f/webp/assets/multimedia/imagenes/2022/01/21/16427697880924.jpg" alt="">
             </div>
             <div>
-                <h4>¿Por que BookingBike?</h4>
-                <p>Porque ahora, alquilar tu bicicleta favorita para cada época del año es más sencillo de lo que te imaginas.
+                <h4>¿Por que BooKingBike?</h4>
+                <p>Porque ahora, alquilar tu h1bicicleta favorita para cada época del año es más sencillo de lo que te imaginas.
                     Nosotros te mostramos todo el cátalogo disponible en tu zona, tú eres el encargado o encargada de seleccionar
                     la que mejor se adapte a tí y en tan solo unos días la tendrás en la puerta de tu casa. <b>Así de simple!</b>
                 </p>
@@ -316,34 +316,76 @@ class body():
     # Body para la pagina de contacto
 
     def body_contacto():
-        print(f"""    <body>
+        print(f"""    <body class="contact">
         <header>
-            <h1>BookingBike</h1>
+            <h1>BooKingBike</h1>
+            <h2>Página de contacto</h2>
         </header>""")
         nav_body()
         print("""        <main>
             <section>
-                <form>
-                    <fieldset>
-                        <legend>Contacta con nosotros</legend>
-                        <label for='nombre'> Nombre: </label>
-                        <input type='text' name='nombre' id='nombre'><br><br>
-                        <label for='correo'> Correo: </label>
-                        <input type='text' name='correo' id='correo'><br><br>
-                        <label for='mensaje'> Mensaje: </label><br>
-                        <textarea type='text' name='mensaje' id='mensaje'></textarea><br>
-                        <input type='submit' value='enviar'>
-                        <input type='reset' value='borrar'>
-                    </fieldset>
-                </form>
+                <div class="contact_form">
+
+                    <div class="formulario">      
+                    <h1>Formulario de contacto</h1>
+                        <h3>Escríbenos y en breve nos pondremos en contacto contigo</h3>
+
+
+                        <form action="" method="post">       
+
+                            
+                                <p>
+                                <label for="nombre" class="colocar_nombre">Nombre
+                                    <span class="obligatorio">*</span>
+                                </label>
+                                    <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
+                                </p>
+                            
+                                <p>
+                                <label for="email" class="colocar_email">Email
+                                    <span class="obligatorio">*</span>
+                                </label>
+                                    <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
+                                </p>
+                            
+                                <p>
+                                <label for="telefone" class="colocar_telefono">Teléfono
+                                </label>
+                                    <input type="number" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+                                </p>     
+                            
+                                <p>
+                                <label for="asunto" class="colocar_asunto">Asunto
+                                    <span class="obligatorio">*</span>
+                                </label>
+                                    <input type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Escribe un asunto">
+                                </p>    
+                            
+                                <p>
+                                <label for="mensaje" class="colocar_mensaje">Mensaje
+                                    <span class="obligatorio">*</span>
+                                </label>                     
+                                                    <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
+                                                </p>                    
+                            
+                                <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+
+                                <p class="aviso">
+                                <span class="obligatorio"> * </span>los campos son obligatorios.
+                                </p>          
+                            
+                        </form>
+                    </div>  
+                </div>
             </section>
-        </main>""")
+        </main><br><br>""")
 
 
     def body_listado_total_bicis():
         print("""    <body>
         <header>
-            <h1>BookingBike </h1>
+            <h1>BooKingBike</h1>
+            <h2>Bicis disponibles</h2>
         </header>""")
         nav_body()
         print("""        <section>
@@ -371,11 +413,12 @@ class body():
     def body_listado_tipo_bicis():
         print("""    <body>
         <header>
-            <h1>BookingBike</h1>
+            <h1>BooKingBike</h1>
+            <h2>Modelos disponibles</h2>
         </header>""")
         nav_body()
         print("""        <section>
-            <div>""")
+            <div class="flex-container">""")
 
         x = 0
         tipos_bicis = []
@@ -392,7 +435,7 @@ class body():
         
         for x in tipos_bicis:
             enlace = "<a href='types/{}.html'> {} </a>".format(x,x)
-            print("                <div>",enlace ,"</div>")  
+            print("                <div class='container-subpage'><p>",enlace ,"</p></div>")  
         print("""            </div>
         </section>""")
 
@@ -402,11 +445,12 @@ class body():
     def body_listado_marca_bicis():
         print("""    <body>
         <header>
-            <h1>BookingBike</h1>
+            <h1>BooKingBike</h1>
+            <h2>Marcas disponibles</h2>
         </header>""")
         nav_body()
         print("""        <section>
-            <div>""")
+            <div class="flex-container">""")
 
         x = 0
         marcas_bicis = []
@@ -425,7 +469,7 @@ class body():
         
         for x in marcas_bicis:
             enlace = "<a href='brand/{}.html'> {} </a>".format(x,x)
-            print("                <div>",enlace ,"</div>")  
+            print("                <div class='container-subpage'><p>",enlace ,"</p></div>") 
         
         print("""            </div>
             <table>
@@ -475,11 +519,12 @@ class body():
     def body_listado_por_zona_bicis():
         print("""    <body>
         <header>
-            <h1>BookingBike</h1>
+            <h1>BooKingBike</h1>
+            <h2>Zonas disponibles</h2>
         </header>""")
         nav_body()
         print("""        <section>
-            <div>""")
+            <div class="flex-container">""")
 
         x = 0
         zonas_bicis = []
@@ -496,7 +541,7 @@ class body():
         
         for x in zonas_bicis:
             enlace = "<a href='location/{}.html'> {} </a>".format(x,x)
-            print("                <div>",enlace ,"</div>")  
+            print("                <div class='container-subpage'><p>",enlace ,"</p></div>")
         print("""            </div>
         </section>""")
 
@@ -504,11 +549,12 @@ class body():
     def body_listado_por_tamaño_rueda_bicis():
         print("""    <body>
         <header>
-            <h1>Listado de Bicis por tamaño de rueda </h1>
+            <h1>BooKingBike<h1>
+            <h2>Tamaños de rueda disponibles</h2>
         </header>""")
         nav_body()
         print("""        <section>
-            <div>""")
+            <div class="flex-container">""")
 
         x = 0
         tamaño_rueda_bicis = []
@@ -525,14 +571,15 @@ class body():
         
         for x in tamaño_rueda_bicis:
             enlace = "<a href='wheelsize/{}.html'> {} </a>".format(x,x)
-            print("                <div>",enlace ,"</div>")  
+            print("                <div class='container-subpage'><p>",enlace ,"</p></div>")
         print("""            </div>
-        </section>""")
+        </section><br><br><br><br><br><br>""")
 
     def body_listado_por_desarollo_bicis():
         print("""    <body>
         <header>
-            <h1>Listado de Bicis por desarollo </h1>
+            <h1>BooKingBike<h1>
+            <h2>Desarollos disponibles </h2>
         </header>""")
         nav_body()
         print("""        <section>
@@ -553,19 +600,20 @@ class body():
         
         for x in desarrollo_bicis:
             enlace = "<a href='developments/{}.html'> {} </a>".format(x,x)
-            print("                <div class='container-subpage'><p class=''>",enlace ,"</p></div>")  
+            print("                <div class='container-subpage'><p>",enlace ,"</p></div>")  
         print("""            </div>
-        </section>""")
+        </section><br><br><br><br><br><br>""")
 
     
     def body_listado_por_cambio_bicis():
         print("""    <body>
         <header>
-            <h1>Listado de Bicis por tipo de cambio </h1>
+            <h1>BooKingBike<h1>
+            <h2>Tipo de cambio disponibles</h2>
         </header>""")
         nav_body()
         print("""        <section>
-            <div>""")
+            <div class="flex-container">""")
 
         x = 0
         cambio_bicis = []
@@ -582,9 +630,9 @@ class body():
         
         for x in cambio_bicis:
             enlace = "<a href='shifts/{}.html'> {} </a>".format(x,x)
-            print("                <div>",enlace ,"</div>")  
+            print("                <div class='container-subpage'><p>",enlace ,"</p></div>")
         print("""            </div>
-        </section>""")
+        </section><br><br><br><br><br><br>""")
 
 
 # FOOTER
@@ -637,7 +685,7 @@ def paginas_tipos_bicis():
                 
 
         print("""            </div>
-        </section>""")
+        </section><br><br><br><br><br><br>""")
 
         footer()
         
@@ -676,7 +724,7 @@ def paginas_marcas_bicis():
                 
 
         print("""            </div>
-        </section>""")
+        </section><br><br><br><br><br><br>""")
 
         footer()
         
@@ -715,7 +763,7 @@ def paginas_zonas_bicis():
                 
 
         print("""            </div>
-        </section>""")
+        </section><br><br><br><br><br><br>""")
 
         footer()
         
@@ -755,7 +803,7 @@ def paginas_tamaño_ruedas_bicis():
                 
 
         print("""            </div>
-        </section>""")
+        </section><br><br><br><br><br><br>""")
 
         footer()
         
@@ -796,7 +844,7 @@ def paginas_desarrollo_bicis():
                 
 
         print("""            </div>
-        </section>""")
+        </section><br><br><br><br><br><br>""")
 
         footer()
         
@@ -836,7 +884,7 @@ def paginas_cambio_bicis():
                 
 
         print("""            </div>
-        </section>""")
+        </section><br><br><br><br><br><br>""")
 
         footer()
         

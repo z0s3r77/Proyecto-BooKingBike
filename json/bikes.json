@@ -22,7 +22,7 @@
             }
         },
         "Price": {
-            "$numberInt": "76"
+            "$numberInt": "41"
         },
         "Status": "avaliable",
         "Location": "Palma",
@@ -51,7 +51,7 @@
             }
         },
         "Price": {
-            "$numberInt": "60"
+            "$numberInt": "40"
         },
         "Status": "available",
         "Location": "Santanyi",
@@ -78,7 +78,7 @@
             }
         },
         "Price": {
-            "$numberInt": "35"
+            "$numberInt": "20"
         },
         "Status": "rented",
         "Location": "Palma",
@@ -105,7 +105,7 @@
             }
         },
         "Price": {
-            "$numberInt": "50"
+            "$numberInt": "52"
         },
         "Status": "rented",
         "Location": "Campos",
@@ -132,7 +132,7 @@
             }
         },
         "Price": {
-            "$numberInt": "40"
+            "$numberInt": "31"
         },
         "Status": "available",
         "Location": "Palma",
@@ -161,7 +161,7 @@
             }
         },
         "Price": {
-            "$numberInt": "50"
+            "$numberInt": "38"
         },
         "Location": "Manacor",
         "img": "https://images.internetstores.de/products/1704296/02/97a657/serious-rockville-275-race-fire-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
@@ -187,7 +187,7 @@
             }
         },
         "Price": {
-            "$numberInt": "50"
+            "$numberInt": "32"
         },
         "Status": "avaliable",
         "Location": "Palma",
@@ -214,7 +214,7 @@
             }
         },
         "Price": {
-            "$numberInt": "80"
+            "$numberInt": "31"
         },
         "Status": "avaliable",
         "Location": "Palma",
@@ -241,7 +241,7 @@
             }
         },
         "Price": {
-            "$numberInt": "60"
+            "$numberInt": "50"
         },
         "Status": "avaliable",
         "Location": "Manacor",
@@ -442,7 +442,7 @@
             }
         },
         "Price": {
-            "$numberInt": "40"
+            "$numberInt": "29"
         },
         "Status": "available",
         "Location": "Santanyi",
@@ -500,7 +500,7 @@
             }
         },
         "Price": {
-            "$numberInt": "50"
+            "$numberInt": "52"
         },
         "Status": "available",
         "Location": "Palma",
@@ -529,7 +529,7 @@
             }
         },
         "Price": {
-            "$numberInt": "50"
+            "$numberInt": "41"
         },
         "Status": "available",
         "Location": "Manacor",
