@@ -31,6 +31,15 @@ Cumpliendo con el propósito indicado anteriormente, el proyecto presenta la sig
 
 A continuación una imagen de la arquitectura:
 
-file:///home/z0s3r77/Descargas/Conceptos%20relacionados.jpg![imagen](https://user-images.githubusercontent.com/80277545/206923029-32d8fb7b-bbc8-46c7-8f48-8383c1b8dfd7.png)
+file:///home/z0s3r77/Descargas/Conceptos%20relacionados(1).jpg![imagen](https://user-images.githubusercontent.com/80277545/206923387-44d30ab3-f65f-43ec-81a6-562dc9f5ee72.png)
+
+
+- En primer lugar tenemos la base de datos, donde se almacenan las bicicletas, en concreto en una colección llamada Bikes dentro de la base de datos BookingBike (pero de esto daremos detalles más abajo). 
+
+- Mediante Python en la **capa de acceso a datos**, nos conectamos al cluster de Mongo Atlas mediante la API proporcionada por esta misma. Importamos los datos, los formateamos y los guardamos en documentos **JSON**. A esto lo llamamos **proceso de datos**.
+
+- A continuación , en la **capa lógica** , convertirmos los datos de los archivos JSON en objetos Python y montamos las diferentes páginas con el contenido extraido. Aparte contamos con un programa CRUD, al cuál se puede acceder mediante la terminal CLI.
+
+-Por último, en la **capa de presentación**, servimos las diferentes páginas que se han creado en Github Pages. Por otro lado, proporcionamos la CLI mencionada anteriormente. De ahí viene que desde el punto **TERMINAL CLI** en la imagen superior se pueda volver hacia atrás, ya que está mediante el CRUD servido en la **capa lógica** puede alterar la base de datos. 
 
 
