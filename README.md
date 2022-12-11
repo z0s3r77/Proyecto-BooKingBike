@@ -54,4 +54,4 @@ file:///home/z0s3r77/Descargas/Conceptos%20relacionados(1).jpg![imagen](https://
 
 - Por último, en la **capa de presentación**, servimos las diferentes páginas que se han creado en Github Pages. Por otro lado, proporcionamos la CLI mencionada anteriormente. De ahí viene que desde el punto **TERMINAL CLI** en la imagen superior se pueda volver hacia atrás, ya que está mediante el CRUD servido en la **capa lógica** puede alterar la base de datos. 
 
-
+## Diagrama de componenetes
