@@ -4,9 +4,9 @@ Enlace del proyecto: https://z0s3r77.github.io/BooKingBikeV2/
 
 **Indice**
 
-- [Introducción](#introducción)
-- [Descripción técnica](#Descripción técnica)
--   [Arquitectura de la aplicación](## Arquitectura de la aplicación)
+- [**Introducción**](#introducción)
+- [**Descripción técnica**](#Descripción técnica)
+  - [**Arquitectura de la aplicación**](#Arquitectura de la aplicación)
 
 
 # Introducción 
@@ -25,6 +25,17 @@ Las tecnologías que se han utilizado han sido las siguientes:
 
 En este apartado procedemos a detallar mediante tecnicismos como funciona el proyecto.
 Dado que los usuarios a usar son dos, un técnico y un usuario sin conocimientos. El técnico debe tener acceso a una interfaz de consola (CLI) para poder realizar un CRUD a la base de datos de Booking Bike, es decir, crear, leer, actualizar y borrar documentos. Por otro lado, estaría el usuario que quiere reservar la bicicleta, este tan solo tendría acceso a la VISTA del proyecto, es decir, a la página que se despliega en Github Pages.
+
+## Tecnologías usadas
+
+Para poder llevar a cabo el proyecto se han utilizado las siguientes técnologias:
+
+- **Python**
+- **MongoDB**
+- **Git**
+- **Github Pages**
+- **HTML y CSS**
+
 
 Cumpliendo con el propósito indicado anteriormente, el proyecto presenta la siguiente **Arquitectura**.
 
