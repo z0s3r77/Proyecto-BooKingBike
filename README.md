@@ -29,4 +29,8 @@ Cumpliendo con el propósito indicado anteriormente, el proyecto presenta la sig
 
 ## Arquitectura de la aplicación
 
+A continuación una imagen de la arquitectura:
+
+file:///home/z0s3r77/Descargas/Conceptos%20relacionados.jpg![imagen](https://user-images.githubusercontent.com/80277545/206922964-d7fb27f6-3e1e-47f7-9f3d-c758f5bbeeb7.png)
+
 
