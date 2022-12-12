@@ -1,4 +1,4 @@
-from src.db.conexionApiMongo import requestToMongoApi
+# from src.db.conexionApiMongo import requestToMongoApi
 from schema import Schema, And, Use, Optional, SchemaError
 import os
 import json

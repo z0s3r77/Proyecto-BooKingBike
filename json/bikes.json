@@ -22,7 +22,7 @@
             }
         },
         "Price": {
-            "$numberInt": "76"
+            "$numberInt": "41"
         },
         "Status": "avaliable",
         "Location": "Palma",
@@ -51,7 +51,7 @@
             }
         },
         "Price": {
-            "$numberInt": "60"
+            "$numberInt": "40"
         },
         "Status": "available",
         "Location": "Santanyi",
@@ -78,7 +78,7 @@
             }
         },
         "Price": {
-            "$numberInt": "35"
+            "$numberInt": "20"
         },
         "Status": "rented",
         "Location": "Palma",
@@ -105,7 +105,7 @@
             }
         },
         "Price": {
-            "$numberInt": "50"
+            "$numberInt": "52"
         },
         "Status": "rented",
         "Location": "Campos",
@@ -115,7 +115,7 @@
         "_id": "B5",
         "Brand": "RONDO",
         "Model": {
-            "Name": "Road Bike",
+            "Name": "RoadBike",
             "Style": "Gravel",
             "Suspension": "none",
             "Material": "Aluminio",
@@ -132,7 +132,7 @@
             }
         },
         "Price": {
-            "$numberInt": "40"
+            "$numberInt": "31"
         },
         "Status": "available",
         "Location": "Palma",
@@ -161,7 +161,7 @@
             }
         },
         "Price": {
-            "$numberInt": "50"
+            "$numberInt": "38"
         },
         "Location": "Manacor",
         "img": "https://images.internetstores.de/products/1704296/02/97a657/serious-rockville-275-race-fire-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
@@ -187,7 +187,7 @@
             }
         },
         "Price": {
-            "$numberInt": "50"
+            "$numberInt": "32"
         },
         "Status": "avaliable",
         "Location": "Palma",
@@ -197,7 +197,7 @@
         "_id": "B9",
         "Brand": "BMC",
         "Model": {
-            "Name": "Road bike",
+            "Name": "RoadBike",
             "Style": "Gravel",
             "Suspension": "Triple suspension",
             "Material": "Carbono",
@@ -214,7 +214,7 @@
             }
         },
         "Price": {
-            "$numberInt": "80"
+            "$numberInt": "31"
         },
         "Status": "avaliable",
         "Location": "Palma",
@@ -241,7 +241,7 @@
             }
         },
         "Price": {
-            "$numberInt": "60"
+            "$numberInt": "50"
         },
         "Status": "avaliable",
         "Location": "Manacor",
@@ -301,13 +301,13 @@
         },
         "Status": "available",
         "Location": "Palma",
-        "img": "https://images.internetstores.de/products/1537493/02/c01c89/ghost-kato-eq-275-al-black-bright-blue-matt-2.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
+        "img": "https://images.internetstores.de/products/1537493/02/907e5e/ghost-kato-eq-275-al-black-bright-blue-matt-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=613x613"
     },
     {
         "_id": "B12",
         "Brand": "Orbea",
         "Model": {
-            "Name": "Road Bike",
+            "Name": "RoadBike",
             "Style": "Gravel",
             "Suspension": "front suspension",
             "Material": "Aluminio",
@@ -388,7 +388,7 @@
         },
         "Status": "available",
         "Location": "Soller",
-        "img": "https://images.internetstores.de/products/1491593/02/5886e4/orbea-gain-m20i-coral-black-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
+        "img": "https://images.internetstores.de/products/1705673/02/67eebf/ortler-cargo-detroit-alloy-wave-grey-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
     },
     {
         "_id": "E15",
@@ -417,7 +417,7 @@
         },
         "Status": "available",
         "Location": "Palma",
-        "img": "https://images.internetstores.de/products/1491593/02/5886e4/orbea-gain-m20i-coral-black-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
+        "img": "https://images.internetstores.de/products/1537469/02/cb5383/ghost-kato-275-al-black-riot-red-glossy-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
     },
     {
         "_id": "E16",
@@ -442,11 +442,11 @@
             }
         },
         "Price": {
-            "$numberInt": "40"
+            "$numberInt": "29"
         },
         "Status": "available",
         "Location": "Santanyi",
-        "img": "https://images.internetstores.de/products/1705730/02/0cbcce/ortler-van-dyck-trapeze-ocean-blue-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
+        "img": "https://images.internetstores.de/products/1705721/02/a7c121/ortler-van-dyck-trapeze-black-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
     },
     {
         "_id": "E17",
@@ -500,11 +500,11 @@
             }
         },
         "Price": {
-            "$numberInt": "50"
+            "$numberInt": "52"
         },
         "Status": "available",
         "Location": "Palma",
-        "img": "https://images.internetstores.de/products/1490672/02/e6ac34/orbea-orca-m40-metallic-electric-orange-black-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
+        "img": "https://images.internetstores.de/products/1550474/02/59f790/ortler-bozen-suv-anthracite-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
     },
     {
         "_id": "E19",
@@ -529,7 +529,7 @@
             }
         },
         "Price": {
-            "$numberInt": "50"
+            "$numberInt": "41"
         },
         "Status": "available",
         "Location": "Manacor",
