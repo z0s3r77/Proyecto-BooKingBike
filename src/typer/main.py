@@ -23,7 +23,7 @@ def desplegar_site():
     print("[blue] Site Desplegado [/blue]")
     confirm = typer.confirm("Quieres ir al dominio?")
     if confirm:
-        typer.launch("file:///home/z0s3r77/Documentos/BooKingBikeV2/docs/home.html")
+        typer.launch("file:///home/z0s3r77/Documentos/BooKingBikeV2/docs/index.html")
         print("[blue] Proceso finalizado [/blue]")
         quit()
     else:
@@ -253,7 +253,7 @@ def mostrar_site():
     """
     Inicia el navegador con la pagina principal de BookingBike
     """
-    typer.launch("https://bikesbooking.com/es/")
+    typer.launch("https://z0s3r77.github.io/BooKingBikeV2/")
 
 
 
