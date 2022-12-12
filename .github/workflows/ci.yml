@@ -16,9 +16,9 @@ jobs:
       - uses:  actions/checkout@v4
       
       - name:  Instalando Python 3.8
-      - uses: actions/setup-python@v4
+        uses:  actions/setup-python@v4.3.1
         with:
-          python-version: '3.10'
+          python-verion: 3.8
         
       - name:  Instalando dependencias
         run:  |
