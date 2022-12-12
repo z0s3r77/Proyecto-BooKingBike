@@ -23,16 +23,16 @@ jobs:
        
       - uses: actions/cache@v3
         with:
-          path: ~/.cache/pip3
-          key: ${{ runner.os }}-pip3-${{ hashFiles('**/requirements.txt') }}
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
-            ${{ runner.os }}-pip3-
+            ${{ runner.os }}-pip-
         
         
       - name:  Instalando dependencias
         run:  |
           python3 -m pip install --upgrade pip
-          pip3 install -r requirements.txt
+          pip install -r requirements.txt
           
           
       - name: Test with pytest
