@@ -1,6 +1,5 @@
 import typer
 from rich import print
-import json
 from src.crud.main import mongoDBcrud
 from rich.progress import Progress, SpinnerColumn, TextColumn
 import os
@@ -164,7 +163,7 @@ def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los d
     else:
 
         _id = typer.prompt("Indica el id del documento")
-        # _id = "B5"
+
         with Progress(
             SpinnerColumn(),
             TextColumn("[progress.description]{task.description}"),
@@ -179,7 +178,7 @@ def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los d
                 return False
             else:
                 print(result)
-                print("finalizado")
+                print("[blue]finalizado[/blue]")
 
 
 

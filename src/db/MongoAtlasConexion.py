@@ -1,7 +1,6 @@
 import pymongo
 import urllib.request
 from dotenv import dotenv_values
-import os
 
 #Check conexion MongoAtlas
 def connect(host):
