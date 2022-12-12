@@ -1,25 +1,35 @@
+#Modulo PRINCIPAL de Typer
 import typer
 from rich import print
 from src.crud.main import mongoDBcrud
 from rich.progress import Progress, SpinnerColumn, TextColumn
 import os
 
+#Se inicia la aplicación de Typer
 app = typer.Typer(help="La CLI de BookingBike te permite realizar un CRUD sobre la colección Bikes de la base de datos BookingBike, ubicada en Mongo Atlas")
 
+
+#Con app.command indicamos los comandos que nos saldrán en la CLI
 @app.command()
 def desplegar_site():
     """
     Ejecuta el modulo main de SRC/VIEWS que despliega todo el SITE
     """
+
+    #Estos procesos son de la libreria RICH, muestran de forma elegante una barrita cargando.
     with Progress(
     SpinnerColumn(),
     TextColumn("[progress.description]{task.description}"),
     transient=True,
     )as progress:
         progress.add_task(description="Desplegando site...", total=None)
+
+        #Importamos el modulo src.views.main, para que se active.Este despliega el site.
         import src.views.main
 
     print("[blue] Site Desplegado [/blue]")
+
+    #Confirm muestra un prompt, que en caso de Y , muestra la pagina.
     confirm = typer.confirm("Quieres ir al dominio?")
     if confirm:
         typer.launch("file:///home/z0s3r77/Documentos/BooKingBikeV2/docs/index.html")
@@ -118,9 +128,10 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
 
     #En caso de usar el parametro jsonFile, enviará el nombre del documento a la función mongoDBcrud.insert_json
     else:
-
+        #Comprueba la ruta 
         print("[blue]Comprobando ruta... [/blue]")
         if os.path.exists(jsonFile) == True:
+            #Comprobamos la respuesta del metodo insert_json
             if mongoDBcrud.insert_json(jsonFile) == True:
                 print("[blue]Se han insertado todos los documentos[/blue]")
             else:
@@ -130,14 +141,16 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
 
 
 
-
+#Listar documentos hace un print de luna bici indicada por ID.
+#La opción de todos, muestra todos los documentos.
 @app.command()
 def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los documentos disponibles')):
     """
     Muestra todos los documentos disponibles en la colección Bikes de la base de datos BookingBikes
     """
-    if todos:
 
+    #todos, hace referencia al paramtro todos
+    if todos:
         print("[blue]Listando todos los documentos[/blue]",'\n')
         with Progress(
             SpinnerColumn(),
@@ -145,13 +158,16 @@ def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los d
             transient=True,
         )as progress:
             progress.add_task(description="Procesando...", total=None)
+            #result , guarda la respuesta del metodo readall del modulo mongoDBcrud, está es False o la respuesta
             result = mongoDBcrud.readall()
     
         if result == False:
+            #Este print no se puede provocar porque es en caso de que no hayan documentos en la colección
             result = f'[red]No se han encontrado documentos[/red]'
             print(result)
         
         else:
+            #Esto es en caso de que nos devuelva la respuesta, mostramos los documentos de la respuesta y hacemos un contador
             contador = 0
             for x in result:
                 print(x)
@@ -162,6 +178,7 @@ def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los d
 
     else:
 
+        #En caso de que no se seleccione la opción de todos, pide el id de un documento
         _id = typer.prompt("Indica el id del documento")
 
         with Progress(
@@ -170,8 +187,10 @@ def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los d
             transient=True,
         )as progress:
             progress.add_task(description="Procesando...", total=None)
+            #Realiza la misma funcion que readall, pero solo con un ID
             result = mongoDBcrud.read(_id)
-
+            
+            #Si el resultado es True, sale el documento
             if result == False:
                 result = f'[red]No existe ningún documento con ID:[/red]  {_id}'
                 print(result)
@@ -182,14 +201,14 @@ def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los d
 
 
 
-
+#Comando que actualiza un documento indicando el ID, el campo a modificar y el nombre
 @app.command()
 def actualizar_documento():
 
     """
     Actualizar un campo en concreto de un documento proporcionando el ID
     """
-    
+    #Pedimos el ID 
     targetId = typer.prompt("Indica el ID del documento a actualizar ")
     
     with Progress(
@@ -199,10 +218,12 @@ def actualizar_documento():
     )as progress:
         progress.add_task(description="Buscando documento...", total=None)
         
+        #Ejecutamos un read, mostrado anteriormente
         if mongoDBcrud.read(targetId) == False:
             print("[red]No hay ningún documento con ese ID[/red]")
             quit()
 
+    #Pedimos los campos de FIELD y el VALOR
     field = typer.prompt("Indica el campo a actualizar ")
     value = typer.prompt("Indica el nuevo valor")
 
@@ -213,10 +234,15 @@ def actualizar_documento():
     )as progress:
         progress.add_task(description="Actualizando documento...", total=None)  
         
+        #Enviamos los valores a la función de mongoDBcrud.update, si nos devuelve False
+        #Indicamos que no se ha podido actualizar
         if mongoDBcrud.update(targetId, field, value) == False:
             print("[red]No se ha podido actualizar el documento[/red]")
             quit()
         else:
+        
+        #Por otro lado, si la respuesta de la funcion update es TRUE,
+        #Hacemos un print del resultado 
             print("[blue]Documento actualizado[/blue]")
             progress.add_task(description="Mostrando resultado...", total=None)
             result = mongoDBcrud.read(targetId)
@@ -226,7 +252,8 @@ def actualizar_documento():
 
 
 
-
+#El comando borrar_documento, obtiene un ID y lo borra.
+#En caso de no poder borrarlo, el result se convierte en un mensaje de Error
 @app.command()
 def borrar_documento():
     """
@@ -246,7 +273,7 @@ def borrar_documento():
 
 
 
-
+#Este comando solo hace un launch de nuestra pagina de GitHub
 @app.command()
 def mostrar_site():
     """

@@ -4,6 +4,7 @@ import json
 
 
 
+#Con esta función convertimos la RESPONSE de la API en un objeto Python
 def convertResponseStringIntoObjtect(response):
 
     #Damos el valor de la coleccion de bicicletas a response
@@ -26,9 +27,10 @@ def convertResponseStringIntoObjtect(response):
 
 
 
+#Con esta funcion comprobamos que cada documento de la colección siga el esquema correcto
+
 def checkSchemaDocument(response):
 
-    #Con esta funcion comprobamos que cada documento de la colección siga el esquema correcto
 
     if isinstance(response, dict):
         pass

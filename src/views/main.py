@@ -1,3 +1,4 @@
+#Modulo PRINCIPAL de VIEWS
 from src.views.funcionesHTML import *
 from src.views.crearPaginaPorBicicleta import pagina_por_bicicleta
 from src.views.crearcss import css
@@ -6,6 +7,7 @@ import sys
     Generando archivos .HTML empleando funciones del modulo html_generator
 """
 
+#Con este modulo se despliegan todas las funciones 
 
 # GENERANDO PAGINAS
 

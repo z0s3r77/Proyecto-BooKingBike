@@ -1,6 +1,8 @@
 import json
 import os
 
+
+#Con esta función comprobamos que exista un archivo JSON y que su formato sea JSON
 def checkBikesJsonFile(path): 
 
     if type(path) == list:

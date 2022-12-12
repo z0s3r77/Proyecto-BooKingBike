@@ -22,7 +22,7 @@ if connect(host='https://www.mongodb.com/atlas/app-services/data-api') == False:
   quit()
 
 
-
+#Se crea una lista con las variables de entorno de .env
 config = dotenv_values(".env")
 
 
