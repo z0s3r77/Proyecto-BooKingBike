@@ -1,5 +1,4 @@
-from src.db.conexionApiMongo import requestToMongoApi
-from schema import Schema, And, Use, Optional, SchemaError
+from schema import Schema, And, Use
 import os
 import json
 

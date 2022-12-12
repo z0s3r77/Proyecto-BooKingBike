@@ -1,4 +1,3 @@
-import pymongo
 import json
 import time
 from src.db.MongoAtlasConexion import MongoAtlas
