@@ -15,7 +15,7 @@ def pagina_por_bicicleta():
                   description='Bici en concreto')
         print("""    <body>
         <header>
-            <h1>BookingBike</h1>
+            <h1 class="header">BooKingBike</h1>
         </header>""")
         nav_body_externo()
         print("""        <main class="specifications-group">
