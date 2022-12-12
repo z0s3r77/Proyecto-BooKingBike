@@ -56,7 +56,8 @@ file:///home/z0s3r77/Descargas/Conceptos%20relacionados(2).jpg![imagen](https://
 
 ## Diagrama de componenetes
 
-file:///home/z0s3r77/Descargas/diagrama_componentes.jpg![imagen](https://user-images.githubusercontent.com/80277545/206933261-e2edfa93-732e-45fe-884c-0265eedf2546.png)
+file:///home/z0s3r77/Descargas/Diagrama%20sin%20t%C3%ADtulo.jpg![imagen](https://user-images.githubusercontent.com/80277545/207053951-2394eceb-e8a9-421d-a0fd-9d5f03d4c780.png)
+
 
 
 En el este diagrama se indica el flujo de trabajo del Programa. El diagrama empieza con el modulo de TYPER_main.py, que despliega una CLI para poder desplegar el site o interactuar con el CRUD.
