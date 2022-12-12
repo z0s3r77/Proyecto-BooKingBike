@@ -1,4 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+import os
+
+#Comprobamos si existe el directorio css , sino, lo crea
+if not os.path.exists('docs/css/'):
+    os.makedirs('docs/css/')
+
+
+def css():
+    print("""@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
     body {
     background-color: rgb(252, 206, 106);
@@ -473,4 +481,4 @@
         color: rgb(24, 16, 1);
         font-weight: bold;
     
-    }
+    }""")

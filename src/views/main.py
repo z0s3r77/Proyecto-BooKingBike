@@ -1,5 +1,6 @@
 from src.views.funcionesHTML import *
 from src.views.crearPaginaPorBicicleta import pagina_por_bicicleta
+from src.views.crearcss import css
 import sys
 import os
 """
@@ -85,6 +86,14 @@ def listado_cambios_bicis():
     sys.stdout.close()
 
 
+    # Generar CSS
+
+def pagina_css():
+    sys.stdout = open('docs/css/base.css', 'w', encoding="UTF-8")
+    css()
+    sys.stdout.close()
+
+
 def paginas_por_bicicletas():
     pagina_por_bicicleta()
 
@@ -108,3 +117,4 @@ listado_desarollo_bicis()
 listado_cambios_bicis()
 paginas_por_bicicletas()
 listado_paginas_por_agrupaciones()
+pagina_css()
