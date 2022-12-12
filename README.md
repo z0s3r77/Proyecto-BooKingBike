@@ -71,6 +71,11 @@ Por otro lado, si desplegamos el site, seguiriamos el otro flujo, el de VIEWS_ma
 
 Para poder llevar a acabo el proyecto se han utilizado las siguientes librerias en Python:
 
-
+  - PyMongo: Se ha utilizado para poder lanzar comandos de MongoDB desde Python hacia el cluster de Mongo Atlas.
+  - Typer: Se ha utilziado para poder montar y desplegar la CLI con una interfaz comoda y ligera.
+  - PyTest: Se ha utilizado para poder realizar casos test sobre los distintos modulos del proyecto.
+  - Coverage: Se ha utilizado para poder ver, con la ayuda de Pytest la cobertura de los test sobre todo los modulos. Dato curioso, es de 91%
+  - Requests: Se ha utilizado para poder realizar una petición HTTP a la API de Mongo Atlas.
+  - Schema: Se ha utilizado para, mediante Python poder comprobar una estructura JSON.
 
 
