@@ -6,7 +6,7 @@ result = [
         '_id': 'B5',
         'Brand': 'RONDO',
         'Model': {
-            'Name': 'Road Bike',
+            'Name': 'RoadBike',
             'Style': 'Gravel',
             'Suspension': 'none',
             'Material': 'Aluminio',
@@ -18,7 +18,7 @@ result = [
             'Wheel size': 20.0,
             'Weight': 10.5
         },
-        'Price': 40,
+        'Price': 31,
         'Status': 'available',
         'Hangar': 'H1',
         'Location': 'Palma',
