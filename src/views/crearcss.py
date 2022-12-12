@@ -404,7 +404,7 @@ def css():
     }
 
 
-    /* home */
+    /* Index */
 
 
 
