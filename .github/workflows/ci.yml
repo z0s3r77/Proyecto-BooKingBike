@@ -39,12 +39,5 @@ jobs:
     #Lanzamos el comando Pytest
       - name: Test with pytest
         run:  |
-          coverage run -m pytest -vv test/test_VIEW_main.py test/test_DB_conexionApiMongo.py test/test_DB_MongoAtlasConexion.py test/test_DB_generadorJson.py test/test_DB_convertirJsonALista.py test/test_DB_mainDB.py test/test_TYPER_listar_documentos.py test/test_TYPER_insertar_documento.py test/test_TYPER_actualizar_documento.py  test/test_TYPER_borrar_documento.py  test/test_CRUD_main.py
-          coverage report -m
-
-      - name: Pytest coverage comment
-        uses: MishaKav/pytest-coverage-comment@main
-        with:
-          pytest-coverage-path: ./pytest-coverage.txt
-          junitxml-path: ./pytest.xml
+          pytest -vv test/test_VIEW_main.py test/test_DB_conexionApiMongo.py test/test_DB_MongoAtlasConexion.py test/test_DB_generadorJson.py test/test_DB_convertirJsonALista.py test/test_DB_mainDB.py test/test_TYPER_listar_documentos.py test/test_TYPER_insertar_documento.py test/test_TYPER_actualizar_documento.py  test/test_TYPER_borrar_documento.py  test/test_CRUD_main.py
 
