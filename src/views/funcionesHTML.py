@@ -93,7 +93,7 @@ def html_head_externo(title, description):
 def nav_body():
     print("""        <nav>
             <ul>
-                <li><a href="home.html" class="active2">Inicio</a></li>
+                <li><a href="index.html" class="active2">Inicio</a></li>
                 <li><a href="listadototalbicis.html">Listado Bicicletas</a></li>
                 <li class="dropdown">
                     <a  class="dropbtn" href="listadomarcabicis.html" >Marcas</a>    
@@ -182,7 +182,7 @@ def nav_body():
 def nav_body_externo():
     print("""        <nav>
             <ul>
-                <li><a href="../home.html" class="active2">Inicio</a></li>
+                <li><a href="../index.html" class="active2">Inicio</a></li>
                 <li><a href="../listadototalbicis.html">Listado Bicicletas</a></li>
                 <li class="dropdown">
                     <a  class="dropbtn" href="../listadomarcabicis.html" >Marcas</a>    
@@ -269,7 +269,7 @@ def nav_body_externo():
 
 class body():
 
-    # Body para home
+    # Body para index
 
     def body_pagina_principal():
         print("""    <body>
