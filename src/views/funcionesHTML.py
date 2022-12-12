@@ -11,7 +11,7 @@ import os
 #Comprobar que existe bikes_json
 assert isinstance(bikes_json, list)
 
-"""
+""" 
     COMPROBAMOS SI EXISTEN LAS CARPETAS, SI NO, LAS CREAMOS
 """
 
@@ -274,7 +274,7 @@ class body():
     def body_pagina_principal():
         print("""    <body>
         <header>
-            <h1>BooKingBike</h1>
+            <h1 class="header">BooKingBike</h1>
         </header>""")
         nav_body()
         print("""        <main>
@@ -306,7 +306,7 @@ class body():
             </div>
             <div  class="response-p">
                 <h4>¿Por que BooKingBike?</h4>
-                <p>Porque ahora, alquilar tu h1bicicleta favorita para cada época del año es más sencillo de lo que te imaginas.
+                <p>Porque ahora, alquilar tu bicicleta favorita para cada época del año es más sencillo de lo que te imaginas.
                     Nosotros te mostramos todo el cátalogo disponible en tu zona, tú eres el encargado o encargada de seleccionar
                     la que mejor se adapte a tí y en tan solo unos días la tendrás en la puerta de tu casa. <b>Así de simple!</b>
                 </p>
@@ -319,7 +319,7 @@ class body():
     def body_contacto():
         print(f"""    <body class="contact">
         <header>
-            <h1>BooKingBike</h1>
+            <h1 class="header">BooKingBike</h1>
             <h2>Página de contacto</h2>
         </header>""")
         nav_body()
@@ -328,7 +328,7 @@ class body():
                 <div class="contact_form">
 
                     <div class="formulario">      
-                    <h1>Formulario de contacto</h1>
+                    <h1 class="form">Formulario de contacto</h1>
                         <h3>Escríbenos y en breve nos pondremos en contacto contigo</h3>
 
 
@@ -385,7 +385,7 @@ class body():
     def body_listado_total_bicis():
         print("""    <body>
         <header>
-            <h1>BooKingBike</h1>
+            <h1 class="header">BooKingBike</h1>
             <h2>Bicis disponibles</h2>
         </header>""")
         nav_body()
@@ -414,7 +414,7 @@ class body():
     def body_listado_tipo_bicis():
         print("""    <body>
         <header>
-            <h1>BooKingBike</h1>
+            <h1 class="header">BooKingBike</h1>
             <h2>Modelos disponibles</h2>
         </header>""")
         nav_body()
@@ -446,7 +446,7 @@ class body():
     def body_listado_marca_bicis():
         print("""    <body>
         <header>
-            <h1>BooKingBike</h1>
+            <h1 class="header">BooKingBike</h1>
             <h2>Marcas disponibles</h2>
         </header>""")
         nav_body()
@@ -520,7 +520,7 @@ class body():
     def body_listado_por_zona_bicis():
         print("""    <body>
         <header>
-            <h1>BooKingBike</h1>
+            <h1 class="header">BooKingBike</h1>
             <h2>Zonas disponibles</h2>
         </header>""")
         nav_body()
@@ -550,7 +550,7 @@ class body():
     def body_listado_por_tamaño_rueda_bicis():
         print("""    <body>
         <header>
-            <h1>BooKingBike<h1>
+            <h1 class="header">BooKingBike</h1>
             <h2>Tamaños de rueda disponibles</h2>
         </header>""")
         nav_body()
@@ -579,7 +579,7 @@ class body():
     def body_listado_por_desarollo_bicis():
         print("""    <body>
         <header>
-            <h1>BooKingBike<h1>
+            <h1 class="header">BooKingBike</h1>
             <h2>Desarollos disponibles </h2>
         </header>""")
         nav_body()
@@ -609,7 +609,7 @@ class body():
     def body_listado_por_cambio_bicis():
         print("""    <body>
         <header>
-            <h1>BooKingBike<h1>
+            <h1 class="header">BooKingBike</h1>
             <h2>Tipo de cambio disponibles</h2>
         </header>""")
         nav_body()
@@ -664,7 +664,7 @@ def paginas_tipos_bicis():
         html_head_externo(title=f'Bicis tipo {x}', description=f'Pagina de listado de bicis tipo {x}')
         print("""    <body>
         <header>
-            <h1>BooKingBike<h1>            
+            <h1 class="header">BooKingBike</h1>      
             <h2> Modelos""", x ,"""</h2>
         </header>""")
         nav_body_externo()
@@ -704,7 +704,7 @@ def paginas_marcas_bicis():
         html_head_externo(title=f'Bicis marca {x}', description=f'Pagina de listado de bicis marca {x}')
         print("""    <body>
         <header>
-            <h1>BooKingBike<h1>            
+            <h1 class="header">BooKingBike</h1>      
             <h2> Marca""", x ,"""</h2>
         </header>""")
         nav_body_externo()
@@ -744,7 +744,7 @@ def paginas_zonas_bicis():
         html_head_externo(title=f'Bicis zona {x}', description=f'Pagina de listado de bicis por zona {x}')
         print("""    <body>
         <header>
-            <h1>BooKingBike<h1>            
+            <h1 class="header">BooKingBike</h1>        
             <h2> Zona""", x ,"""</h2>
         </header>""")
         nav_body_externo()
@@ -785,7 +785,7 @@ def paginas_tamaño_ruedas_bicis():
         html_head_externo(title=f'Bicis con tamaño de rueda {x}', description=f'Pagina de listado de bicis tamaño de rueda {x}')
         print("""    <body>
         <header>
-            <h1>BooKingBike<h1>        
+            <h1 class="header">BooKingBike</h1>   
             <h2> Tamaño Rueda""", x +""""</h2>
         </header>""")
         nav_body_externo()
@@ -827,7 +827,7 @@ def paginas_desarrollo_bicis():
         html_head_externo(title=f'Bicis con desarollo {x}', description=f'Pagina de listado de bicis segun su desarollo {x}')
         print("""    <body>
         <header>
-            <h1>BooKingBike<h1>        
+            <h1 class="header">BooKingBike</h1>   
             <h2> Desarrollo""", x ,"""</h2>
         </header>""")
         nav_body_externo()
@@ -868,7 +868,7 @@ def paginas_cambio_bicis():
         html_head_externo(title=f'Bicis con cambio {x}', description=f'Pagina de listado de bicis segun su tipo de cambio {x}')
         print("""    <body>
         <header>
-            <h1>BooKingBike<h1>        
+            <h1 class="header">BooKingBike</h1>
             <h2> Cambio Tipo""", x ,"""</h2>
         </header>""")
         nav_body_externo()

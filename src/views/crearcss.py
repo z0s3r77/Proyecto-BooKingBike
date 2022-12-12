@@ -13,8 +13,13 @@ def css():
     font-family: 'Open Sans',serif;
     }
 
-    h1 {
+    h1.header{
     padding-left: 30px;
+    color: #005763;
+    font-size: 39px;
+    }
+
+    h1.form{
     color: #005763;
     font-size: 39px;
     }
