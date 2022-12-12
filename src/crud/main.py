@@ -22,7 +22,6 @@ class mongoDBcrud():
             json.loads(file_content)
         except ValueError:
             print("La ruta es correcta pero el archivo no es de tipo JSON")
-            return "[red]Saliendo del programa...[/red]"
             quit()
         else:
             print("El archivo es JSON")
@@ -46,10 +45,11 @@ class mongoDBcrud():
             check = BikesCollection.find_one({'_id':i['_id']})
 
             if check:
-                return (f"Se ha insertado correctamente el nuevo documento con id {i['_id']}")
+                pass
             elif check == None:
                 return (f"No se ha podido insetar el documento con id {i['_id']}")
 
+            return True
         
 
 
@@ -58,32 +58,39 @@ class mongoDBcrud():
     #Este metodo pide los datos para completar el documento JSON
     #Seguidamente sube el resultado
 
-    def create(_id, brand, modelName, modelStyle, modelSuspension, modelMaterial, modelForkBrand, modelForklenght, modelDevelopments, modelGroup, modelType, priceday, status):
+    def create(_id,brand,modelName, modelStyle, modelSuspension, modelMaterial, modelForkBrand, modelForklenght, modelDevelopments, modelGroup, modelType, modelWheelSize, modelWeight, priceday, status, location, img):
         
         BookingBikeDb = MongoAtlas["BookingBike"]
         BikesCollection = BookingBikeDb["bikes"]
             
         query = {
-            "_id" : _id,
-            "Brand": brand,
-            "Model" : {
-            "Name": modelName,
-            "Style": modelStyle,
-            "Suspension": modelSuspension,
-            "Material": modelMaterial,
-            "Fork brand": modelForkBrand,
-            "Fork length": modelForklenght,
-            "Developments": modelDevelopments,
-            "Group": modelGroup,
-            "Type": modelType
-            },
-            "Price": priceday,
-            "Status": status
-        }
+                "_id" : _id,
+                "Brand": brand,
+                "Model" : {
+                    "Name": modelName,
+                    "Style": modelStyle,
+                    "Suspension": modelSuspension,
+                    "Material": modelMaterial,
+                    "Fork brand": modelForkBrand,
+                    "Fork length": {"$numberInt": modelForklenght},
+                    "Developments": modelDevelopments,
+                    "Group": modelGroup,
+                    "Type": modelType,
+                    "Wheel size":{  "$numberDouble": modelWheelSize},
+                    "Weight": {  "$numberDouble": modelWeight}
+                },
+                "Price": { "$numberInt": priceday},
+                "Status": status,
+                "Location": location,
+                "img": img
+            }
 
-        insert = BikesCollection.insert_one(query)
+        try:
+            BikesCollection.insert_one(query)
+            return True
+        except:
+            return False
 
-      
 
     #Este metodo toma un ID de documento, un campo y un valor nuevo y lo actualiza
     def update(targetId, field, value ):
@@ -97,7 +104,11 @@ class mongoDBcrud():
         newValues = {"$set": values}
 
 
-        BikesCollection.update_one(query, newValues)
+
+        if BikesCollection.update_one(query, newValues) == False:
+            return False
+        else:
+            return True
 
 
     #Este metodo tan solo muestra el documento por su ID
@@ -117,8 +128,7 @@ class mongoDBcrud():
         
             return result
         else:
-            result = f'[red]No existe ningún documento con ID:[/red]  {id}'
-            return result
+            return False
 
 
     #Este metodo toma todos los documentos de la base de datos y los envia a src/typer/main.py
@@ -134,7 +144,10 @@ class mongoDBcrud():
         for x in BikesCollection.find():
             result.append(x)
 
-        return result
+        if len(result) == 0:
+            return False
+        else:
+            return result
 
 
     #Este metodo borra el documento según su ID
@@ -144,12 +157,17 @@ class mongoDBcrud():
         BikesCollection = BookingBikeDb["bikes"]
 
         query = {"_id":id}
-        BikesCollection.delete_one(query)
 
-        if BikesCollection.count_documents (query, limit=1) != 0:
-            result = f'[red]No se ha podido borrar el documento[/red] {id}'
+        if mongoDBcrud.read(id) == False:
+            result = '[red]No hay ningún documento con ese ID[/red]'
             return result
 
+        try:
+            BikesCollection.delete_one(query)
+        except:
+            result = '[red]Algo ha ido mal, no se ha podido borrar[/red]'
+            return result
         else:
-            result = f'[blue]Se ha borrado correctamente el documento[/blue] {id}'
+            result = '[blue]Se ha borrado el documento correctamente[/blue]'
             return result
+

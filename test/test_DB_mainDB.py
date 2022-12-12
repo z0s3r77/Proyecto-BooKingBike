@@ -2,20 +2,22 @@ import pytest
 from src.db.mainDb import generateJsonFromResponseApi, getListfromJsonFile, mainDB
 import os
 
-resultado = [
+resultado =[
     {
+        "_id": "BSebas",
         "Nombre": "Sebas",
         "Apellido": "Estacio",
         "Edad": "21"
     },
     {
+        "_id": "GMiguel",
         "Nombre": "Miguel",
         "Apellido": "Vidal",
         "Edad": "21"
     }
 ]
 
-@pytest.mark.test_generarUnFicheroJsonDeLaRespuestaAPI
+@pytest.mark.test_DB
 def test_generateJsonFromResponseApi():
     
     #La función nos genera un json con el nombre del parametro
@@ -28,7 +30,7 @@ def test_generateJsonFromResponseApi():
     assert generateJsonFromResponseApi('prueba2') == True
 
 
-@pytest.mark.test_generarListaDesdeUnFicheroJSON
+@pytest.mark.test_DB
 def test_getListfromJsonFile():
 
     #La funcion genera un objeto List de un archivo JSON
@@ -41,7 +43,7 @@ def test_getListfromJsonFile():
     assert getListfromJsonFile({"Esto":"Es un dict"}) == False
 
 
-@pytest.mark.test_generarElArchivoBikesYQueSeDevuelvaUnaLista
+@pytest.mark.test_DB
 def test_mainDB():
 
     #MainDB obtiene una ruta y el nombre del fichero.

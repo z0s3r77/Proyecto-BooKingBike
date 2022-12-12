@@ -1,7 +1,7 @@
 import pytest
 from src.db.MongoAtlasConexion import connect
 
-@pytest.mark.test_conexion
+@pytest.mark.test_DB
 def test_MongoAtlasConexion():
     #Comprobamos que no se pueda introducir un host invalidado
     assert connect(host='OIhsioahd') == False

@@ -3,18 +3,20 @@ from src.db.convertirJsonALista import checkBikesJsonFile, convertBikesJsonToLis
 
 resultado = [
     {
+        "_id": "BSebas",
         "Nombre": "Sebas",
         "Apellido": "Estacio",
         "Edad": "21"
     },
     {
+        "_id": "GMiguel",
         "Nombre": "Miguel",
         "Apellido": "Vidal",
         "Edad": "21"
     }
 ]
 
-@pytest.mark.test_comprobarSiElContenidoDeUnFicheroEsJSON
+@pytest.mark.test_DB
 def test_checkBikesJsonFile():
 
     #A la función se le pasa la ruta de un fichero 
@@ -26,7 +28,7 @@ def test_checkBikesJsonFile():
     assert checkBikesJsonFile('test/pruebas/buenjson.txt') == True
 
 
-@pytest.mark.test_convierteElResultadoDelFicheroEnUnaListaDeDocumentos
+@pytest.mark.test_DB
 def test_convertBikesJsonToList():
 
     #A la función se le pasa la ruta de un fichero 
