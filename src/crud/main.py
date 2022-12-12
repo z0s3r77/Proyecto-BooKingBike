@@ -81,6 +81,7 @@ class mongoDBcrud():
                 },
                 "Price": { "$numberInt": priceday},
                 "Status": status,
+                "Hangar": "H6",
                 "Location": location,
                 "img": img
             }
