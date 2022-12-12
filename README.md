@@ -67,6 +67,10 @@ Por este motivo modulo TYPER_main.py se divide en VIEWS y CRUD. Cuando se quiere
 
 Por otro lado, si desplegamos el site, seguiriamos el otro flujo, el de VIEWS_main.py y se ejecutarían todos los modulos de abajo arriba.
 
+## Librerias utilizadas
+
+Para poder llevar a acabo el proyecto se han utilizado las siguientes librerias en Python:
+
 
 
 
