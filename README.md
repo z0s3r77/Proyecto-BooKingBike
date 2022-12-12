@@ -79,4 +79,7 @@ Para poder llevar a acabo el proyecto se han utilizado las siguientes librerias 
   - `Requests`: Se ha utilizado para poder realizar una petición HTTP a la API de Mongo Atlas.
   - Schema`: Se ha utilizado para, mediante Python poder comprobar una estructura JSON.
 
+# Clockify
+
+![imagen](https://user-images.githubusercontent.com/80277545/207130055-abff2951-d326-480e-9cc3-e674b793ee27.png)
 
