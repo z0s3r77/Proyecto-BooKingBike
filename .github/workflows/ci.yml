@@ -13,12 +13,12 @@ jobs:
     name: Contenedor Con Ubuntu
     runs-on:  ubuntu-latest
     steps:
-      - uses:  actions/checkout@v2
+      - uses:  actions/checkout@v4
       
       - name:  Instalando Python 3.8
-        uses:  actions/setup-python@v4.3.1
+      - uses: actions/setup-python@v4
         with:
-          python-verion: 3.8
+          python-version: '3.10'
         
       - name:  Instalando dependencias
         run:  |
