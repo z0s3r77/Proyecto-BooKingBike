@@ -18,12 +18,12 @@ def pagina_por_bicicleta():
             <h1>BookingBike</h1>
         </header>""")
         nav_body_externo()
-        print("""        <main>
+        print("""        <main class="specifications-group">
             <h2>Especificaciones técnicas:</h2>
-            <div>""")
-        print(f"""                <img alt="B2" width="500" height="450"  src="{bikes_json[x]['img']}">
-                <div>
-                    <p>
+            <div >""")
+        print(f"""                <img class="responsive-sale" alt="B2" width="500" height="450"  src="{bikes_json[x]['img']}">
+                <div class=specifications-move">
+                    <p class="specifications">
                         <b>Marca:</b>""",bikes_json[x]['Brand'],""" <br>
                         <b>Bicicleta de tipo: </b>""",bikes_json[x]['Model']['Name'],""" <br>
                         <b>Estilo:</b> """,bikes_json[x]['Model']['Style'],"""  <br>
@@ -34,7 +34,7 @@ def pagina_por_bicicleta():
                         <b>Localizacion:</b> Palma <br>
                         <b>Precio por día:</b> """,bikes_json[x]['Price']['$numberInt']+"""€ <br>
                     </p>
-                    <a href="#aningunlugar">RESERVAR</a>
+                    <button class="sale"><a href="#aningunlugar">RESERVAR</a></button>
                 </div>
             </div>
         </main>""")
