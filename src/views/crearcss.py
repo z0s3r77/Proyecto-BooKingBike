@@ -414,7 +414,9 @@ th {
 
 /* Index */
 
-
+.frame{
+    width: 80%
+}
 .responsive {
     width: 100%;
     height: auto;
@@ -422,7 +424,7 @@ th {
 }
 
 .header {
-    width: 100%;
+    width: 98%;
     height: auto;
 }
 

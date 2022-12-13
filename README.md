@@ -34,7 +34,8 @@ Para poder llevar a cabo el proyecto se han utilizado las siguientes técnologia
 - **MongoDB**
 - **Git**
 - **Github Pages**
-- **HTML y CSS**
+- **HTML**
+- **CSS responsive para Ordenador, iPhone XR y IPad Air**
 
 
 Cumpliendo con el propósito indicado anteriormente, el proyecto presenta la siguiente **Arquitectura**.
