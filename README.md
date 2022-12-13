@@ -80,7 +80,7 @@ Para poder llevar a acabo el proyecto se han utilizado las siguientes librerias 
   - `PyTest`: Se ha utilizado para poder realizar casos test sobre los distintos modulos del proyecto.
   - `Coverage`: Se ha utilizado para poder ver, con la ayuda de Pytest la cobertura de los test sobre todo los modulos. Dato curioso, es de 91%
   - `Requests`: Se ha utilizado para poder realizar una petición HTTP a la API de Mongo Atlas.
-  - Schema`: Se ha utilizado para, mediante Python poder comprobar una estructura JSON.
+  - `Schema`: Se ha utilizado para, mediante Python poder comprobar una estructura JSON.
 
 # Clockify
 
