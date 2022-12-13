@@ -563,5 +563,34 @@
         "Status": "available",
         "Location": "Palma",
         "img": "https://images.internetstores.de/products/1748759/02/8a191f/ns-bikes-movement-2-alloy-red-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
+    },
+    {
+        "_id": "H100",
+        "Brand": " Apple",
+        "Model": {
+            "Name": " Electronica",
+            "Style": " Ciclocross",
+            "Suspension": " no suspension",
+            "Material": " Carbono",
+            "Fork brand": " Apple",
+            "Fork length": {
+                "$numberInt": " 160"
+            },
+            "Developments": " 1x13",
+            "Group": " Ortler Bozen",
+            "Type": " manual",
+            "Wheel size": {
+                "$numberDouble": " 28"
+            },
+            "Weight": {
+                "$numberDouble": " 9.1"
+            }
+        },
+        "Price": {
+            "$numberInt": " 70"
+        },
+        "Status": " avaliable",
+        "Location": " Manacor",
+        "img": " https://upload.wikimedia.org/wikipedia/commons/b/ba/Pytest_logo.svg"
     }
 ]

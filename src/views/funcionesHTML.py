@@ -312,7 +312,7 @@ class body():
                 </p>
                 <img class="responsive" src="https://s2.best-wallpaper.net/wallpaper/1920x1080/1308/City-coast-bike-sunset_1920x1080.jpg" alt="">
             </div>
-        </main><br><br><br><br><br><br>""")
+        </main>""")
 
     # Body para la pagina de contacto
 
@@ -378,7 +378,7 @@ class body():
                         </form>
                     </div>  
                 </div>
-                    </section><br><br><br><br><br><br>
+                    </section>
         </main><br><br>""")
 
 
@@ -406,7 +406,7 @@ class body():
                     </div>
                 </div>""")
                 x += 1
-        print("            </div><br><br><br><br>")
+        print("            </div>")
 
     
     # Body para la los tipos de bicis
@@ -438,7 +438,7 @@ class body():
             enlace = "<a href='types/{}.html'> {} </a>".format(x,x)
             print("                <div class='container-subpage'><p>",enlace ,"</p></div>")  
         print("""            </div>
-        </section><br><br><br><br><br><br>""")
+        </section>""")
 
         
     # Body para las marcas de bicis 
@@ -513,7 +513,7 @@ class body():
             # print("""<td>""",cantidad,"""</td>
             #         </tr>""")
         print("""</table>
-        </section><br><br><br><br><br><br>""")
+        </section>""")
 
     #Body para mostrar las bicis segun su localización
 
@@ -544,7 +544,7 @@ class body():
             enlace = "<a href='location/{}.html'> {} </a>".format(x,x)
             print("                <div class='container-subpage'><p>",enlace ,"</p></div>")
         print("""            </div>
-        </section><br><br><br><br><br><br>""")
+        </section>""")
 
 
     def body_listado_por_tamaño_rueda_bicis():
@@ -574,7 +574,7 @@ class body():
             enlace = "<a href='wheelsize/{}.html'> {} </a>".format(x,x)
             print("                <div class='container-subpage'><p>",enlace ,"</p></div>")
         print("""            </div>
-        </section><br><br><br><br><br><br>""")
+        </section>""")
 
     def body_listado_por_desarollo_bicis():
         print("""    <body>
@@ -603,7 +603,7 @@ class body():
             enlace = "<a href='developments/{}.html'> {} </a>".format(x,x)
             print("                <div class='container-subpage'><p>",enlace ,"</p></div>")  
         print("""            </div>
-        </section><br><br><br><br><br><br>""")
+        </section>""")
 
     
     def body_listado_por_cambio_bicis():
@@ -633,7 +633,7 @@ class body():
             enlace = "<a href='shifts/{}.html'> {} </a>".format(x,x)
             print("                <div class='container-subpage'><p>",enlace ,"</p></div>")
         print("""            </div>
-        </section><br><br><br><br><br><br>""")
+        </section>""")
 
 
 # FOOTER
@@ -643,7 +643,7 @@ def footer():
     footer = """        <footer class="footer">
             <p>Esta página es de @Miguel & @Sebastian</p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licencia Creative Commons"
-                    style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a>Esta obra
+                    style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />&nbsp</a>Esta obra
             está
             bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Licencia Creative Commons
                 Atribución-NoComercial 4.0 Internacional</a>.
@@ -687,7 +687,7 @@ def paginas_tipos_bicis():
                 
 
         print("""            </div>
-        </section><br><br><br><br><br><br>""")
+        </section>""")
 
         footer()
         
@@ -727,7 +727,7 @@ def paginas_marcas_bicis():
                 
 
         print("""            </div>
-        </section><br><br><br><br><br><br>""")
+        </section>""")
 
         footer()
         
@@ -767,7 +767,7 @@ def paginas_zonas_bicis():
                 
 
         print("""            </div>
-        </section><br><br><br><br><br><br>""")
+        </section>""")
 
         footer()
         
@@ -808,7 +808,7 @@ def paginas_tamaño_ruedas_bicis():
                 
 
         print("""            </div>
-        </section><br><br><br><br><br><br>""")
+        </section>""")
 
         footer()
         
@@ -850,7 +850,7 @@ def paginas_desarrollo_bicis():
                 
 
         print("""            </div>
-        </section><br><br><br><br><br><br>""")
+        </section>""")
 
         footer()
         
@@ -891,7 +891,7 @@ def paginas_cambio_bicis():
                 
 
         print("""            </div>
-        </section><br><br><br><br><br><br>""")
+        </section>""")
 
         footer()
         
