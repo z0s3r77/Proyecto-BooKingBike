@@ -422,7 +422,7 @@ th {
 }
 
 .header {
-    width: 100%;
+    width: 98%;
     height: auto;
 }
 

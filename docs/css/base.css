@@ -406,6 +406,9 @@ th {
 
 /* Index */
 
+iframe{
+    width: 80%;
+}
 
 .responsive {
     width: 100%;
@@ -414,7 +417,7 @@ th {
 }
 
 .header {
-    width: 100%;
+    width: 98%;
     height: auto;
 }
 

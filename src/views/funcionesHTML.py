@@ -323,7 +323,7 @@ class body():
                     y al medio ambiente a ir hacia un futuro mejor y ecosostenible. 
                 </p>
                 <!--Imagen-->
-                <img class="responsive" src="http://www.palma.cat/portal/RecursosWeb/IMAGENES/1/0_119436_1.jpg" alt="">
+                <img class="responsive" src="http://www.palma.cat/portal/RecursosWeb/IMAGENES/1/0_119436_1.jpg" alt="imagen-1">
             </div>
             <!--Bloque de texto-->
             <div  class="response-p">
@@ -334,7 +334,7 @@ class body():
                     de bicicletas que estén interesadas pueden volcar su catálago con nosotros.
                 </p>
                 <!--Imagen-->
-                <img class="responsive" src="https://images6.alphacoders.com/549/549198.jpg" alt="">
+                <img class="responsive" src="https://images6.alphacoders.com/549/549198.jpg" alt="imagen-2">
             </div>
             <!--Bloque de texto-->
             <div  class="response-p">
@@ -344,7 +344,7 @@ class body():
                     la que más te conviene, tan solo haz <u>clic</u> en <b>Reservar</b> y te indicaremos los siguientes pasos.  
                 </p>
                 <!--Imagen-->
-                <img class="responsive" src="https://images2.alphacoders.com/449/449541.jpg" alt="">
+                <img class="responsive" src="https://images2.alphacoders.com/449/449541.jpg" alt="imagen-3">
             </div>
             <div  class="response-p">
                 <h4>¿Por que BooKingBike?</h4>
@@ -353,7 +353,7 @@ class body():
                     la que mejor se adapte a tí y en tan solo unos días la tendrás en la puerta de tu casa. <b>Así de simple!</b>
                 </p>
                 <!--Imagen-->
-                <img class="responsive" src="https://s2.best-wallpaper.net/wallpaper/1920x1080/1308/City-coast-bike-sunset_1920x1080.jpg" alt="">
+                <iframe width="760" height="515" src="https://www.youtube.com/embed/7tFQgHLUAN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </main>""")
 
