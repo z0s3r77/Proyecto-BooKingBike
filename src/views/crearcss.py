@@ -4,9 +4,11 @@ import os
 if not os.path.exists('docs/css/'):
     os.makedirs('docs/css/')
 
-
+# Creamos la función para generar el css
 def css():
     print("""@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+/* ESTRUCTURA GENERAL */
 
 body {
     background-color: rgb(252, 206, 106);
@@ -28,6 +30,8 @@ h2 {
     padding-left: 30px;
     color: #005763;
 }
+
+/* FIN ESTRUCTURA GENERAL */
 
 /* BARRA DE NAVEGACIÓN */
 nav {
@@ -239,12 +243,7 @@ html {
     position: relative;
 }
 
-/* Contactp */
-
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
-
-
-
+/* CONTACTO */
 
 .contact_form {
     width: 460px;
@@ -357,8 +356,10 @@ h3 {
     border: 1px solid #97d848;
 }
 
+/* FIN CONTACTO */
 
-/* Links */
+
+/* LINKS */
 
 a {
     text-decoration: none;
@@ -383,8 +384,9 @@ p a {
     padding-bottom: 20px;
 }
 
+/* FIN LINKS */
 
-/* table */
+/* TABLA */
 
 
 table {
@@ -408,11 +410,9 @@ th {
     color: white;
 }
 
+/* FIN TABLA */
 
 /* Index */
-
-
-
 
 
 .responsive {
@@ -490,7 +490,7 @@ button a:link {
 }
 
 
-/* MOBILES */
+/* MOBILE */
 
 /* IPHONE XR */
 
@@ -696,8 +696,5 @@ button a:link {
         font-size: 1.5em;
     }
 }
-
-
-
 
 """)
