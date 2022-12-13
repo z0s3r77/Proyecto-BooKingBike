@@ -414,9 +414,10 @@ th {
 
 /* Index */
 
-.frame{
+iframe{
     width: 80%
 }
+
 .responsive {
     width: 100%;
     height: auto;
