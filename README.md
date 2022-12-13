@@ -47,7 +47,7 @@ Cumpliendo con el propósito indicado anteriormente, el proyecto presenta la sig
 
 A continuación una imagen de la arquitectura:
 
-file:///home/z0s3r77/Descargas/Conceptos%20relacionados(2).jpg![imagen](https://user-images.githubusercontent.com/80277545/206925650-5ab8087a-086a-4726-a586-3b74ef6f80ea.png)
+![imagen](https://user-images.githubusercontent.com/80277545/206925650-5ab8087a-086a-4726-a586-3b74ef6f80ea.png)
 
 
 - En primer lugar tenemos la base de datos, donde se almacenan las bicicletas, en concreto en una colección llamada Bikes dentro de la base de datos BookingBike (pero de esto daremos detalles más abajo). 
@@ -60,7 +60,7 @@ file:///home/z0s3r77/Descargas/Conceptos%20relacionados(2).jpg![imagen](https://
 
 ## Diagrama de componentes
 
-file:///home/z0s3r77/Descargas/Diagrama%20sin%20t%C3%ADtulo.jpg![imagen](https://user-images.githubusercontent.com/80277545/207053951-2394eceb-e8a9-421d-a0fd-9d5f03d4c780.png)
+![imagen](https://user-images.githubusercontent.com/80277545/207053951-2394eceb-e8a9-421d-a0fd-9d5f03d4c780.png)
 
 
 
