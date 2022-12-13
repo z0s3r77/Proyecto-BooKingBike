@@ -9,7 +9,7 @@ Enlace del proyecto: https://z0s3r77.github.io/BooKingBikeV2/
   - [**Arquitectura de la aplicación**](#arquitectura-de-la-aplicación)
   - [**Diagrama de componentes**](#diagrama-de-componentes)
 - [**Clockify**](#clockify)
-
+- [**Pytest**](#Pytest)
 
 # Introducción 
 
