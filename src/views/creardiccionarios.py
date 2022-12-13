@@ -1,7 +1,11 @@
 from src.db.convertirJsonALista import convertJsonToList
 from src.views.funcionesHTML import *
 
+#Llamamos a la función que convierte en lista el archivo json
+
 bikes_json = convertJsonToList('json/bikes.json')
+
+#Creamos diccionario añadiendo todos los tipos disponibles
 
 def diccionario_tipos_bicis():
 
@@ -36,6 +40,8 @@ def diccionario_tipos_bicis():
                 diccionarioTiposBicis[x] = array
             
     return diccionarioTiposBicis
+
+#Creamos diccionario añadiendo todas las marcas disponibles
 
 
 def diccionario_marcas_bicis():
@@ -72,6 +78,9 @@ def diccionario_marcas_bicis():
             
     return diccionarioMarcasBicis
 
+
+#Creamos diccionario añadiendo todos las zonas disponibles
+
 def diccionario_zonas_bicis():
 
     zonas_bicis = []
@@ -106,7 +115,7 @@ def diccionario_zonas_bicis():
             
     return diccionarioZonasBicis
 
-
+#Creamos diccionario añadiendo todos los tamaños de ruedas disponibles
 
 def diccionario_tamaño_ruedas_bicis():
 
@@ -142,6 +151,7 @@ def diccionario_tamaño_ruedas_bicis():
             
     return diccionarioTamañoRuedasBicis
 
+#Creamos diccionario añadiendo todos los desarrollos de las bicis
 
 def diccionario_desarrollo_bicis():
 
@@ -177,6 +187,8 @@ def diccionario_desarrollo_bicis():
             
     return diccionarioDesarrolloBicis
 
+
+#Creamos diccionario añadiendo todos los tipo de cambio de las bici
 
 def diccionario_cambios_bicis():
 

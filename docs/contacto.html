@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        <!--Añadimos el head-->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="author" content="Miguel & Sebastian">
@@ -17,10 +18,12 @@
             <h1 class="header">BooKingBike</h1>
             <h2>Página de contacto</h2>
         </header>
+        <!--Añadimos nav con diferentes listas-->
         <nav>
             <ul>
                 <li><a href="index.html" class="active2">Inicio</a></li>
                 <li><a href="listadototalbicis.html">Listado Bicicletas</a></li>
+                <!--Lista desplegable por marcas-->
                 <li class="dropdown">
                     <a  class="dropbtn" href="listadomarcabicis.html" >Marcas</a>    
                     <div class="dropdown-content">
@@ -35,6 +38,7 @@
                         <a href='brand/ Apple.html'>  Apple </a>
                     </div>
                 </li>
+                <!--Lista desplegable por modelo-->
                 <li class="dropdown">
                     <a  class="dropbtn" href="listadotipobicis.html" >Modelos</a>    
                     <div class="dropdown-content">
@@ -47,6 +51,7 @@
                         <a href='types/ Electronica.html'>  Electronica </a>
                     </div>
                 </li>
+                <!--Lista desplegable por zona-->
                 <li class="dropdown">
                     <a  class="dropbtn" href="listadobicisporzona.html" >Zonas</a>    
                     <div class="dropdown-content">
@@ -59,6 +64,7 @@
                         <a href='location/ Manacor.html'>  Manacor </a>
                  </div>
                     </li>
+                    <!--Lista desplegable segun caracteristicas-->
                     <li class="dropdown">
                         <a href="javascript:void(0)" class="dropbtn">Caracteristicas</a>    
                         <div class="dropdown-content">
@@ -67,66 +73,66 @@
                             <a href="listadobicisporcambio.html">Tipo de cambios</a>
                         </div>
                     </li>
+                <!--Boton de contacto-->
                 <li style="float:right; background-color: #005763;;"><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
         <main>
             <section>
+                <!--Añadimos una caja para el form-->
                 <div class="contact_form">
 
                     <div class="formulario">      
                     <h1 class="form">Formulario de contacto</h1>
                         <h3>Escríbenos y en breve nos pondremos en contacto contigo</h3>
 
-
+                        <!--Añadimos el formulario-->
                         <form action="" method="post">       
-
-                            
-                                <p>
+                            <p>
+                                <!--Añadir el nombre-->
                                 <label for="nombre" class="colocar_nombre">Nombre
                                     <span class="obligatorio">*</span>
                                 </label>
-                                    <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
-                                </p>
-                            
-                                <p>
+                                <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
+                            </p>
+                            <p>
+                                <!--Añadir el correo electronico-->
                                 <label for="email" class="colocar_email">Email
                                     <span class="obligatorio">*</span>
                                 </label>
-                                    <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
-                                </p>
-                            
-                                <p>
+                                <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
+                            </p>
+                            <p>
+                                <!--Añadir el telefono-->
                                 <label for="telefone" class="colocar_telefono">Teléfono
                                 </label>
-                                    <input type="number" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
-                                </p>     
-                            
-                                <p>
+                                <input type="number" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+                            </p>     
+                            <p>
+                                <!--Añadir el asunto-->
                                 <label for="asunto" class="colocar_asunto">Asunto
                                     <span class="obligatorio">*</span>
                                 </label>
-                                    <input type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Escribe un asunto">
-                                </p>    
-                            
-                                <p>
+                                <input type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Escribe un asunto">
+                            </p>    
+                            <p>
+                                <!--Añadir el mensaje-->
                                 <label for="mensaje" class="colocar_mensaje">Mensaje
                                     <span class="obligatorio">*</span>
                                 </label>                     
-                                                    <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
-                                                </p>                    
-                            
+                                <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
+                            </p>                    
+                                <!--boton para enviar mensaje-->
                                 <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
-
-                                <p class="aviso">
+                            <p class="aviso">
                                 <span class="obligatorio"> * </span>los campos son obligatorios.
-                                </p>          
-                            
+                            </p>          
                         </form>
                     </div>  
                 </div>
                     </section>
         </main><br><br>
+        <!--Añadimos un footer con una licencia creative commons-->
         <footer class="footer">
             <p>Esta página es de @Miguel & @Sebastian</p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licencia Creative Commons"

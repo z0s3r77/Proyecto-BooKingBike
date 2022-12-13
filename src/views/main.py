@@ -9,8 +9,7 @@ import sys
 
 #Con este modulo se despliegan todas las funciones 
 
-# GENERANDO PAGINAS
-
+# GENERANDO PAGINAS HTML
 
 def pagina_principal():
     sys.stdout = open('docs/index.html', 'w', encoding="UTF-8")
@@ -87,16 +86,20 @@ def listado_cambios_bicis():
     sys.stdout.close()
 
 
-    # Generar CSS
+# GENERANDO PAGINA CSS
 
 def pagina_css():
     sys.stdout = open('docs/css/base.css', 'w', encoding="UTF-8")
     css()
     sys.stdout.close()
-
+ 
+# GENERANDO PAGINA POR BICICLETA
 
 def paginas_por_bicicletas():
     pagina_por_bicicleta()
+
+
+# GENERANDO PAGINA SUS TIPOS
 
 def listado_paginas_por_agrupaciones():
     paginas_tipos_bicis()
@@ -106,6 +109,7 @@ def listado_paginas_por_agrupaciones():
     paginas_tamaño_ruedas_bicis()
     paginas_cambio_bicis()
     
+# LLAMAMOS A TODAS LAS FUNCIONES
 
 pagina_principal()
 contacto()

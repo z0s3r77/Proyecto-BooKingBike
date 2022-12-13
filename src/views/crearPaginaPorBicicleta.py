@@ -2,7 +2,12 @@ from src.db.convertirJsonALista import convertJsonToList
 from src.views.funcionesHTML import *
 import sys
 
+#Llamamos a la función que convierte en lista el archivo json
+
+
 bikes_json = convertJsonToList('json/bikes.json')
+
+#Genera una pagina por cada bici de la base de datos
 
 def pagina_por_bicicleta():
 
@@ -19,6 +24,7 @@ def pagina_por_bicicleta():
         </header>""")
         nav_body_externo()
         print("""        <main class="specifications-group">
+            <!--Añadimos toda la información de la bici-->
             <h2>Especificaciones técnicas:</h2>
             <div >""")
         print(f"""                <img class="responsive-sale" alt="B2" width="500" height="450"  src="{bikes_json[x]['img']}">
