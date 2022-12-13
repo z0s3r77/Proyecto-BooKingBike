@@ -5,8 +5,10 @@ Enlace del proyecto: https://z0s3r77.github.io/BooKingBikeV2/
 **Indice**
 
 - [**Introducción**](#introducción)
-- [**Descripción técnica**](#Descripción técnica)
-  - [**Arquitectura de la aplicación**](#Arquitectura de la aplicación)
+- [**Descripción técnica**](#descripción-técnica)
+  - [**Arquitectura de la aplicación**](#arquitectura-de-la-aplicación)
+  - [**Diagrama de componentes**](#diagrama-de-componentes)
+- [**Clockify**](#clockify)
 
 
 # Introducción 
@@ -55,7 +57,7 @@ file:///home/z0s3r77/Descargas/Conceptos%20relacionados(2).jpg![imagen](https://
 
 - Por último, en la **capa de presentación**, servimos las diferentes páginas que se han creado en Github Pages. Por otro lado, proporcionamos la CLI mencionada anteriormente. De ahí viene que desde el punto **TERMINAL CLI** en la imagen superior se pueda volver hacia atrás, ya que está mediante el CRUD servido en la **capa lógica** puede alterar la base de datos. 
 
-## Diagrama de componenetes
+## Diagrama de componentes
 
 file:///home/z0s3r77/Descargas/Diagrama%20sin%20t%C3%ADtulo.jpg![imagen](https://user-images.githubusercontent.com/80277545/207053951-2394eceb-e8a9-421d-a0fd-9d5f03d4c780.png)
 
