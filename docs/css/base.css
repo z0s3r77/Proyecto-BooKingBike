@@ -406,8 +406,9 @@ th {
 
 /* Index */
 
-iframe{
-    width: 80%;
+
+.frame{
+    width: 80%
 }
 
 .responsive {
