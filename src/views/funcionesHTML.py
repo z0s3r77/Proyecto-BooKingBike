@@ -1,9 +1,10 @@
-import os
-import sys
-from datetime import datetime
-from src.views.creardiccionarios import *
 from src.db.mainDb import mainDB
+bikes_json = mainDB('json/bikes.json','bikes')
 
+from src.views.creardiccionarios import *
+from datetime import datetime
+import sys
+import os
 # Llamamos a la función que convierte en lista el archivo json
 bikes_json = mainDB('json/bikes.json', 'bikes')
 
