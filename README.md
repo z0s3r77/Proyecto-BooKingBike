@@ -87,3 +87,13 @@ Para poder llevar a acabo el proyecto se han utilizado las siguientes librerias 
 
 ![imagen](https://user-images.githubusercontent.com/80277545/207130055-abff2951-d326-480e-9cc3-e674b793ee27.png)
 
+# Pytest 
+
+Para ejecutar los test se debe seguir la estructura puesta en `pytest.ini`, por otro lado , se pueden ejecutar todos los tets con el siguiente comando: 
+```
+coverage run -m pytest -vv test/test_VIEW_main.py test/test_DB_conexionApiMongo.py test/test_DB_MongoAtlasConexion.py test/test_DB_generadorJson.py test/test_DB_convertirJsonALista.py test/test_DB_mainDB.py test/test_TYPER_listar_documentos.py test/test_TYPER_insertar_documento.py test/test_TYPER_actualizar_documento.py  test/test_TYPER_borrar_documento.py  test/test_CRUD_main.py
+```
+
+El comando anterior ejecutaria el Pytest bajo coverage. 
+![imagen](https://user-images.githubusercontent.com/80277545/207448219-f454d6ca-a8f3-4a70-a937-e06ddad95702.png)
+
