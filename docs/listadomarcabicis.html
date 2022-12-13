@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        <!--Añadimos el head-->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="author" content="Miguel & Sebastian">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name='description' content='Pagina que muestra todas las marcas de bicis disponibles'>
         <meta name="keywords" content="MTB, Ebike , CityBike, Bikes , Renting">
-        <meta http-equiv="last-modified" content='2022-12-12'>
+        <meta http-equiv="last-modified" content='2022-12-13'>
         <link rel="stylesheet" href="css/base.css">
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3714/3714324.png">
-        <title>Marcas de bicis disponibles - BookingBike</title>
+        <title>Marcas disponibles - BookingBike</title>
         </head>
     <body>
         <header>
             <h1 class="header">BooKingBike</h1>
             <h2>Marcas disponibles</h2>
         </header>
+        <!--Añadimos nav con diferentes listas-->
         <nav>
             <ul>
                 <li><a href="index.html" class="active2">Inicio</a></li>
                 <li><a href="listadototalbicis.html">Listado Bicicletas</a></li>
+                <!--Lista desplegable por marcas-->
                 <li class="dropdown">
                     <a  class="dropbtn" href="listadomarcabicis.html" >Marcas</a>    
                     <div class="dropdown-content">
@@ -32,8 +35,10 @@
                         <a href='brand/Ghost.html'> Ghost </a>
                         <a href='brand/Ortler.html'> Ortler </a>
                         <a href='brand/NS Bikes.html'> NS Bikes </a>
+                        <a href='brand/ Apple.html'>  Apple </a>
                     </div>
                 </li>
+                <!--Lista desplegable por modelo-->
                 <li class="dropdown">
                     <a  class="dropbtn" href="listadotipobicis.html" >Modelos</a>    
                     <div class="dropdown-content">
@@ -43,8 +48,10 @@
                         <a href='types/RoadBike.html'> RoadBike </a>
                         <a href='types/E-MTB.html'> E-MTB </a>
                         <a href='types/E-RoadBike.html'> E-RoadBike </a>
+                        <a href='types/ Electronica.html'>  Electronica </a>
                     </div>
                 </li>
+                <!--Lista desplegable por zona-->
                 <li class="dropdown">
                     <a  class="dropbtn" href="listadobicisporzona.html" >Zonas</a>    
                     <div class="dropdown-content">
@@ -54,8 +61,10 @@
                         <a href='location/Manacor.html'> Manacor </a>
                         <a href='location/Inca.html'> Inca </a>
                         <a href='location/Soller.html'> Soller </a>
+                        <a href='location/ Manacor.html'>  Manacor </a>
                  </div>
                     </li>
+                    <!--Lista desplegable segun caracteristicas-->
                     <li class="dropdown">
                         <a href="javascript:void(0)" class="dropbtn">Caracteristicas</a>    
                         <div class="dropdown-content">
@@ -64,10 +73,12 @@
                             <a href="listadobicisporcambio.html">Tipo de cambios</a>
                         </div>
                     </li>
+                <!--Boton de contacto-->
                 <li style="float:right; background-color: #005763;;"><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
         <section>
+            <!--Marcas disponibles-->
             <div class="flex-container">
                 <div class='container-subpage'><p> <a href='brand/Nukeproof.html'> Nukeproof </a> </p></div>
                 <div class='container-subpage'><p> <a href='brand/Orbea.html'> Orbea </a> </p></div>
@@ -77,59 +88,67 @@
                 <div class='container-subpage'><p> <a href='brand/Ghost.html'> Ghost </a> </p></div>
                 <div class='container-subpage'><p> <a href='brand/Ortler.html'> Ortler </a> </p></div>
                 <div class='container-subpage'><p> <a href='brand/NS Bikes.html'> NS Bikes </a> </p></div>
+                <div class='container-subpage'><p> <a href='brand/ Apple.html'>  Apple </a> </p></div>
             </div>
+            <!--Añadimos una tabla-->
             <table>
                 <tr>
                     <th>Marcas Disponibles</th>
                     <th>Nº de Bicicletas</th>
                     <th>Enlace</th>
                 </tr>
-<tr>
-<td> Nukeproof </td>
-<td> 1 </td>
-<td> <a href='brand/Nukeproof.html'> Listar </a> </td>
-</tr>
-<tr>
-<td> Orbea </td>
-<td> 6 </td>
-<td> <a href='brand/Orbea.html'> Listar </a> </td>
-</tr>
-<tr>
-<td> RONDO </td>
-<td> 3 </td>
-<td> <a href='brand/RONDO.html'> Listar </a> </td>
-</tr>
-<tr>
-<td> Serious </td>
-<td> 2 </td>
-<td> <a href='brand/Serious.html'> Listar </a> </td>
-</tr>
-<tr>
-<td> BMC </td>
-<td> 1 </td>
-<td> <a href='brand/BMC.html'> Listar </a> </td>
-</tr>
-<tr>
-<td> Ghost </td>
-<td> 3 </td>
-<td> <a href='brand/Ghost.html'> Listar </a> </td>
-</tr>
-<tr>
-<td> Ortler </td>
-<td> 3 </td>
-<td> <a href='brand/Ortler.html'> Listar </a> </td>
-</tr>
-<tr>
-<td> NS Bikes </td>
-<td> 1 </td>
-<td> <a href='brand/NS Bikes.html'> Listar </a> </td>
-</tr>
-</table>
-        </section><br><br><br><br><br><br>
+                <tr>
+                    <td> Nukeproof </td>
+                    <td> 1 </td>
+                    <td> <a href='brand/Nukeproof.html'> Listar </a> </td>
+                </tr>
+                <tr>
+                    <td> Orbea </td>
+                    <td> 6 </td>
+                    <td> <a href='brand/Orbea.html'> Listar </a> </td>
+                </tr>
+                <tr>
+                    <td> RONDO </td>
+                    <td> 3 </td>
+                    <td> <a href='brand/RONDO.html'> Listar </a> </td>
+                </tr>
+                <tr>
+                    <td> Serious </td>
+                    <td> 2 </td>
+                    <td> <a href='brand/Serious.html'> Listar </a> </td>
+                </tr>
+                <tr>
+                    <td> BMC </td>
+                    <td> 1 </td>
+                    <td> <a href='brand/BMC.html'> Listar </a> </td>
+                </tr>
+                <tr>
+                    <td> Ghost </td>
+                    <td> 3 </td>
+                    <td> <a href='brand/Ghost.html'> Listar </a> </td>
+                </tr>
+                <tr>
+                    <td> Ortler </td>
+                    <td> 3 </td>
+                    <td> <a href='brand/Ortler.html'> Listar </a> </td>
+                </tr>
+                <tr>
+                    <td> NS Bikes </td>
+                    <td> 1 </td>
+                    <td> <a href='brand/NS Bikes.html'> Listar </a> </td>
+                </tr>
+                <tr>
+                    <td>  Apple </td>
+                    <td> 1 </td>
+                    <td> <a href='brand/ Apple.html'> Listar </a> </td>
+                </tr>
+            </table>
+        </section>
+        <!--Añadimos un footer con una licencia creative commons-->
         <footer class="footer">
             <p>Esta página es de @Miguel & @Sebastian</p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licencia Creative Commons"
-                    style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a>Esta obra
+                    style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />&nbsp</a>Esta obra
             está
             bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Licencia Creative Commons
                 Atribución-NoComercial 4.0 Internacional</a>.

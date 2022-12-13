@@ -9,12 +9,11 @@ import sys
 
 #Con este modulo se despliegan todas las funciones 
 
-# GENERANDO PAGINAS
-
+# GENERANDO PAGINAS HTML
 
 def pagina_principal():
     sys.stdout = open('docs/index.html', 'w', encoding="UTF-8")
-    html_head("index",
+    html_head("index - BooKingBike",
               'Pagina de inicio de BookingBike')
     body.body_pagina_principal()
     footer()
@@ -32,7 +31,7 @@ def contacto():
 
 def listado_total_bicis():
     sys.stdout = open('docs/listadototalbicis.html', 'w', encoding="UTF-8")
-    html_head(title="Modelos",
+    html_head(title="Modelos disponibles - BookingBike",
               description='Pagina que muestra todas las bicis disponibles')
     body.body_listado_total_bicis()
     footer()
@@ -40,7 +39,7 @@ def listado_total_bicis():
 
 def listado_tipo_bicis():
     sys.stdout = open('docs/listadotipobicis.html', 'w', encoding="UTF-8")
-    html_head(title="Tipos de bicis disponibles - BookingBike",
+    html_head(title="Tipos disponibles - BookingBike",
               description='Pagina que muestra todos los tipos de bicis disponibles')
     body.body_listado_tipo_bicis()
     footer()
@@ -48,7 +47,7 @@ def listado_tipo_bicis():
 
 def listado_marca_bicis():
     sys.stdout = open('docs/listadomarcabicis.html', 'w', encoding="UTF-8")
-    html_head(title="Marcas de bicis disponibles - BookingBike",
+    html_head(title="Marcas disponibles - BookingBike",
               description='Pagina que muestra todas las marcas de bicis disponibles')
     body.body_listado_marca_bicis()
     footer()
@@ -56,7 +55,7 @@ def listado_marca_bicis():
 
 def listado_zona_bicis():
     sys.stdout = open('docs/listadobicisporzona.html', 'w', encoding="UTF-8")
-    html_head(title="Bicis disponible por zona - BookingBike",
+    html_head(title="Bicis por zona - BookingBike",
               description='Pagina que muestra todas las zonas que tienen bicis disponibles')
     body.body_listado_por_zona_bicis()
     footer()
@@ -64,7 +63,7 @@ def listado_zona_bicis():
 
 def listado_tamaño_rueda_bicis():
     sys.stdout = open('docs/listadobicisportamañorueda.html', 'w', encoding="UTF-8")
-    html_head(title="Bicis disponible por tamaño de rueda - BookingBike",
+    html_head(title="Bicis por tamaño de rueda - BookingBike",
               description='Pagina que muestra todos los tamaño de rueda de bicis disponibles')
     body.body_listado_por_tamaño_rueda_bicis()
     footer()
@@ -72,7 +71,7 @@ def listado_tamaño_rueda_bicis():
 
 def listado_desarollo_bicis():
     sys.stdout = open('docs/listadobicispordesarrollo.html', 'w', encoding="UTF-8")
-    html_head(title="Bicis disponible por desarollo - BookingBike",
+    html_head(title="Bicis por desarollo - BookingBike",
               description='Pagina que muestra todos los desarollos disponibles')
     body.body_listado_por_desarollo_bicis()
     footer()
@@ -80,23 +79,27 @@ def listado_desarollo_bicis():
 
 def listado_cambios_bicis():
     sys.stdout = open('docs/listadobicisporcambio.html', 'w', encoding="UTF-8")
-    html_head(title="Bicis disponible por tipo de cambio - BookingBike",
+    html_head(title="Bicis por tipo de cambio - BookingBike",
               description='Pagina que muestra todos los cambios disponibles')
     body.body_listado_por_cambio_bicis()
     footer()
     sys.stdout.close()
 
 
-    # Generar CSS
+# GENERANDO PAGINA CSS
 
 def pagina_css():
     sys.stdout = open('docs/css/base.css', 'w', encoding="UTF-8")
     css()
     sys.stdout.close()
-
+ 
+# GENERANDO PAGINA POR BICICLETA
 
 def paginas_por_bicicletas():
     pagina_por_bicicleta()
+
+
+# GENERANDO PAGINA SUS TIPOS
 
 def listado_paginas_por_agrupaciones():
     paginas_tipos_bicis()
@@ -106,6 +109,7 @@ def listado_paginas_por_agrupaciones():
     paginas_tamaño_ruedas_bicis()
     paginas_cambio_bicis()
     
+# LLAMAMOS A TODAS LAS FUNCIONES
 
 pagina_principal()
 contacto()
