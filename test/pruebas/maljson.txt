@@ -1,0 +1,9 @@
+[
+    {
+        "Nombre": "Sebas",
+        "Apellido": "Estacio",
+        "Edad": "21"
+    },
+    {
+        Esto no es un archivo JSON en condiciones
+]
