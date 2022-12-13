@@ -15,7 +15,8 @@ Enlace del proyecto: https://z0s3r77.github.io/BooKingBikeV2/
 
 El proyecto **Booking Bike** tiene como finalidad desplegar un conjunto de páginas sobre bicicletas, obteniendo su contenido a partir de una base de datos, mediante Python.
 
-El sitio Web tiene que simular ser una página de reservas de bicicletas disponibles en Mallorca, Islas Baleares. 
+El sitio Web tiene que simular ser una página en la cual diferentes organizaciones pueden añadir sus bicicletas disponibles en Mallorca, Islas Baleares.
+Entonces el cliente al seleccionar la bici deseada le enviaria a la pagina web del anunciante.
 
 Las tecnologías que se han utilizado han sido las siguientes:
 
