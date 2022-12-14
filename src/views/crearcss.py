@@ -586,6 +586,7 @@ button a:link {
     
     button.sale{
         background-color: #539da7;
+        width: 380px;
     }
 }
 

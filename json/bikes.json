@@ -563,5 +563,34 @@
         "Status": "available",
         "Location": "Palma",
         "img": "https://images.internetstores.de/products/1748759/02/8a191f/ns-bikes-movement-2-alloy-red-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
+    },
+    {
+        "_id": "R7",
+        "Brand": "RockRider",
+        "Model": {
+            "Name": "E-MTB",
+            "Style": "R\u00edgida",
+            "Suspension": "Triple suspension",
+            "Material": "Aluminio",
+            "Fork brand": "RockShox",
+            "Fork length": {
+                "$numberInt": "150"
+            },
+            "Developments": "1x12",
+            "Group": "Nukeproof Scout",
+            "Type": "automatico",
+            "Wheel size": {
+                "$numberDouble": "27.5"
+            },
+            "Weight": {
+                "$numberDouble": "25.38"
+            }
+        },
+        "Price": {
+            "$numberInt": "45"
+        },
+        "Status": "avaliable",
+        "Location": "Palma",
+        "img": "https://images.internetstores.de/products/1700375/02/5b37d4/haibike-alltrail-6-275-matte-gloss-black-mango-2.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
     }
 ]

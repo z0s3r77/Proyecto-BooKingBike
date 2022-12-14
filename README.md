@@ -9,13 +9,14 @@ Enlace del proyecto: https://z0s3r77.github.io/BooKingBikeV2/
   - [**Arquitectura de la aplicación**](#arquitectura-de-la-aplicación)
   - [**Diagrama de componentes**](#diagrama-de-componentes)
 - [**Clockify**](#clockify)
-
+- [**Pytest**](#Pytest)
 
 # Introducción 
 
 El proyecto **Booking Bike** tiene como finalidad desplegar un conjunto de páginas sobre bicicletas, obteniendo su contenido a partir de una base de datos, mediante Python.
 
-El sitio Web tiene que simular ser una página de reservas de bicicletas disponibles en Mallorca, Islas Baleares. 
+El sitio Web tiene que simular ser una página en la cual diferentes organizaciones pueden añadir sus bicicletas disponibles en Mallorca, Islas Baleares.
+Entonces el cliente al seleccionar la bici deseada le enviaria a la pagina web del anunciante.
 
 Las tecnologías que se han utilizado han sido las siguientes:
 
@@ -46,7 +47,7 @@ Cumpliendo con el propósito indicado anteriormente, el proyecto presenta la sig
 
 A continuación una imagen de la arquitectura:
 
-file:///home/z0s3r77/Descargas/Conceptos%20relacionados(2).jpg![imagen](https://user-images.githubusercontent.com/80277545/206925650-5ab8087a-086a-4726-a586-3b74ef6f80ea.png)
+![imagen](https://user-images.githubusercontent.com/80277545/206925650-5ab8087a-086a-4726-a586-3b74ef6f80ea.png)
 
 
 - En primer lugar tenemos la base de datos, donde se almacenan las bicicletas, en concreto en una colección llamada Bikes dentro de la base de datos BookingBike (pero de esto daremos detalles más abajo). 
@@ -59,7 +60,7 @@ file:///home/z0s3r77/Descargas/Conceptos%20relacionados(2).jpg![imagen](https://
 
 ## Diagrama de componentes
 
-file:///home/z0s3r77/Descargas/Diagrama%20sin%20t%C3%ADtulo.jpg![imagen](https://user-images.githubusercontent.com/80277545/207053951-2394eceb-e8a9-421d-a0fd-9d5f03d4c780.png)
+![imagen](https://user-images.githubusercontent.com/80277545/207053951-2394eceb-e8a9-421d-a0fd-9d5f03d4c780.png)
 
 
 
@@ -85,4 +86,14 @@ Para poder llevar a acabo el proyecto se han utilizado las siguientes librerias 
 # Clockify
 
 ![imagen](https://user-images.githubusercontent.com/80277545/207130055-abff2951-d326-480e-9cc3-e674b793ee27.png)
+
+# Pytest 
+
+Para ejecutar los test se debe seguir la estructura puesta en `pytest.ini`, por otro lado , se pueden ejecutar todos los tets con el siguiente comando: 
+```
+coverage run -m pytest -vv test/test_VIEW_main.py test/test_DB_conexionApiMongo.py test/test_DB_MongoAtlasConexion.py test/test_DB_generadorJson.py test/test_DB_convertirJsonALista.py test/test_DB_mainDB.py test/test_TYPER_listar_documentos.py test/test_TYPER_insertar_documento.py test/test_TYPER_actualizar_documento.py  test/test_TYPER_borrar_documento.py  test/test_CRUD_main.py
+```
+
+El comando anterior ejecutaria el Pytest bajo coverage. 
+![imagen](https://user-images.githubusercontent.com/80277545/207448219-f454d6ca-a8f3-4a70-a937-e06ddad95702.png)
 
