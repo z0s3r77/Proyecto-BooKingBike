@@ -1,12 +1,3 @@
-
-
-
-### Este CRUD está vacío
-
-
-
-
-
 import json
 import time
 from src.db.MongoAtlasConexion import MongoAtlas

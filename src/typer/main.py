@@ -1,7 +1,7 @@
 #Modulo PRINCIPAL de Typer
 import typer
 from rich import print
-from src.crud.main import mongoDBcrud
+from src.db.crud import mongoDBcrud
 from rich.progress import Progress, SpinnerColumn, TextColumn
 import os
 
