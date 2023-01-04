@@ -3,4 +3,4 @@ import random
 
 
 subprocess.run(["git", "add", "."])
-subprocess.run(["git", "commit" , "-m", "actualizado gitPages" ], shell=False)
+subprocess.run(["git", "commit" , "-m", "actualizado gitPages" ], check=False)
