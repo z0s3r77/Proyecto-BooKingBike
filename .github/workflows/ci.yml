@@ -1,0 +1,44 @@
+name: Pytest BookingBike
+on:
+  push:
+    branches:
+      - dev
+      - master
+  pull_request:
+    branches:
+      - dev
+      - master
+  workflow_dispatch:
+
+jobs:
+  CI:
+  #Se elige un RUNNER "especie de contenedor"
+    runs-on:  ubuntu-latest
+    steps:
+    #Descargamos una copia del repositorio en el runner con el checkout
+      - uses:  actions/checkout@v3
+      
+    #Instalamos Python, a la verión 3.8
+      - name:  Instalando Python 3.8
+        uses:  actions/setup-python@v4.3.1
+        with:
+          python-verion: 3.8
+        
+    #Con está acción guardamos en caché las dependencias descargadas para mejorar la velociadad de ejecución del RUNNER
+      - uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+        
+    #Instalamos dependencias (al tener el actions/cache@v3 no se instalan)
+      - name:  Instalando dependencias
+        run:  |
+          python3 -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+    #Lanzamos el comando Pytest
+      - name: Test with pytest
+        run:  |
+          pytest -vv test/test_VIEW_main.py test/test_DB_conexionApiMongo.py test/test_DB_MongoAtlasConexion.py test/test_DB_generadorJson.py test/test_DB_convertirJsonALista.py test/test_DB_mainDB.py test/test_CRUD_main.py
