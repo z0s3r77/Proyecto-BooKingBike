@@ -1,9 +1,9 @@
 #Modulo PRINCIPAL de Typer
 import typer
 from rich import print
-from src.db.crud import mongoDBcrud
 from rich.progress import Progress, SpinnerColumn, TextColumn
-import os
+import src.crud.main as CRUD
+
 
 #Se inicia la aplicación de Typer
 app = typer.Typer(help="La CLI de BookingBike te permite realizar un CRUD sobre la colección Bikes de la base de datos BookingBike, ubicada en Mongo Atlas")
@@ -25,18 +25,21 @@ def desplegar_site():
         progress.add_task(description="Desplegando site...", total=None)
 
         #Importamos el modulo src.views.main, para que se active.Este despliega el site.
-        import src.views.main
+        try:
+            import src.views.main
+        except:
+            print("[red]No se ha podido desplegar el site[/red]")
 
-    print("[blue] Site Desplegado [/blue]")
 
     #Confirm muestra un prompt, que en caso de Y , muestra la pagina.
     confirm = typer.confirm("Quieres ir al dominio?")
     if confirm:
-        typer.launch("file:///home/z0s3r77/Documentos/BooKingBikeV2/docs/index.html")
+        typer.launch("./docs/index.html")
         print("[blue] Proceso finalizado [/blue]")
-        quit()
+
     else:
         print("[blue]Proceso finalizado[/blue]")
+
 
 
 
@@ -102,7 +105,7 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
         #Posteriormente hace un read del documento
 
         confirm = typer.confirm("Seguro que quieres insertarlo?")
-        print('\n')
+
         if not confirm:
             print("[red]Se ha abortado el proceso[/red]")
             quit()
@@ -113,31 +116,14 @@ def insertar_documento(jsonFile: str = typer.Option("", help="Inserta un documen
                     transient=True,
                 ) as progress:
                 progress.add_task(description="Insertando...", total=None)
-                result = mongoDBcrud.create(_id,brand,modelName, modelStyle, modelSuspension, modelMaterial, modelForkBrand, modelForklenght, modelDevelopments, modelGroup, modelType, modelWheelSize, modelWeight, priceday, status, location, img)
 
-            if result == False:
-                print("[red]No se ha podido insertar el documento[/red]\n")
+                print(CRUD.insertarDocumento(_id,brand,modelName, modelStyle, modelSuspension, modelMaterial, modelForkBrand, modelForklenght, modelDevelopments, modelGroup, modelType, modelWheelSize, modelWeight, priceday, status, location, img))
 
-            elif result == True:
 
-                print("[blue]Mostrando documento....[/blue]")
-                result = mongoDBcrud.read(_id)
-                print(result)
-                print("[blue]Se ha insertado con exito[/blue]")
-    
-
-    #En caso de usar el parametro jsonFile, enviará el nombre del documento a la función mongoDBcrud.insert_json
+    #En caso de usar el parametro jsonFile, enviará la ruta del fichero a src.crud.main.insertarArchivoJson
     else:
-        #Comprueba la ruta 
-        print("[blue]Comprobando ruta... [/blue]")
-        if os.path.exists(jsonFile) == True:
-            #Comprobamos la respuesta del metodo insert_json
-            if mongoDBcrud.insert_json(jsonFile) == True:
-                print("[blue]Se han insertado todos los documentos[/blue]")
-            else:
-                print("[red] Algo ha ido mal")
-        else:
-            print(f"[red]No existe el archivo en la ruta especificada: {jsonFile} [/red]")
+        print(CRUD.insertarArchivoJson(jsonFile))
+         
 
 
 
@@ -159,7 +145,7 @@ def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los d
         )as progress:
             progress.add_task(description="Procesando...", total=None)
             #result , guarda la respuesta del metodo readall del modulo mongoDBcrud, está es False o la respuesta
-            result = mongoDBcrud.readall()
+            result = CRUD.mostrarTodosLosDocumentos()
     
         if result == False:
             #Este print no se puede provocar porque es en caso de que no hayan documentos en la colección
@@ -188,16 +174,11 @@ def listar_documento(todos: bool = typer.Option(False, help='Mostrar todos los d
         )as progress:
             progress.add_task(description="Procesando...", total=None)
             #Realiza la misma funcion que readall, pero solo con un ID
-            result = mongoDBcrud.read(_id)
+            if type(CRUD.buscarDocumento(_id)) == list:
+                print(CRUD.buscarDocumento(_id))
+                print("[blue]Finalizado[/blue]")
             
-            #Si el resultado es True, sale el documento
-            if result == False:
-                result = f'[red]No existe ningún documento con ID:[/red]  {_id}'
-                print(result)
-                return False
-            else:
-                print(result)
-                print("[blue]finalizado[/blue]")
+
 
 
 
@@ -217,9 +198,9 @@ def actualizar_documento():
         transient=True,
     )as progress:
         progress.add_task(description="Buscando documento...", total=None)
-        
+
         #Ejecutamos un read, mostrado anteriormente
-        if mongoDBcrud.read(targetId) == False:
+        if CRUD.buscarDocumento(targetId) == "[red]No hay ningún documento con ese ID[/red]":
             print("[red]No hay ningún documento con ese ID[/red]")
             quit()
 
@@ -236,18 +217,13 @@ def actualizar_documento():
         
         #Enviamos los valores a la función de mongoDBcrud.update, si nos devuelve False
         #Indicamos que no se ha podido actualizar
-        if mongoDBcrud.update(targetId, field, value) == False:
+        if CRUD.actualizarDocumento(targetId, field, value) == "[red]No se ha podido actualizar el documento[/red]":
             print("[red]No se ha podido actualizar el documento[/red]")
             quit()
         else:
-        
-        #Por otro lado, si la respuesta de la funcion update es TRUE,
-        #Hacemos un print del resultado 
             print("[blue]Documento actualizado[/blue]")
             progress.add_task(description="Mostrando resultado...", total=None)
-            result = mongoDBcrud.read(targetId)
-            print(result)
-            print("[blue]Proceso finalizado[/blue]")
+            print(CRUD.buscarDocumento(targetId))
 
 
 
@@ -267,9 +243,8 @@ def borrar_documento():
         transient=True,
     )as progress:
         progress.add_task(description="Borrando documento...", total=None) 
-        result = mongoDBcrud.delete(_id)
+        print(CRUD.borrarDocumento(_id))
         
-    print(result)
 
 
 
