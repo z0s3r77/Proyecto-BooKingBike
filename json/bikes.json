@@ -112,33 +112,6 @@
         "img": "https://images.internetstores.de/products/1368237/02/4d6f61/orbea-vibe-mid-h10-black-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
     },
     {
-        "_id": "B5",
-        "Brand": "RONDO",
-        "Model": {
-            "Name": "RoadBike",
-            "Style": "Gravel",
-            "Suspension": "none",
-            "Material": "Aluminio",
-            "Fork brand": "RONDO",
-            "Fork length": "160",
-            "Developments": "2x11",
-            "Group": "RONDO Ruut",
-            "Type": "manual",
-            "Wheel size": {
-                "$numberDouble": "20"
-            },
-            "Weight": {
-                "$numberDouble": "10.5"
-            }
-        },
-        "Price": {
-            "$numberInt": "31"
-        },
-        "Status": "available",
-        "Location": "Palma",
-        "img": "https://images.internetstores.de/products/1736102/02/bba211/rondo-ruut-al-2-gravel-plus-black-black-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
-    },
-    {
         "_id": "B6",
         "Brand": "Serious",
         "Model": {
@@ -565,32 +538,32 @@
         "img": "https://images.internetstores.de/products/1748759/02/8a191f/ns-bikes-movement-2-alloy-red-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
     },
     {
-        "_id": "R7",
-        "Brand": "RockRider",
+        "_id": "Prueba",
+        "Brand": "4323423",
         "Model": {
-            "Name": "E-MTB",
-            "Style": "R\u00edgida",
-            "Suspension": "Triple suspension",
-            "Material": "Aluminio",
-            "Fork brand": "RockShox",
+            "Name": "4234234",
+            "Style": "234234",
+            "Suspension": "234",
+            "Material": "234234",
+            "Fork brand": "234",
             "Fork length": {
-                "$numberInt": "150"
+                "$numberInt": "234"
             },
-            "Developments": "1x12",
-            "Group": "Nukeproof Scout",
-            "Type": "automatico",
+            "Developments": "234",
+            "Group": "234",
+            "Type": "2",
             "Wheel size": {
-                "$numberDouble": "27.5"
+                "$numberDouble": "34"
             },
             "Weight": {
-                "$numberDouble": "25.38"
+                "$numberDouble": "234"
             }
         },
         "Price": {
-            "$numberInt": "45"
+            "$numberInt": "234"
         },
-        "Status": "avaliable",
-        "Location": "Palma",
-        "img": "https://images.internetstores.de/products/1700375/02/5b37d4/haibike-alltrail-6-275-matte-gloss-black-mango-2.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
+        "Status": "24",
+        "Location": "23",
+        "img": "423"
     }
 ]

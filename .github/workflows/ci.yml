@@ -42,4 +42,3 @@ jobs:
       - name: Test with pytest
         run:  |
           pytest -vv test/test_VIEW_main.py test/test_DB_conexionApiMongo.py test/test_DB_MongoAtlasConexion.py test/test_DB_generadorJson.py test/test_DB_convertirJsonALista.py test/test_DB_mainDB.py test/test_CRUD_main.py
-

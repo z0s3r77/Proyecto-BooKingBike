@@ -1,4 +1,5 @@
 import pytest
+import shutil
 import os 
 
 
@@ -8,9 +9,6 @@ def test_lanzar_main():
     import src.views.main 
     assert os.path.exists("json/") == True
     assert os.path.exists("docs/") == True
-
-
-
 
 
 @pytest.mark.comprobar_rutas_html
@@ -24,3 +22,7 @@ def test_main():
     assert os.path.exists("docs/shifts") == True
     assert os.path.exists("docs/wheelsize") == True
     assert os.path.exists("docs/index.html") == True
+
+def test_eliminarRutasCreadasParaElTest():
+    shutil.rmtree("docs/")
+    shutil.rmtree("json/")
