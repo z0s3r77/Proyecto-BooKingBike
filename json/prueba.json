@@ -112,33 +112,6 @@
         "img": "https://images.internetstores.de/products/1368237/02/4d6f61/orbea-vibe-mid-h10-black-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
     },
     {
-        "_id": "B5",
-        "Brand": "RONDO",
-        "Model": {
-            "Name": "RoadBike",
-            "Style": "Gravel",
-            "Suspension": "none",
-            "Material": "Aluminio",
-            "Fork brand": "RONDO",
-            "Fork length": "160",
-            "Developments": "2x11",
-            "Group": "RONDO Ruut",
-            "Type": "manual",
-            "Wheel size": {
-                "$numberDouble": "20"
-            },
-            "Weight": {
-                "$numberDouble": "10.5"
-            }
-        },
-        "Price": {
-            "$numberInt": "31"
-        },
-        "Status": "available",
-        "Location": "Palma",
-        "img": "https://images.internetstores.de/products/1736102/02/bba211/rondo-ruut-al-2-gravel-plus-black-black-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
-    },
-    {
         "_id": "B6",
         "Brand": "Serious",
         "Model": {
@@ -563,5 +536,63 @@
         "Status": "available",
         "Location": "Palma",
         "img": "https://images.internetstores.de/products/1748759/02/8a191f/ns-bikes-movement-2-alloy-red-1.jpg?forceSize=true&forceAspectRatio=true&useTrim=true&size=2400x2400"
+    },
+    {
+        "_id": "Prueba",
+        "Brand": "4323423",
+        "Model": {
+            "Name": "4234234",
+            "Style": "234234",
+            "Suspension": "234",
+            "Material": "234234",
+            "Fork brand": "234",
+            "Fork length": {
+                "$numberInt": "234"
+            },
+            "Developments": "234",
+            "Group": "234",
+            "Type": "2",
+            "Wheel size": {
+                "$numberDouble": "34"
+            },
+            "Weight": {
+                "$numberDouble": "234"
+            }
+        },
+        "Price": {
+            "$numberInt": "234"
+        },
+        "Status": "24",
+        "Location": "23",
+        "img": "423"
+    },
+    {
+        "_id": "H100",
+        "Brand": " Apple",
+        "Model": {
+            "Name": " Electronica",
+            "Style": " Ciclocross",
+            "Suspension": " no suspension",
+            "Material": " Carbono",
+            "Fork brand": " Apple",
+            "Fork length": {
+                "$numberInt": " 160"
+            },
+            "Developments": " 1x13",
+            "Group": " Ortler Bozen",
+            "Type": " manual",
+            "Wheel size": {
+                "$numberDouble": " 28"
+            },
+            "Weight": {
+                "$numberDouble": " 9.1"
+            }
+        },
+        "Price": {
+            "$numberInt": " 70"
+        },
+        "Status": " avaliable",
+        "Location": " Manacor",
+        "img": " https://upload.wikimedia.org/wikipedia/commons/b/ba/Pytest_logo.svg"
     }
 ]
