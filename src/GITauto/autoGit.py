@@ -11,9 +11,11 @@ def gitPush(message):
     else:
         subprocess.run(["git", "commit" , "-m", message ], stdout=subprocess.DEVNULL)
 
-    subprocess.run(["git", "push","origin", "master"])
+    try:
+        subprocess.run(["git", "push","origin", "master"], stdout=subprocess.DEVNULL)
+        return True
+    except:
+        return False
 
-
-gitPush('FUnciona')
 
 # Como lo subo a master?

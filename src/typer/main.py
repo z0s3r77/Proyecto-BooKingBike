@@ -3,7 +3,7 @@ import typer
 from rich import print
 from rich.progress import Progress, SpinnerColumn, TextColumn
 import src.crud.main as CRUD
-
+from src.GITauto.autoGit import gitPush
 
 #Se inicia la aplicación de Typer
 app = typer.Typer(help="La CLI de BookingBike te permite realizar un CRUD sobre la colección Bikes de la base de datos BookingBike, ubicada en Mongo Atlas")
@@ -255,6 +255,24 @@ def mostrar_site():
     Inicia el navegador con la pagina principal de BookingBike
     """
     typer.launch("https://z0s3r77.github.io/BooKingBikeV2/")
+
+@app.command()
+def actualizar_site_remoto():
+    """
+    Actualizar el repositorio de GitHub
+    """
+    message = typer.prompt("Inserte un mensaje para el commit: ")
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        transient=True,
+    )as progress:
+        progress.add_task(description="Actualizando repositorio remoto...", total=None) 
+    if gitPush(message) == False:
+        print("[red]No se ha podido actualizar el repositorio[/red]")
+    else:
+        print("[blue]Repositorio actualizado[/blue]")
+
 
 
 
