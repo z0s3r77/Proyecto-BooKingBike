@@ -1,10 +1,9 @@
 import subprocess
-import random
 
 
 def gitPush(message):
 
-    subprocess.run(["git", "add", "."])
+    subprocess.run(["git", "add", "."], stdout=subprocess.DEVNULL)
 
     if not message:
         subprocess.run(["git", "commit" , "-m", "base de datos actualizada" ], stdout=subprocess.DEVNULL)
